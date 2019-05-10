@@ -1,0 +1,1669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6ce418a4-e901-4e91-b3bc-ffd68b22e701" activeEnvironment="Default" name="CreditCheckWS" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="26f63094-4ea1-41e4-8764-9afc3456321a" wsaVersion="NONE" name="CreditCheckWSPortBinding" type="wsdl" bindingName="{http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/}CreditCheckWSPortBinding" soapVersion="1_1" anonymous="optional" definition="http://191.9.3.249:9080/CreditCheckWS/service/CreditCheckWS.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://191.9.3.249:9080/CreditCheckWS/service/CreditCheckWS.wsdl"><con:part><con:url>http://191.9.3.249:9080/CreditCheckWS/service/CreditCheckWS.wsdl</con:url><con:content><![CDATA[<definitions name="CreditCheckWS" targetNamespace="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/" schemaLocation="CreditCheckWS_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="idProviderBcResponse">
+    <part name="parameters" element="tns:idProviderBcResponse"></part>
+  </message>
+  <message name="anacrAdeudo">
+    <part name="parameters" element="tns:anacrAdeudo"></part>
+  </message>
+  <message name="idProviderBc">
+    <part name="parameters" element="tns:idProviderBc"></part>
+  </message>
+  <message name="evaluacionTramite">
+    <part name="parameters" element="tns:evaluacionTramite"></part>
+  </message>
+  <message name="historicoPagosM2KResponse">
+    <part name="parameters" element="tns:historicoPagosM2KResponse"></part>
+  </message>
+  <message name="listaNegraResponse">
+    <part name="parameters" element="tns:listaNegraResponse"></part>
+  </message>
+  <message name="repoBcTelcoIcc">
+    <part name="parameters" element="tns:repoBcTelcoIcc"></part>
+  </message>
+  <message name="equipoPremiumResponse">
+    <part name="parameters" element="tns:equipoPremiumResponse"></part>
+  </message>
+  <message name="adeudoHstPagosM2KResponse">
+    <part name="parameters" element="tns:adeudoHstPagosM2KResponse"></part>
+  </message>
+  <message name="idProvBcIcc">
+    <part name="parameters" element="tns:idProvBcIcc"></part>
+  </message>
+  <message name="historicoBc">
+    <part name="parameters" element="tns:historicoBc"></part>
+  </message>
+  <message name="idProvBcTelcoIccResponse">
+    <part name="parameters" element="tns:idProvBcTelcoIccResponse"></part>
+  </message>
+  <message name="idProvBcIccResponse">
+    <part name="parameters" element="tns:idProvBcIccResponse"></part>
+  </message>
+  <message name="limiteCreditoResponse">
+    <part name="parameters" element="tns:limiteCreditoResponse"></part>
+  </message>
+  <message name="rangoEquipoResponse">
+    <part name="parameters" element="tns:rangoEquipoResponse"></part>
+  </message>
+  <message name="adeudoHstPagosM2K">
+    <part name="parameters" element="tns:adeudoHstPagosM2K"></part>
+  </message>
+  <message name="depPlanLibre">
+    <part name="parameters" element="tns:depPlanLibre"></part>
+  </message>
+  <message name="cargoInterredes">
+    <part name="parameters" element="tns:cargoInterredes"></part>
+  </message>
+  <message name="idProvBcTelcoIcc">
+    <part name="parameters" element="tns:idProvBcTelcoIcc"></part>
+  </message>
+  <message name="anacrHistoricoResponse">
+    <part name="parameters" element="tns:anacrHistoricoResponse"></part>
+  </message>
+  <message name="listaNegra">
+    <part name="parameters" element="tns:listaNegra"></part>
+  </message>
+  <message name="reporteBcResponse">
+    <part name="parameters" element="tns:reporteBcResponse"></part>
+  </message>
+  <message name="planesLibresResponse">
+    <part name="parameters" element="tns:planesLibresResponse"></part>
+  </message>
+  <message name="financiamientoResponse">
+    <part name="parameters" element="tns:financiamientoResponse"></part>
+  </message>
+  <message name="lineasAutorizadasResponse">
+    <part name="parameters" element="tns:lineasAutorizadasResponse"></part>
+  </message>
+  <message name="financiamiento">
+    <part name="parameters" element="tns:financiamiento"></part>
+  </message>
+  <message name="depositoRenta">
+    <part name="parameters" element="tns:depositoRenta"></part>
+  </message>
+  <message name="evaluacionTramiteResponse">
+    <part name="parameters" element="tns:evaluacionTramiteResponse"></part>
+  </message>
+  <message name="historicoPagosM2K">
+    <part name="parameters" element="tns:historicoPagosM2K"></part>
+  </message>
+  <message name="reporteBcMorales">
+    <part name="parameters" element="tns:reporteBcMorales"></part>
+  </message>
+  <message name="historicoBcResponse">
+    <part name="parameters" element="tns:historicoBcResponse"></part>
+  </message>
+  <message name="equipoPremium">
+    <part name="parameters" element="tns:equipoPremium"></part>
+  </message>
+  <message name="lineasAutorizadasEdadResponse">
+    <part name="parameters" element="tns:lineasAutorizadasEdadResponse"></part>
+  </message>
+  <message name="verificacionDomiciliariaResponse">
+    <part name="parameters" element="tns:verificacionDomiciliariaResponse"></part>
+  </message>
+  <message name="rangoEquipo">
+    <part name="parameters" element="tns:rangoEquipo"></part>
+  </message>
+  <message name="repoBcIcc">
+    <part name="parameters" element="tns:repoBcIcc"></part>
+  </message>
+  <message name="lineasAutorizadasEdad">
+    <part name="parameters" element="tns:lineasAutorizadasEdad"></part>
+  </message>
+  <message name="reporteBc">
+    <part name="parameters" element="tns:reporteBc"></part>
+  </message>
+  <message name="repoBcTelcoIccResponse">
+    <part name="parameters" element="tns:repoBcTelcoIccResponse"></part>
+  </message>
+  <message name="limiteCredito">
+    <part name="parameters" element="tns:limiteCredito"></part>
+  </message>
+  <message name="lineasAutorizadas">
+    <part name="parameters" element="tns:lineasAutorizadas"></part>
+  </message>
+  <message name="reporteBcMoralesResponse">
+    <part name="parameters" element="tns:reporteBcMoralesResponse"></part>
+  </message>
+  <message name="verificacionDomiciliaria">
+    <part name="parameters" element="tns:verificacionDomiciliaria"></part>
+  </message>
+  <message name="depositoRentaResponse">
+    <part name="parameters" element="tns:depositoRentaResponse"></part>
+  </message>
+  <message name="gamaPlanResponse">
+    <part name="parameters" element="tns:gamaPlanResponse"></part>
+  </message>
+  <message name="cargoInterredesResponse">
+    <part name="parameters" element="tns:cargoInterredesResponse"></part>
+  </message>
+  <message name="scoreCCS">
+    <part name="parameters" element="tns:scoreCCS"></part>
+  </message>
+  <message name="planesLibres">
+    <part name="parameters" element="tns:planesLibres"></part>
+  </message>
+  <message name="anacrHistorico">
+    <part name="parameters" element="tns:anacrHistorico"></part>
+  </message>
+  <message name="depPlanLibreResponse">
+    <part name="parameters" element="tns:depPlanLibreResponse"></part>
+  </message>
+  <message name="anacrAdeudoResponse">
+    <part name="parameters" element="tns:anacrAdeudoResponse"></part>
+  </message>
+  <message name="gamaPlan">
+    <part name="parameters" element="tns:gamaPlan"></part>
+  </message>
+  <message name="depPlanForzosoResponse">
+    <part name="parameters" element="tns:depPlanForzosoResponse"></part>
+  </message>
+  <message name="scoreCCSResponse">
+    <part name="parameters" element="tns:scoreCCSResponse"></part>
+  </message>
+  <message name="depPlanForzoso">
+    <part name="parameters" element="tns:depPlanForzoso"></part>
+  </message>
+  <message name="repoBcIccResponse">
+    <part name="parameters" element="tns:repoBcIccResponse"></part>
+  </message>
+  <portType name="CreditCheckWS">
+    <operation name="evaluacionTramite">
+      <input message="tns:evaluacionTramite" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/evaluacionTramiteRequest"></input>
+      <output message="tns:evaluacionTramiteResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/evaluacionTramiteResponse"></output>
+    </operation>
+    <operation name="listaNegra">
+      <input message="tns:listaNegra" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/listaNegraRequest"></input>
+      <output message="tns:listaNegraResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/listaNegraResponse"></output>
+    </operation>
+    <operation name="depPlanLibre">
+      <input message="tns:depPlanLibre" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanLibreRequest"></input>
+      <output message="tns:depPlanLibreResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanLibreResponse"></output>
+    </operation>
+    <operation name="depPlanForzoso">
+      <input message="tns:depPlanForzoso" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanForzosoRequest"></input>
+      <output message="tns:depPlanForzosoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanForzosoResponse"></output>
+    </operation>
+    <operation name="rangoEquipo">
+      <input message="tns:rangoEquipo" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/rangoEquipoRequest"></input>
+      <output message="tns:rangoEquipoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/rangoEquipoResponse"></output>
+    </operation>
+    <operation name="limiteCredito">
+      <input message="tns:limiteCredito" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/limiteCreditoRequest"></input>
+      <output message="tns:limiteCreditoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/limiteCreditoResponse"></output>
+    </operation>
+    <operation name="historicoPagosM2K">
+      <input message="tns:historicoPagosM2K" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoPagosM2KRequest"></input>
+      <output message="tns:historicoPagosM2KResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoPagosM2KResponse"></output>
+    </operation>
+    <operation name="adeudoHstPagosM2K">
+      <input message="tns:adeudoHstPagosM2K" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/adeudoHstPagosM2KRequest"></input>
+      <output message="tns:adeudoHstPagosM2KResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/adeudoHstPagosM2KResponse"></output>
+    </operation>
+    <operation name="idProviderBc">
+      <input message="tns:idProviderBc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProviderBcRequest"></input>
+      <output message="tns:idProviderBcResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProviderBcResponse"></output>
+    </operation>
+    <operation name="reporteBc">
+      <input message="tns:reporteBc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcRequest"></input>
+      <output message="tns:reporteBcResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcResponse"></output>
+    </operation>
+    <operation name="reporteBcMorales">
+      <input message="tns:reporteBcMorales" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcMoralesRequest"></input>
+      <output message="tns:reporteBcMoralesResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcMoralesResponse"></output>
+    </operation>
+    <operation name="repoBcIcc">
+      <input message="tns:repoBcIcc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcIccRequest"></input>
+      <output message="tns:repoBcIccResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcIccResponse"></output>
+    </operation>
+    <operation name="idProvBcIcc">
+      <input message="tns:idProvBcIcc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcIccRequest"></input>
+      <output message="tns:idProvBcIccResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcIccResponse"></output>
+    </operation>
+    <operation name="repoBcTelcoIcc">
+      <input message="tns:repoBcTelcoIcc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcTelcoIccRequest"></input>
+      <output message="tns:repoBcTelcoIccResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcTelcoIccResponse"></output>
+    </operation>
+    <operation name="idProvBcTelcoIcc">
+      <input message="tns:idProvBcTelcoIcc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcTelcoIccRequest"></input>
+      <output message="tns:idProvBcTelcoIccResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcTelcoIccResponse"></output>
+    </operation>
+    <operation name="historicoBc">
+      <input message="tns:historicoBc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoBcRequest"></input>
+      <output message="tns:historicoBcResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoBcResponse"></output>
+    </operation>
+    <operation name="scoreCCS">
+      <input message="tns:scoreCCS" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/scoreCCSRequest"></input>
+      <output message="tns:scoreCCSResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/scoreCCSResponse"></output>
+    </operation>
+    <operation name="planesLibres">
+      <input message="tns:planesLibres" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/planesLibresRequest"></input>
+      <output message="tns:planesLibresResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/planesLibresResponse"></output>
+    </operation>
+    <operation name="financiamiento">
+      <input message="tns:financiamiento" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/financiamientoRequest"></input>
+      <output message="tns:financiamientoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/financiamientoResponse"></output>
+    </operation>
+    <operation name="lineasAutorizadas">
+      <input message="tns:lineasAutorizadas" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasRequest"></input>
+      <output message="tns:lineasAutorizadasResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasResponse"></output>
+    </operation>
+    <operation name="lineasAutorizadasEdad">
+      <input message="tns:lineasAutorizadasEdad" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasEdadRequest"></input>
+      <output message="tns:lineasAutorizadasEdadResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasEdadResponse"></output>
+    </operation>
+    <operation name="verificacionDomiciliaria">
+      <input message="tns:verificacionDomiciliaria" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/verificacionDomiciliariaRequest"></input>
+      <output message="tns:verificacionDomiciliariaResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/verificacionDomiciliariaResponse"></output>
+    </operation>
+    <operation name="cargoInterredes">
+      <input message="tns:cargoInterredes" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/cargoInterredesRequest"></input>
+      <output message="tns:cargoInterredesResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/cargoInterredesResponse"></output>
+    </operation>
+    <operation name="depositoRenta">
+      <input message="tns:depositoRenta" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depositoRentaRequest"></input>
+      <output message="tns:depositoRentaResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depositoRentaResponse"></output>
+    </operation>
+    <operation name="gamaPlan">
+      <input message="tns:gamaPlan" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/gamaPlanRequest"></input>
+      <output message="tns:gamaPlanResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/gamaPlanResponse"></output>
+    </operation>
+    <operation name="anacrHistorico">
+      <input message="tns:anacrHistorico" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrHistoricoRequest"></input>
+      <output message="tns:anacrHistoricoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrHistoricoResponse"></output>
+    </operation>
+    <operation name="anacrAdeudo">
+      <input message="tns:anacrAdeudo" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrAdeudoRequest"></input>
+      <output message="tns:anacrAdeudoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrAdeudoResponse"></output>
+    </operation>
+    <operation name="equipoPremium">
+      <input message="tns:equipoPremium" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/equipoPremiumRequest"></input>
+      <output message="tns:equipoPremiumResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/equipoPremiumResponse"></output>
+    </operation>
+  </portType>
+  <binding name="CreditCheckWSPortBinding" type="tns:CreditCheckWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="evaluacionTramite">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="listaNegra">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="depPlanLibre">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="depPlanForzoso">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="rangoEquipo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="limiteCredito">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="historicoPagosM2K">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="adeudoHstPagosM2K">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="idProviderBc">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="reporteBc">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="reporteBcMorales">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="repoBcIcc">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="idProvBcIcc">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="repoBcTelcoIcc">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="idProvBcTelcoIcc">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="historicoBc">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="scoreCCS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="planesLibres">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="financiamiento">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="lineasAutorizadas">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="lineasAutorizadasEdad">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="verificacionDomiciliaria">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="cargoInterredes">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="depositoRenta">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="gamaPlan">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="anacrHistorico">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="anacrAdeudo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="equipoPremium">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CreditCheckWS">
+    <port name="CreditCheckWSPort" binding="tns:CreditCheckWSPortBinding">
+      <soap:address location="http://191.9.3.249:9080/CreditCheckWS/service"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://191.9.3.249:9080/CreditCheckWS/service/CreditCheckWS_schema1.xsd</con:url><con:content><![CDATA[<!--Generated by the JavaTM Architecture for XML Binding(JAXB) Reference Implementation, (build IBM 2.2.10-06/29/2016 1:04:51 PMforeman-) 
+See <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a>-->
+<xs:schema version="1.0" targetNamespace="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+  <xs:element name="adeudoHstPagosM2K" type="tns:adeudoHstPagosM2K"/>
+  <xs:element name="adeudoHstPagosM2KResponse" type="tns:adeudoHstPagosM2KResponse"/>
+  <xs:element name="anacrAdeudo" type="tns:anacrAdeudo"/>
+  <xs:element name="anacrAdeudoResponse" type="tns:anacrAdeudoResponse"/>
+  <xs:element name="anacrHistorico" type="tns:anacrHistorico"/>
+  <xs:element name="anacrHistoricoResponse" type="tns:anacrHistoricoResponse"/>
+  <xs:element name="cargoInterredes" type="tns:cargoInterredes"/>
+  <xs:element name="cargoInterredesResponse" type="tns:cargoInterredesResponse"/>
+  <xs:element name="depPlanForzoso" type="tns:depPlanForzoso"/>
+  <xs:element name="depPlanForzosoResponse" type="tns:depPlanForzosoResponse"/>
+  <xs:element name="depPlanLibre" type="tns:depPlanLibre"/>
+  <xs:element name="depPlanLibreResponse" type="tns:depPlanLibreResponse"/>
+  <xs:element name="depositoRenta" type="tns:depositoRenta"/>
+  <xs:element name="depositoRentaResponse" type="tns:depositoRentaResponse"/>
+  <xs:element name="equipoPremium" type="tns:equipoPremium"/>
+  <xs:element name="equipoPremiumResponse" type="tns:equipoPremiumResponse"/>
+  <xs:element name="evaluacionTramite" type="tns:evaluacionTramite"/>
+  <xs:element name="evaluacionTramiteResponse" type="tns:evaluacionTramiteResponse"/>
+  <xs:element name="financiamiento" type="tns:financiamiento"/>
+  <xs:element name="financiamientoResponse" type="tns:financiamientoResponse"/>
+  <xs:element name="gamaPlan" type="tns:gamaPlan"/>
+  <xs:element name="gamaPlanResponse" type="tns:gamaPlanResponse"/>
+  <xs:element name="historicoBc" type="tns:historicoBc"/>
+  <xs:element name="historicoBcResponse" type="tns:historicoBcResponse"/>
+  <xs:element name="historicoPagosM2K" type="tns:historicoPagosM2K"/>
+  <xs:element name="historicoPagosM2KResponse" type="tns:historicoPagosM2KResponse"/>
+  <xs:element name="idProvBcIcc" type="tns:idProvBcIcc"/>
+  <xs:element name="idProvBcIccResponse" type="tns:idProvBcIccResponse"/>
+  <xs:element name="idProvBcTelcoIcc" type="tns:idProvBcTelcoIcc"/>
+  <xs:element name="idProvBcTelcoIccResponse" type="tns:idProvBcTelcoIccResponse"/>
+  <xs:element name="idProviderBc" type="tns:idProviderBc"/>
+  <xs:element name="idProviderBcResponse" type="tns:idProviderBcResponse"/>
+  <xs:element name="limiteCredito" type="tns:limiteCredito"/>
+  <xs:element name="limiteCreditoResponse" type="tns:limiteCreditoResponse"/>
+  <xs:element name="lineasAutorizadas" type="tns:lineasAutorizadas"/>
+  <xs:element name="lineasAutorizadasEdad" type="tns:lineasAutorizadasEdad"/>
+  <xs:element name="lineasAutorizadasEdadResponse" type="tns:lineasAutorizadasEdadResponse"/>
+  <xs:element name="lineasAutorizadasResponse" type="tns:lineasAutorizadasResponse"/>
+  <xs:element name="listaNegra" type="tns:listaNegra"/>
+  <xs:element name="listaNegraResponse" type="tns:listaNegraResponse"/>
+  <xs:element name="planesLibres" type="tns:planesLibres"/>
+  <xs:element name="planesLibresResponse" type="tns:planesLibresResponse"/>
+  <xs:element name="rangoEquipo" type="tns:rangoEquipo"/>
+  <xs:element name="rangoEquipoResponse" type="tns:rangoEquipoResponse"/>
+  <xs:element name="repoBcIcc" type="tns:repoBcIcc"/>
+  <xs:element name="repoBcIccResponse" type="tns:repoBcIccResponse"/>
+  <xs:element name="repoBcTelcoIcc" type="tns:repoBcTelcoIcc"/>
+  <xs:element name="repoBcTelcoIccResponse" type="tns:repoBcTelcoIccResponse"/>
+  <xs:element name="reporteBc" type="tns:reporteBc"/>
+  <xs:element name="reporteBcMorales" type="tns:reporteBcMorales"/>
+  <xs:element name="reporteBcMoralesResponse" type="tns:reporteBcMoralesResponse"/>
+  <xs:element name="reporteBcResponse" type="tns:reporteBcResponse"/>
+  <xs:element name="scoreCCS" type="tns:scoreCCS"/>
+  <xs:element name="scoreCCSResponse" type="tns:scoreCCSResponse"/>
+  <xs:element name="verificacionDomiciliaria" type="tns:verificacionDomiciliaria"/>
+  <xs:element name="verificacionDomiciliariaResponse" type="tns:verificacionDomiciliariaResponse"/>
+  <xs:complexType name="anacrAdeudo">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anacrAdeudoResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reporteBc">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reporteBcResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="idProvBcIcc">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="idProvBcIccResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="planesLibres">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="planesLibresResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineasAutorizadas">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineasAutorizadasResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="repoBcTelcoIcc">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="repoBcTelcoIccResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="idProviderBc">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="idProviderBcResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="repoBcIcc">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="repoBcIccResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depPlanLibre">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depPlanLibreResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cargoInterredes">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cargoInterredesResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="historicoBc">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="historicoBcResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="financiamiento">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="financiamientoResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gamaPlan">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gamaPlanResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depPlanForzoso">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depPlanForzosoResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reporteBcMorales">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reporteBcMoralesResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listaNegra">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listaNegraResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="historicoPagosM2K">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="historicoPagosM2KResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anacrHistorico">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anacrHistoricoResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineasAutorizadasEdad">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineasAutorizadasEdadResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evaluacionTramite">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evaluacionTramiteResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="equipoPremium">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="equipoPremiumResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rangoEquipo">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rangoEquipoResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="scoreCCS">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="scoreCCSResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depositoRenta">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="depositoRentaResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="idProvBcTelcoIcc">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="idProvBcTelcoIccResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="adeudoHstPagosM2K">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="adeudoHstPagosM2KResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="limiteCredito">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="limiteCreditoResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificacionDomiciliaria">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificacionDomiciliariaResponse">
+    <xs:sequence>
+      <xs:element name="xml" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:endpoint>http://VI8G02304EXMXCO:8088/mockCreditCheckWSPortBinding</con:endpoint></con:endpoints><con:operation id="e0e15d03-7f97-453d-b2fb-b630feafb3b9" isOneWay="false" action="" name="adeudoHstPagosM2K" bindingOperationName="adeudoHstPagosM2K" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="99d4c271-40bc-449e-ae97-aff2e514fa72" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:adeudoHstPagosM2K>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:adeudoHstPagosM2K>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/adeudoHstPagosM2KRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="316f2a99-6311-4123-ba2a-70e5a0d2d86f" isOneWay="false" action="" name="anacrAdeudo" bindingOperationName="anacrAdeudo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9b5c1030-2a88-4fb5-95e2-d9deed49a4a8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:anacrAdeudo>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:anacrAdeudo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrAdeudoRequest"/></con:call></con:operation><con:operation id="57181c5f-5ada-4f65-bb25-cf8d52d0d48b" isOneWay="false" action="" name="anacrHistorico" bindingOperationName="anacrHistorico" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="12221572-4332-44fb-8355-46301f19f117" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:anacrHistorico>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:anacrHistorico>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrHistoricoRequest"/></con:call></con:operation><con:operation id="a167e252-e655-47a0-be66-1457b3272068" isOneWay="false" action="" name="cargoInterredes" bindingOperationName="cargoInterredes" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="48f11887-a9e4-4fb6-9a8a-c16d4559a2d3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:cargoInterredes>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:cargoInterredes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/cargoInterredesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b088d7de-b41b-4c2b-84f4-a4145a2f783e" isOneWay="false" action="" name="depositoRenta" bindingOperationName="depositoRenta" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0e189c62-b1ee-470f-82f7-f3bb81d4bdec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:depositoRenta>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:depositoRenta>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depositoRentaRequest"/></con:call></con:operation><con:operation id="9370b666-3c9b-42e5-bde2-7f2dfa49eddd" isOneWay="false" action="" name="depPlanForzoso" bindingOperationName="depPlanForzoso" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="85b2ed85-6fca-4bb1-992e-9de3d0e29c0a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:depPlanForzoso>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:depPlanForzoso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanForzosoRequest"/></con:call></con:operation><con:operation id="e2e8c01c-8210-45f2-a936-c70726c13fdb" isOneWay="false" action="" name="depPlanLibre" bindingOperationName="depPlanLibre" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3c5d4090-c099-4283-b2e4-cc488683059d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:depPlanLibre>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:depPlanLibre>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanLibreRequest"/></con:call></con:operation><con:operation id="3f7a6640-195a-47c7-93dc-383eb068463a" isOneWay="false" action="" name="equipoPremium" bindingOperationName="equipoPremium" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7624b269-532a-4640-afb3-b64f30161fcb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:equipoPremium>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:equipoPremium>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/equipoPremiumRequest"/></con:call></con:operation><con:operation id="dfdc1e4b-49c5-440d-872e-c8bfd9643e9d" isOneWay="false" action="" name="evaluacionTramite" bindingOperationName="evaluacionTramite" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="075afac9-e65f-440e-8ccb-724c2751e79d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://VI8G02304EXMXCO:8088/mockCreditCheckWSPortBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:evaluacionTramite>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:evaluacionTramite>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/evaluacionTramiteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9aebd5c3-bcaa-42ae-8485-15d9ae86d0a6" isOneWay="false" action="" name="financiamiento" bindingOperationName="financiamiento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f9c8449f-b451-4303-904c-bced57c30088" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:financiamiento>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:financiamiento>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/financiamientoRequest"/></con:call></con:operation><con:operation id="e7e20eda-946a-49f5-8826-d8feca493f14" isOneWay="false" action="" name="gamaPlan" bindingOperationName="gamaPlan" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8011de06-a0eb-4041-b249-8dabe255713a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:gamaPlan>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:gamaPlan>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/gamaPlanRequest"/></con:call></con:operation><con:operation id="34dc5b58-e4d0-4091-b5e7-11b7ad2fd106" isOneWay="false" action="" name="historicoBc" bindingOperationName="historicoBc" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2a9d8a94-b38f-450d-88c0-47bb51f41ed4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:historicoBc>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:historicoBc>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoBcRequest"/></con:call></con:operation><con:operation id="61d88b89-3229-4caf-bfa9-ded8cb844d87" isOneWay="false" action="" name="historicoPagosM2K" bindingOperationName="historicoPagosM2K" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f984b0fd-3dc2-4e00-bbd6-a4be1e25331d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:historicoPagosM2K>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:historicoPagosM2K>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoPagosM2KRequest"/></con:call></con:operation><con:operation id="484bf4cb-b734-4056-8551-6282863b11bf" isOneWay="false" action="" name="idProvBcIcc" bindingOperationName="idProvBcIcc" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="828aaea4-86ad-4a5a-b79c-7e510d74653a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:idProvBcIcc>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:idProvBcIcc>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcIccRequest"/></con:call></con:operation><con:operation id="f97a7dcc-f7d1-4368-8b8f-946b71590e0a" isOneWay="false" action="" name="idProvBcTelcoIcc" bindingOperationName="idProvBcTelcoIcc" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7442a34a-818c-4dca-ade1-e4d3f9c39198" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:idProvBcTelcoIcc>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:idProvBcTelcoIcc>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcTelcoIccRequest"/></con:call></con:operation><con:operation id="dc8b96fb-2c51-4a28-9d2a-73d11fca72a7" isOneWay="false" action="" name="idProviderBc" bindingOperationName="idProviderBc" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a408dbf6-ac7f-4709-96fe-15bf925ca9b3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:idProviderBc>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:idProviderBc>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProviderBcRequest"/></con:call></con:operation><con:operation id="5fe17847-6c62-4774-bea0-dd48adfbf136" isOneWay="false" action="" name="limiteCredito" bindingOperationName="limiteCredito" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fa3cd203-2619-4ffc-bb46-f901ed392e27" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:limiteCredito>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:limiteCredito>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/limiteCreditoRequest"/></con:call></con:operation><con:operation id="725d7470-c088-4230-9cf8-330602cd9053" isOneWay="false" action="" name="lineasAutorizadas" bindingOperationName="lineasAutorizadas" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cdfe532f-a4de-4ae3-89bd-e1d63f63f56d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:lineasAutorizadas>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:lineasAutorizadas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasRequest"/></con:call></con:operation><con:operation id="9c69dca1-937e-4fa8-b489-c5de35d35aec" isOneWay="false" action="" name="lineasAutorizadasEdad" bindingOperationName="lineasAutorizadasEdad" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0dd1c484-91fb-40e9-b498-edf34b6bc02f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:lineasAutorizadasEdad>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:lineasAutorizadasEdad>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasEdadRequest"/></con:call></con:operation><con:operation id="d0ff6cf5-1499-4c1e-9a2c-41453689d380" isOneWay="false" action="" name="listaNegra" bindingOperationName="listaNegra" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d1c45a0a-c94a-4bab-b3be-fef966b3b1cf" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:listaNegra>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:listaNegra>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/listaNegraRequest"/></con:call></con:operation><con:operation id="b327c716-7b33-41c8-b2ef-5ae9d46f7ece" isOneWay="false" action="" name="planesLibres" bindingOperationName="planesLibres" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4a1101a5-96ab-42bd-8f78-9d5e5e6df6e8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:planesLibres>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:planesLibres>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/planesLibresRequest"/></con:call></con:operation><con:operation id="68c35295-821e-4e59-aac9-8b32c1eccff7" isOneWay="false" action="" name="rangoEquipo" bindingOperationName="rangoEquipo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8cce8b48-71e3-48a4-9b89-2a3abb70464c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:rangoEquipo>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:rangoEquipo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/rangoEquipoRequest"/></con:call></con:operation><con:operation id="1b6e386b-a7d9-4175-93ae-e43061db42d8" isOneWay="false" action="" name="repoBcIcc" bindingOperationName="repoBcIcc" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="268665d8-9904-491f-9072-44f0d7e48d31" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:repoBcIcc>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:repoBcIcc>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcIccRequest"/></con:call></con:operation><con:operation id="d235f139-1743-4cd5-bd12-39d4bbbcfc58" isOneWay="false" action="" name="repoBcTelcoIcc" bindingOperationName="repoBcTelcoIcc" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="edfb8dd3-d34d-43ac-b656-d343b1ac3582" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:repoBcTelcoIcc>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:repoBcTelcoIcc>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcTelcoIccRequest"/></con:call></con:operation><con:operation id="42c548dd-8afc-4418-97bc-ce5cb5cdc550" isOneWay="false" action="" name="reporteBc" bindingOperationName="reporteBc" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="36a07eb0-f8d8-4df5-be2a-85d5e191273d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:reporteBc>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:reporteBc>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcRequest"/></con:call></con:operation><con:operation id="37130b34-4f60-4791-b53c-291a38c62f1b" isOneWay="false" action="" name="reporteBcMorales" bindingOperationName="reporteBcMorales" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d4a15193-1e0e-4a6c-9be2-7b4f35645dfd" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:reporteBcMorales>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:reporteBcMorales>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcMoralesRequest"/></con:call></con:operation><con:operation id="d6302919-c483-43d6-8bd2-e650197ad121" isOneWay="false" action="" name="scoreCCS" bindingOperationName="scoreCCS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="011f7871-0e98-4757-a7f4-c733c8b8ae2f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:scoreCCS>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:scoreCCS>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/scoreCCSRequest"/></con:call></con:operation><con:operation id="e4503001-d72b-4700-bbdb-e68d8699ce1b" isOneWay="false" action="" name="verificacionDomiciliaria" bindingOperationName="verificacionDomiciliaria" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="13ee3d9c-f040-4835-86fc-78fb6cf50c47" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://191.9.3.249:9080/CreditCheckWS/service</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:verificacionDomiciliaria>\r
+         <!--Optional:-->\r
+         <xml>?</xml>\r
+      </ws:verificacionDomiciliaria>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/verificacionDomiciliariaRequest"/></con:call></con:operation></con:interface><con:mockService id="ce6f6a37-5eb6-4b72-8dfc-4d01a745a619" port="8088" path="/mockCreditCheckWSPortBinding" host="VI8G02304EXMXCO" name="CreditCheckWSPortBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="adeudoHstPagosM2K" id="56989e03-0b11-447c-a662-f65fcb576601" interface="CreditCheckWSPortBinding" operation="adeudoHstPagosM2K"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="1784a3fb-f0bc-4152-9d94-1cda0f5d68e7" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:adeudoHstPagosM2KResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:adeudoHstPagosM2KResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/adeudoHstPagosM2KResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="anacrAdeudo" id="4d0eb319-d5d3-4733-8cf0-d1f28b107f32" interface="CreditCheckWSPortBinding" operation="anacrAdeudo"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="cd8d5e4d-eb97-49fa-8f0a-7f706c26568f" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:anacrAdeudoResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:anacrAdeudoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrAdeudoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="anacrHistorico" id="01f21f11-3aa2-4df7-a1db-5e835b66ab90" interface="CreditCheckWSPortBinding" operation="anacrHistorico"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="380d569b-8c02-42f1-83f2-41b35a5f0427" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:anacrHistoricoResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:anacrHistoricoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrHistoricoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="cargoInterredes" id="beea5d71-a017-4bf8-954e-a365993147f6" interface="CreditCheckWSPortBinding" operation="cargoInterredes"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="b9397df3-e590-49cc-ac37-c061960a5dc5" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:cargoInterredesResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:cargoInterredesResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/cargoInterredesResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="depositoRenta" id="83af44ad-3057-4788-8df2-e95dc5e86da6" interface="CreditCheckWSPortBinding" operation="depositoRenta"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="9c3d8ce0-b902-4fe9-802f-69118fcc5482" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:depositoRentaResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:depositoRentaResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depositoRentaResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="depPlanForzoso" id="c3fe2a5c-b656-4acb-8c0d-f17d527c0963" interface="CreditCheckWSPortBinding" operation="depPlanForzoso"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="762617ec-2a80-41a8-bada-d4758d0398f0" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:depPlanForzosoResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:depPlanForzosoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanForzosoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="depPlanLibre" id="9afa03b1-87c1-43bf-ad18-59610c4b4704" interface="CreditCheckWSPortBinding" operation="depPlanLibre"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="76d94fc1-c385-479d-8db1-e94331833f9f" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:depPlanLibreResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:depPlanLibreResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanLibreResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="equipoPremium" id="91494703-720c-4b95-a6e8-a510cb6e6533" interface="CreditCheckWSPortBinding" operation="equipoPremium"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="f14137fc-3d5a-4af2-b963-628cd05ceaf8" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:equipoPremiumResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:equipoPremiumResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/equipoPremiumResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="evaluacionTramite" id="6a75e661-c8f5-45db-8771-3a98dbc4d0e9" interface="CreditCheckWSPortBinding" operation="evaluacionTramite"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="d9ef40fa-7544-486d-ad51-1567a5e4a558" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <evaluacionTramiteResponse>
+	<controlData>
+		<messageUUID>CreditCheckSystemWS-001</messageUUID>
+		<responseDate>2019-05-03T16:24:39.054-05:00</responseDate>
+		<sendBy>CCS</sendBy>
+		<latency>335</latency>
+		<version>1.0</version>
+	</controlData>
+	<detailResponse>
+		<code>300</code>
+		<severityLevel>2</severityLevel>
+		<description>OPERACIÓN EXITOSA</description>
+		<actor>CCS</actor>
+		<businessMeaning>NO EXISTE UN FLUJO DE REGLAS PARA LAS INFORMACIÓN BASICA INGRESADA</businessMeaning>
+	</detailResponse>
+	<evaluacionTramite>
+		<nemonico>E00002402</nemonico>
+		<ejecucion>
+			<nombreFlujo/>
+			<trazaEjecucion/>
+			<clasifBuroCredito>NA</clasifBuroCredito>
+			<clasifMovil2000>NA</clasifMovil2000>
+			<clasifAnacr>NA</clasifAnacr>
+			<respListaNegra>NA</respListaNegra>
+			<claseCredito>NA</claseCredito>
+			<tipoCliente/>
+		</ejecucion>
+		<listaNegra>
+			<ejecucion>
+				<claveAccionLN/>
+				<descripcionAccionLN/>
+			</ejecucion>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</listaNegra>
+		<movilM2K>
+			<historicoM2K>
+				<ejecucion>
+					<clasificacion/>
+					<lineasActivas>0</lineasActivas>
+					<lineasCanceladas>0</lineasCanceladas>
+					<importeTotalLinCanceladas>0.0</importeTotalLinCanceladas>
+					<importeTotalLinActivas>0.0</importeTotalLinActivas>
+					<referenciaCtasActivas/>
+					<referenciaCtasCaneladas/>
+					<adeudo/>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</historicoM2K>
+			<adeudoM2K>
+				<ejecucion>
+					<lineasActivas>0</lineasActivas>
+					<lineasCanceladas>0</lineasCanceladas>
+					<importeTotalLinCanceladas>0.0</importeTotalLinCanceladas>
+					<importeTotalLinActivas>0.0</importeTotalLinActivas>
+					<referenciaCtasActivas/>
+					<referenciaCtasCaneladas/>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</adeudoM2K>
+		</movilM2K>
+		<buroCredito>
+			<reporteBc>
+				<ejecucion>
+					<claveClasificacionBc/>
+					<descripClasificacionBc/>
+					<numeroLineas>0</numeroLineas>
+					<valorIcc>0</valorIcc>
+					<valorScore>0</valorScore>
+					<estatusFinal>NA</estatusFinal>
+					<folioBc>NA</folioBc>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</reporteBc>
+			<idProviderBc>
+				<ejecucion>
+					<claveClasificacionBc/>
+					<descripClasificacionBc/>
+					<numeroLineas>0</numeroLineas>
+					<valorIcc>0</valorIcc>
+					<valorScore>0</valorScore>
+					<estatusFinal>NA</estatusFinal>
+					<folioBc>NA</folioBc>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</idProviderBc>
+			<repoBcIcc>
+				<ejecucion>
+					<claveClasificacionBc/>
+					<descripClasificacionBc/>
+					<numeroLineas>0</numeroLineas>
+					<valorIcc>0</valorIcc>
+					<valorScore>0</valorScore>
+					<estatusFinal>NA</estatusFinal>
+					<folioBc>NA</folioBc>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</repoBcIcc>
+			<idProvBcIcc>
+				<ejecucion>
+					<claveClasificacionBc/>
+					<descripClasificacionBc/>
+					<numeroLineas>0</numeroLineas>
+					<valorIcc>0</valorIcc>
+					<valorScore>0</valorScore>
+					<estatusFinal>NA</estatusFinal>
+					<folioBc>NA</folioBc>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</idProvBcIcc>
+			<repoBcTelcoIcc>
+				<ejecucion>
+					<claveClasificacionBc/>
+					<descripClasificacionBc/>
+					<numeroLineas>0</numeroLineas>
+					<valorIcc>0</valorIcc>
+					<valorScore>0</valorScore>
+					<estatusFinal>NA</estatusFinal>
+					<folioBc>NA</folioBc>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</repoBcTelcoIcc>
+			<idProvTelcoIcc>
+				<ejecucion>
+					<claveClasificacionBc/>
+					<descripClasificacionBc/>
+					<numeroLineas>0</numeroLineas>
+					<valorIcc>0</valorIcc>
+					<valorScore>0</valorScore>
+					<estatusFinal>NA</estatusFinal>
+					<folioBc>NA</folioBc>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</idProvTelcoIcc>
+			<buroCreditoHst>
+				<ejecucion>
+					<producto/>
+					<claveClasificacionBc/>
+					<descripClasificacionBc/>
+					<numeroLineas>0</numeroLineas>
+					<valorIcc>0</valorIcc>
+					<valorScore>0</valorScore>
+					<estatusFinal>NA</estatusFinal>
+					<folioBc>NA</folioBc>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</buroCreditoHst>
+		</buroCredito>
+		<buroCreditoMoral>
+			<ejecucion>
+				<claveClasificacionBc/>
+				<descripClasificacionBc/>
+				<numeroLineas>0</numeroLineas>
+				<valorIcc>0</valorIcc>
+				<valorScore>0</valorScore>
+				<estatusFinal>NA</estatusFinal>
+				<folioBc>NA</folioBc>
+			</ejecucion>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</buroCreditoMoral>
+		<scoreCCS>
+			<ejecucion>
+				<claveClaseCredito/>
+				<descripClaseCredito/>
+				<claveClasificacionFinal/>
+				<descripClasificacionFinal/>
+				<claveTipoCliente/>
+				<descripTipoCliente/>
+			</ejecucion>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</scoreCCS>
+		<gamaPlan>
+			<ejecucion/>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</gamaPlan>
+		<depositoRenta>
+			<ejecucion/>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</depositoRenta>
+		<limiteCredito>
+			<ejecucion>
+				<limiteCredito>0.0</limiteCredito>
+			</ejecucion>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</limiteCredito>
+		<financiamiento>
+			<ejecucion>
+				<aplicaFinanciamiento/>
+				<montoEnganche>0.0</montoEnganche>
+				<montoFinanciado>0.0</montoFinanciado>
+				<montoParcialidad>0.0</montoParcialidad>
+				<montoSobrePrecio>0.0</montoSobrePrecio>
+				<montoTotal>0.0</montoTotal>
+			</ejecucion>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</financiamiento>
+		<cargoInterredes>
+			<ejecucion>
+				<ticket/>
+				<idCargo/>
+				<primerCargo>0.0</primerCargo>
+				<segundoCargo>0.0</segundoCargo>
+			</ejecucion>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</cargoInterredes>
+		<lineasAutorizadas>
+			<lineasAutoAdmon>
+				<ejecucion/>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</lineasAutoAdmon>
+			<lineasAutoEdad>
+				<ejecucion/>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</lineasAutoEdad>
+		</lineasAutorizadas>
+		<verificacionDom>
+			<ejecucion>
+				<claveModalidadInvest/>
+				<descripModalidadInvest/>
+				<generaVerificacion/>
+				<mensajeVerificacion/>
+			</ejecucion>
+			<detalle>
+				<accionRespuesta/>
+				<mensaje/>
+				<tipoRespuesta/>
+			</detalle>
+		</verificacionDom>
+		<anacr>
+			<anacrAdeudo>
+				<ejecucion>
+					<tieneAdeudo>false</tieneAdeudo>
+					<adeudoTotalActivo>0.0</adeudoTotalActivo>
+					<adeudoTotalInactivo>0.0</adeudoTotalInactivo>
+					<lineasActivas>0</lineasActivas>
+					<lineasCanceladas>0</lineasCanceladas>
+					<referenciaCtasActivas/>
+					<referenciaCtasCanceladas/>
+				</ejecucion>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</anacrAdeudo>
+			<anacrHst>
+				<ejecucion/>
+				<detalle>
+					<accionRespuesta/>
+					<mensaje/>
+					<tipoRespuesta/>
+				</detalle>
+			</anacrHst>
+		</anacr>
+		<detalle>
+			<accionRespuesta/>
+			<mensaje/>
+			<tipoRespuesta/>
+		</detalle>
+	</evaluacionTramite>
+</evaluacionTramiteResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/evaluacionTramiteResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="financiamiento" id="3a6d9296-92f3-4810-9af5-3133792d308a" interface="CreditCheckWSPortBinding" operation="financiamiento"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="cf017cbd-e656-41a5-bb23-2078a8713a68" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:financiamientoResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:financiamientoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/financiamientoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="gamaPlan" id="f08359b8-a5d3-4a50-a247-5769ca9b0ac7" interface="CreditCheckWSPortBinding" operation="gamaPlan"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="99ba76ce-ef09-47b2-a05c-cd612f05fc81" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:gamaPlanResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:gamaPlanResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/gamaPlanResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="historicoBc" id="7aeaa063-de0e-4128-965f-b977e28a6fab" interface="CreditCheckWSPortBinding" operation="historicoBc"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="47885748-3fe9-44a2-a2fe-ce46f0e61487" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:historicoBcResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:historicoBcResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoBcResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="historicoPagosM2K" id="c7c063e5-9c36-4600-81ef-9202dbb32cdd" interface="CreditCheckWSPortBinding" operation="historicoPagosM2K"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="f8ab2a8b-4fd9-44a1-be95-422b70be087c" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:historicoPagosM2KResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:historicoPagosM2KResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoPagosM2KResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="idProvBcIcc" id="a6f6712b-3096-4d85-9f17-071e91dec637" interface="CreditCheckWSPortBinding" operation="idProvBcIcc"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="aec03f2e-f4d2-4cbf-8f79-10d0c46449aa" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:idProvBcIccResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:idProvBcIccResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcIccResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="idProvBcTelcoIcc" id="9bbbd586-827f-4977-b1a4-c07ac956aefc" interface="CreditCheckWSPortBinding" operation="idProvBcTelcoIcc"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="27441959-299f-4836-8f32-398d4fe50faa" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:idProvBcTelcoIccResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:idProvBcTelcoIccResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcTelcoIccResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="idProviderBc" id="5b8911d0-dbcd-417e-bd09-73b29f5bce50" interface="CreditCheckWSPortBinding" operation="idProviderBc"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="eadfd272-2cc1-4ba1-894d-23e280cf3dcb" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:idProviderBcResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:idProviderBcResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProviderBcResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="limiteCredito" id="bf227eab-8d05-46b2-a08c-127545fe1426" interface="CreditCheckWSPortBinding" operation="limiteCredito"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="5fe49e29-698b-475d-bdf6-f1c556c29fd9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:limiteCreditoResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:limiteCreditoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/limiteCreditoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="lineasAutorizadas" id="ef17b05c-a645-4974-8c8f-1dd661741ee3" interface="CreditCheckWSPortBinding" operation="lineasAutorizadas"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="ebe9baea-2f7e-4e14-a23f-22b47c6989b1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:lineasAutorizadasResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:lineasAutorizadasResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="lineasAutorizadasEdad" id="fc5a1c36-e209-4822-b02b-aa0e70fa139a" interface="CreditCheckWSPortBinding" operation="lineasAutorizadasEdad"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="7fa12181-224a-4033-bf69-ba97a80a5214" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:lineasAutorizadasEdadResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:lineasAutorizadasEdadResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasEdadResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="listaNegra" id="04e60864-e7df-4613-848e-95ac71b914ac" interface="CreditCheckWSPortBinding" operation="listaNegra"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="43ee7811-27cc-4af2-a2e8-a5a9f700d599" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:listaNegraResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:listaNegraResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/listaNegraResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="planesLibres" id="d6b319d3-a925-459e-9da8-8feeb6c4b0e8" interface="CreditCheckWSPortBinding" operation="planesLibres"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="9c30992d-8f8a-4411-bf44-fbdd76e4feca" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:planesLibresResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:planesLibresResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/planesLibresResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="rangoEquipo" id="1c151791-629f-4bc4-acfa-7bcf63ee608d" interface="CreditCheckWSPortBinding" operation="rangoEquipo"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="ce22d3e2-c6a5-4d2e-9051-7e34c0908dd0" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:rangoEquipoResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:rangoEquipoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/rangoEquipoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="repoBcIcc" id="7feecc9d-bb8d-4403-a77c-0c20b7d899ae" interface="CreditCheckWSPortBinding" operation="repoBcIcc"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="90fff69a-b274-4f16-8e10-bc83c5281ff8" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:repoBcIccResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:repoBcIccResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcIccResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="repoBcTelcoIcc" id="d7a5cc42-a72f-4535-8771-f54093038949" interface="CreditCheckWSPortBinding" operation="repoBcTelcoIcc"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="32737a3e-2903-4c9c-a111-3e4df113aacb" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:repoBcTelcoIccResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:repoBcTelcoIccResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcTelcoIccResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="reporteBc" id="ef0d6cdf-7ffc-453a-a866-ac173144712b" interface="CreditCheckWSPortBinding" operation="reporteBc"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="a515607e-84ab-4985-9983-1bcb3460a254" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:reporteBcResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:reporteBcResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="reporteBcMorales" id="d1304209-2b63-485c-a7e5-a96aa762a9ad" interface="CreditCheckWSPortBinding" operation="reporteBcMorales"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="145450af-65cf-491b-acb4-177089e331b0" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:reporteBcMoralesResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:reporteBcMoralesResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcMoralesResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="scoreCCS" id="01a9b3d8-5e1b-4877-b909-cd26d6df3ef9" interface="CreditCheckWSPortBinding" operation="scoreCCS"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="ab22158c-0afa-411d-9c29-b590d1dd6654" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:scoreCCSResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:scoreCCSResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/scoreCCSResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="verificacionDomiciliaria" id="fb7ce7c3-84fd-4064-88b0-82e2fcac2add" interface="CreditCheckWSPortBinding" operation="verificacionDomiciliaria"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="a6344f2f-9f0c-4456-ad15-338f115e558b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:verificacionDomiciliariaResponse>
+         <!--Optional:-->
+         <xml>?</xml>
+      </ws:verificacionDomiciliariaResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/verificacionDomiciliariaResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
