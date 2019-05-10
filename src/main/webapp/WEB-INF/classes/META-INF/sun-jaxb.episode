@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.11 
+Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2019.05.10 a las 11:50:20 AM CDT 
+
+  -->
+  <bindings xmlns:tns="http://tempuri.org/" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.telcel.gam.siev.ws"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="tns:Add">
+      <class ref="com.telcel.gam.siev.ws.Add"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:AddResponse">
+      <class ref="com.telcel.gam.siev.ws.AddResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:Subtract">
+      <class ref="com.telcel.gam.siev.ws.Subtract"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:SubtractResponse">
+      <class ref="com.telcel.gam.siev.ws.SubtractResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:Multiply">
+      <class ref="com.telcel.gam.siev.ws.Multiply"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:MultiplyResponse">
+      <class ref="com.telcel.gam.siev.ws.MultiplyResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:Divide">
+      <class ref="com.telcel.gam.siev.ws.Divide"/>
+    </bindings>
+    <bindings if-exists="true" scd="tns:DivideResponse">
+      <class ref="com.telcel.gam.siev.ws.DivideResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.telcel.gam.siev.ws"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:adeudoHstPagosM2K">
+      <class ref="com.telcel.gam.siev.ws.AdeudoHstPagosM2K"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:adeudoHstPagosM2KResponse">
+      <class ref="com.telcel.gam.siev.ws.AdeudoHstPagosM2KResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:anacrAdeudo">
+      <class ref="com.telcel.gam.siev.ws.AnacrAdeudo"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:anacrAdeudoResponse">
+      <class ref="com.telcel.gam.siev.ws.AnacrAdeudoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:anacrHistorico">
+      <class ref="com.telcel.gam.siev.ws.AnacrHistorico"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:anacrHistoricoResponse">
+      <class ref="com.telcel.gam.siev.ws.AnacrHistoricoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:cargoInterredes">
+      <class ref="com.telcel.gam.siev.ws.CargoInterredes"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:cargoInterredesResponse">
+      <class ref="com.telcel.gam.siev.ws.CargoInterredesResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:depPlanForzoso">
+      <class ref="com.telcel.gam.siev.ws.DepPlanForzoso"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:depPlanForzosoResponse">
+      <class ref="com.telcel.gam.siev.ws.DepPlanForzosoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:depPlanLibre">
+      <class ref="com.telcel.gam.siev.ws.DepPlanLibre"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:depPlanLibreResponse">
+      <class ref="com.telcel.gam.siev.ws.DepPlanLibreResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:depositoRenta">
+      <class ref="com.telcel.gam.siev.ws.DepositoRenta"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:depositoRentaResponse">
+      <class ref="com.telcel.gam.siev.ws.DepositoRentaResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:equipoPremium">
+      <class ref="com.telcel.gam.siev.ws.EquipoPremium"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:equipoPremiumResponse">
+      <class ref="com.telcel.gam.siev.ws.EquipoPremiumResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:evaluacionTramite">
+      <class ref="com.telcel.gam.siev.ws.EvaluacionTramite"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:evaluacionTramiteResponse">
+      <class ref="com.telcel.gam.siev.ws.EvaluacionTramiteResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:financiamiento">
+      <class ref="com.telcel.gam.siev.ws.Financiamiento"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:financiamientoResponse">
+      <class ref="com.telcel.gam.siev.ws.FinanciamientoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:gamaPlan">
+      <class ref="com.telcel.gam.siev.ws.GamaPlan"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:gamaPlanResponse">
+      <class ref="com.telcel.gam.siev.ws.GamaPlanResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:historicoBc">
+      <class ref="com.telcel.gam.siev.ws.HistoricoBc"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:historicoBcResponse">
+      <class ref="com.telcel.gam.siev.ws.HistoricoBcResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:historicoPagosM2K">
+      <class ref="com.telcel.gam.siev.ws.HistoricoPagosM2K"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:historicoPagosM2KResponse">
+      <class ref="com.telcel.gam.siev.ws.HistoricoPagosM2KResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:idProvBcIcc">
+      <class ref="com.telcel.gam.siev.ws.IdProvBcIcc"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:idProvBcIccResponse">
+      <class ref="com.telcel.gam.siev.ws.IdProvBcIccResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:idProvBcTelcoIcc">
+      <class ref="com.telcel.gam.siev.ws.IdProvBcTelcoIcc"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:idProvBcTelcoIccResponse">
+      <class ref="com.telcel.gam.siev.ws.IdProvBcTelcoIccResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:idProviderBc">
+      <class ref="com.telcel.gam.siev.ws.IdProviderBc"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:idProviderBcResponse">
+      <class ref="com.telcel.gam.siev.ws.IdProviderBcResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:limiteCredito">
+      <class ref="com.telcel.gam.siev.ws.LimiteCredito"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:limiteCreditoResponse">
+      <class ref="com.telcel.gam.siev.ws.LimiteCreditoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:lineasAutorizadas">
+      <class ref="com.telcel.gam.siev.ws.LineasAutorizadas"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:lineasAutorizadasEdad">
+      <class ref="com.telcel.gam.siev.ws.LineasAutorizadasEdad"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:lineasAutorizadasEdadResponse">
+      <class ref="com.telcel.gam.siev.ws.LineasAutorizadasEdadResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:lineasAutorizadasResponse">
+      <class ref="com.telcel.gam.siev.ws.LineasAutorizadasResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listaNegra">
+      <class ref="com.telcel.gam.siev.ws.ListaNegra"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:listaNegraResponse">
+      <class ref="com.telcel.gam.siev.ws.ListaNegraResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:planesLibres">
+      <class ref="com.telcel.gam.siev.ws.PlanesLibres"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:planesLibresResponse">
+      <class ref="com.telcel.gam.siev.ws.PlanesLibresResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:rangoEquipo">
+      <class ref="com.telcel.gam.siev.ws.RangoEquipo"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:rangoEquipoResponse">
+      <class ref="com.telcel.gam.siev.ws.RangoEquipoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:repoBcIcc">
+      <class ref="com.telcel.gam.siev.ws.RepoBcIcc"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:repoBcIccResponse">
+      <class ref="com.telcel.gam.siev.ws.RepoBcIccResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:repoBcTelcoIcc">
+      <class ref="com.telcel.gam.siev.ws.RepoBcTelcoIcc"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:repoBcTelcoIccResponse">
+      <class ref="com.telcel.gam.siev.ws.RepoBcTelcoIccResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:reporteBc">
+      <class ref="com.telcel.gam.siev.ws.ReporteBc"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:reporteBcMorales">
+      <class ref="com.telcel.gam.siev.ws.ReporteBcMorales"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:reporteBcMoralesResponse">
+      <class ref="com.telcel.gam.siev.ws.ReporteBcMoralesResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:reporteBcResponse">
+      <class ref="com.telcel.gam.siev.ws.ReporteBcResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:scoreCCS">
+      <class ref="com.telcel.gam.siev.ws.ScoreCCS"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:scoreCCSResponse">
+      <class ref="com.telcel.gam.siev.ws.ScoreCCSResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:verificacionDomiciliaria">
+      <class ref="com.telcel.gam.siev.ws.VerificacionDomiciliaria"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:verificacionDomiciliariaResponse">
+      <class ref="com.telcel.gam.siev.ws.VerificacionDomiciliariaResponse"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.telcel.gam.siev.ws"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:SafinServicesException">
+      <class ref="com.telcel.gam.siev.ws.SafinServicesException"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ConsultarCredito">
+      <class ref="com.telcel.gam.siev.ws.ConsultarCredito"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ConsultarCreditoResponse">
+      <class ref="com.telcel.gam.siev.ws.ConsultarCreditoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:OfertarCliente">
+      <class ref="com.telcel.gam.siev.ws.OfertarCliente"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:OfertarClienteResponse">
+      <class ref="com.telcel.gam.siev.ws.OfertarClienteResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:RecalcularOferta">
+      <class ref="com.telcel.gam.siev.ws.RecalcularOferta"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:RecalcularOfertaResponse">
+      <class ref="com.telcel.gam.siev.ws.RecalcularOfertaResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:CederDerechos">
+      <class ref="com.telcel.gam.siev.ws.CederDerechos"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:CederDerechosResponse">
+      <class ref="com.telcel.gam.siev.ws.CederDerechosResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ReservarCredito">
+      <class ref="com.telcel.gam.siev.ws.ReservarCredito"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ReservarCreditoResponse">
+      <class ref="com.telcel.gam.siev.ws.ReservarCreditoResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ConsultarCreditoPetType">
+      <class ref="com.telcel.gam.siev.ws.ConsultarCreditoPetType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ConsultarCreditoRespType">
+      <class ref="com.telcel.gam.siev.ws.ConsultarCreditoRespType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:OfertarClientePetType">
+      <class ref="com.telcel.gam.siev.ws.OfertarClientePetType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:OfertarClienteRespType">
+      <class ref="com.telcel.gam.siev.ws.OfertarClienteRespType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:OfertaType">
+      <class ref="com.telcel.gam.siev.ws.OfertaType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:RecalcularOfertaPetType">
+      <class ref="com.telcel.gam.siev.ws.RecalcularOfertaPetType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:RecalcularOfertaRespType">
+      <class ref="com.telcel.gam.siev.ws.RecalcularOfertaRespType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:CederDerechosPetType">
+      <class ref="com.telcel.gam.siev.ws.CederDerechosPetType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:Cliente">
+      <class ref="com.telcel.gam.siev.ws.Cliente"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:CederDerechosRespType">
+      <class ref="com.telcel.gam.siev.ws.CederDerechosRespType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ReservarCreditoPetType">
+      <class ref="com.telcel.gam.siev.ws.ReservarCreditoPetType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ReservarCreditoRespType">
+      <class ref="com.telcel.gam.siev.ws.ReservarCreditoRespType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:PeticionType">
+      <class ref="com.telcel.gam.siev.ws.PeticionType"/>
+    </bindings>
+  </bindings>
+  <bindings xmlns:tns="http://amx.com/mexico/telcel/esb/v1_1" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="com.telcel.gam.siev.ws"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:ControlDataRequestType">
+      <class ref="com.telcel.gam.siev.ws.ControlDataRequestType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ControlDataResponseType">
+      <class ref="com.telcel.gam.siev.ws.ControlDataResponseType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DetailResponseType">
+      <class ref="com.telcel.gam.siev.ws.DetailResponseType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:DetailFailType">
+      <class ref="com.telcel.gam.siev.ws.DetailFailType"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ErrorType">
+      <class ref="com.telcel.gam.siev.ws.ErrorType"/>
+    </bindings>
+  </bindings>
+</bindings>

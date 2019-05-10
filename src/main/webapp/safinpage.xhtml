@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Consulta Información SAFIN</title>
+        <style type="text/css">
+            /*<![CDATA[*/
+
+            input{
+                margin: 0;
+            }
+
+            label{
+                display: inline-block;
+                width: 150px;
+                margin-right: 20px;
+            }
+            input[type="text"]{
+                margin-bottom: 1px;
+            }
+            
+            /*]]>*/
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Consulta Información SAFIN</h1><p></p>
+        <hr size="5" noshade="noshade"/>
+
+        <h:form>
+
+            <p:panel id="columnasGenerales" header="Datos Generales Cliente">
+
+
+                <p:panelGrid columns="3" layout="grid">
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="rfc" value="RFC"/>
+                        <p:inputText id="rfc" value="#{safinViewController.safinPojo.rfc}"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="name" value="Nombre(s)"/>
+                        <p:inputText type="text" id="name" value="#{safinViewController.safinPojo.nombre}" required="true"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="lastName" value="Apellidos"/>
+                        <p:inputText type="text" id="lastName" value="#{safinViewController.safinPojo.apellidos}" required="true"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="curp" value="CURP"/>
+                        <p:inputText type="text" id="curp" value="#{safinViewController.safinPojo.curp}" required="true"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="region" value="Region"/>
+                        <p:selectOneMenu id="region" value="#{safinViewController.safinPojo.region}" style="width:125px">
+                            <f:selectItem itemLabel="R01" itemValue="R01" />
+                            <f:selectItem itemLabel="R02" itemValue="R02" />
+                            <f:selectItem itemLabel="R03" itemValue="R03" />
+                            <f:selectItem itemLabel="R04" itemValue="R04" />
+                            <f:selectItem itemLabel="R05" itemValue="R05" />
+                            <f:selectItem itemLabel="R06" itemValue="R06" />
+                            <f:selectItem itemLabel="R07" itemValue="R07" />
+                            <f:selectItem itemLabel="R08" itemValue="R08" />
+                            <f:selectItem itemLabel="R09" itemValue="R09" />
+                        </p:selectOneMenu>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="clasiCliente" value="Clasificación Cliente"/>
+                        <p:inputText type="text" id="clasiCliente" value="#{safinViewController.safinPojo.clasificacionCliente}"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="clasiBuro" value="Clasificación Buro"/>
+                        <p:inputText type="text" id="clasiBuro" value="#{safinViewController.safinPojo.clasificacionCliente}"/>
+                    </h:panelGroup>
+
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="formaPago" value="Forma de Pago"/>
+                        <p:selectOneMenu id="formaPago" value="#{safinViewController.safinPojo.formaPago}" style="width:200px">
+                            <f:selectItem itemValue="CC" itemLabel="Domiciliado" />
+                            <f:selectItem itemValue="EF" itemLabel="Efectivo" />
+                            <f:selectItem itemValue="TC" itemLabel="Tarjeta de Crédito" />
+                            <f:selectItem itemValue="TI" itemLabel="Efectivo" />
+                        </p:selectOneMenu>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="icc" value="ICC"/>
+                        <p:inputText id="icc" value="#{safinViewController.safinPojo.icc}" />
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="scoreBuro" value="Score Buró"/>
+                        <p:inputText type="number" id="scoreBuro" value="#{safinViewController.safinPojo.scoreBuro}"/>
+                    </h:panelGroup>
+
+                </p:panelGrid>
+
+            </p:panel>
+
+            <p:panel id="ofertaCliente" header="Oferta Cliente">
+
+                <p:panelGrid columns="3" layout="grid">
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="cvePlan" value="Clave Plan"/>
+                        <p:inputText id="cvePlan" value="#{safinViewController.safinPojo.cvePlan}"/>
+                    </h:panelGroup>
+
+<!--                     <h:panelGroup layout="block"> -->
+<!--                         <p:outputLabel for="parcialidades" value="Parlicialidades"/> -->
+<!--                         <p:inputNumber id="parcialidades" value="#{safinViewController.safinPojo.parcialidades}"/> -->
+<!--                     </h:panelGroup> -->
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="movimiento" value="Movimiento"/>
+                        <p:selectOneMenu id="movimiento" value="#{safinViewController.safinPojo.movimiento}">
+                            <f:selectItem itemValue="1" itemLabel="Activación"/>
+                            <f:selectItem itemValue="2" itemLabel="Renovación"/>
+                            <f:selectItem itemValue="3" itemLabel="Migración"/>
+                            <f:selectItem itemValue="4" itemLabel="Portabilidad"/>
+                        </p:selectOneMenu>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="idCanal" value="Canal"/>
+                        <p:selectOneMenu id="idCanal" value="#{safinViewController.safinPojo.idCanal}">
+                            <f:selectItem itemValue="1" itemLabel="DAT"/>
+                            <f:selectItem itemValue="2" itemLabel="CAC"/>
+                            <f:selectItem itemValue="3" itemLabel="TELEFONICO"/>
+                        </p:selectOneMenu>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="idMercado" value="Mercado">Mercado:</p:outputLabel>
+                        <p:selectOneMenu id="idMercado" value="#{safinViewController.safinPojo.idMercado}">
+                            <f:selectItem itemValue="1" itemLabel="MASIVO"/>
+                            <f:selectItem itemValue="2" itemLabel="PYME"/>
+                            <f:selectItem itemValue="3" itemLabel="CORPORATIVO"/>
+                        </p:selectOneMenu>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="costoBase" value="Costo Base Equipo"/>
+                        <p:inputNumber id="costoBase" value="#{safinViewController.safinPojo.costoBase}"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="sobrePrecio" value="Sobre Precio"/>
+                        <p:inputNumber id="sobrePrecio" value="#{safinViewController.safinPojo.sobrePrecio}" />
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="idSistema" value="Sistema"/>
+                        <p:selectOneMenu id="idSistema" style="width:200px" value="#{safinViewController.safinPojo.idSistema}">
+                            <f:selectItem itemValue="1" itemLabel="SISACT"/>
+                            <f:selectItem itemValue="2" itemLabel="ECAC"/>
+                            <f:selectItem itemValue="3" itemLabel="SICORE"/>
+                            <f:selectItem itemValue="4" itemLabel="SAFIN"/>
+                            <f:selectItem itemValue="5" itemLabel="SMART"/>
+                            <f:selectItem itemValue="6" itemLabel="CREDIT CHECK"/>
+                        </p:selectOneMenu>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="idProducto" value="Producto"/>
+                        <p:selectOneMenu id="idProducto" style="width:200px" value="#{safinViewController.safinPojo.idProducto}">
+                            <f:selectItem itemValue="1" itemLabel="EQUIPO"/>
+                            <f:selectItem itemValue="2" itemLabel="ACCESORIO"/>
+                            <f:selectItem itemValue="3" itemLabel="SERVICIO"/>
+                        </p:selectOneMenu>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="cveMarca" value="Clave Marca"/>
+                        <p:inputText id="cveMarca" value="#{safinViewController.safinPojo.cveMarca}"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="cveModelo" value="Clave Modelo"/>
+                        <p:inputText id="cveModelo" value="#{safinViewController.safinPojo.cveModelo}"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="numEmpleado" value="Número Empleado"/>
+                        <p:inputText id="numEmpleado" value="#{safinViewController.safinPojo.numEmpleado}"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="fuerzaVenta" value="Fuerza de Venta"/>
+                        <p:inputText id="fuerzaVenta" value="#{safinViewController.safinPojo.fuerzaVenta}"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="telefono" value="Telefono"/>
+                        <p:inputText id="telefono" value="#{safinViewController.safinPojo.telefono}"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="costoAmigoKit" value="Costo Amigo KIT"/>
+                        <p:inputNumber id="costoAmigoKit" value="#{safinViewController.safinPojo.costoAmigoKit}"/>
+                    </h:panelGroup>
+
+                </p:panelGrid>
+
+            </p:panel>
+
+            <p:panel id="columnasRecalcular" header="Recalcular Oferta">
+
+                <p:panelGrid columns="3" layout="grid">
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="idOferta" value="ID Oferta"/>
+                        <p:inputNumber id="idOferta" value="#{safinViewController.safinPojo.idOferta}" decimalPlaces="0"/>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block">
+                        <p:outputLabel for="aportacionVoluntaria" value="Aportación Voluntaria"/>
+                        <p:inputNumber id="aportacionVoluntaria" value="#{safinViewController.safinPojo.aportacionVoluntaria}"/>
+                    </h:panelGroup>
+
+                </p:panelGrid>
+
+            </p:panel>
+			<p:panelGrid columns="2" layout="grid">
+	            <h:panelGroup layout="block">
+	                <p:commandButton value="Submit" actionListener="#{safinViewController.haceAlgo()}" ajax="false"/>
+	            </h:panelGroup>
+	            <h:panelGroup layout="block">
+	                <p:commandButton value="Limpiar" actionListener="#{safinViewController.limpiarDatos()}" ajax="false"/>
+	            </h:panelGroup>
+			</p:panelGrid>
+            <p:panel header="Respuesta Consulta">
+
+                <h:panelGroup layout="block">
+                    <p:outputLabel for="msg" style="alignment-adjust: auto"></p:outputLabel>
+                    <p:inputTextarea rows="6" cols="140" id="msg" style="align-content: center;" value="#{safinViewController.responseWS}"/>
+                </h:panelGroup>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>

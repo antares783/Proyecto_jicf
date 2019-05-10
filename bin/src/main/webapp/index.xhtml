@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="./template.xhtml">
+        <ui:define name="top">
+            <h2>Datos de usuario</h2>
+        </ui:define>
+        <ui:define name="content">
+            <h:form>
+                <p:panel header="Ingresa los datos">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel for="rfc" value="RFC" styleClass="requiredLb1"/>
+                        <h:inputText id="rfc" label="RFC" value="#{safinController.safinPojo.rfc}"/>
+                                     
+                        <h:outputLabel for="nombres" value="Nombres" styleClass="requiredLb1"/>
+                        <h:inputText id="nombres" label="Nombres" value="#{safinController.safinPojo.nombres}"/>
+                                     
+                        <h:outputLabel for="apellidos" value="Apellidos" styleClass="requiredLb1"/>
+                        <h:inputText id="apellidos" label="Apellidos" value="#{safinController.safinPojo.apellidos}"/>
+                                     
+                        <h:outputLabel for="curp" value="Curp" styleClass="requiredLb1"/>
+                        <h:inputText id="curp" label="CURP" value="#{safinController.safinPojo.curp}"/>
+                                     
+                        <h:outputLabel for="idSistema" value="Id Sistema" styleClass="requiredLb1"/>
+                        <h:inputText id="idSistema" label="Id Sistema" value="#{safinController.safinPojo.idSistema}"/>
+                                     
+                        <h:outputLabel for="region" value="Region" styleClass="requiredLb1"/>
+                        <h:inputText id="region" label="Region" value="#{safinController.safinPojo.region}"/>
+                                     
+                        <h:outputLabel for="clasificacionCliente" value="Clasificación Cliente" styleClass="requiredLb1"/>
+                        <h:inputText id="clasificacionCliente" label="Clasificación Cliente" value="#{safinController.safinPojo.clasificacionCliente}"/>
+                                     
+                        <h:outputLabel for="clasificacionBuro" value="Clasificación Buro" styleClass="requiredLb1"/>
+                        <h:inputText id="clasificacionBuro" label="Clasificación Buro" value="#{safinController.safinPojo.clasificacionBuro}"/>
+                                     
+                        <h:outputLabel for="idFormaPago" value="Forma de Pago" styleClass="requiredLb1"/>
+                        <h:inputText id="idFormaPago" label="Forma de Pago" value="#{safinController.safinPojo.idFormaPago}"/>
+                                     
+                        <h:outputLabel for="icc" value="ICC" styleClass="requiredLb1"/>
+                        <h:inputText id="icc" label="ICC" value="#{safinController.safinPojo.icc}"/>
+                                     
+                        <h:outputLabel for="scoreBuro" value="Score Buró" styleClass="requiredLb1"/>
+                        <h:inputText id="scoreBuro" label="Score Buró" value="#{safinController.safinPojo.scoreBuro}"/>                                    
+                                     
+                        <h:panelGroup/>
+                        
+                        <p:commandButton value="Submit" action="#{safinController.saveCommit()}" ajax="false"/>
+                    </h:panelGrid>
+                    <p:messages/>
+                </p:panel>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

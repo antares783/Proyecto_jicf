@@ -1,0 +1,374 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" name="SafinServices" targetNamespace="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:ns1="http://amx.com/mexico/telcel/esb/v1_1" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices">
+			<xs:import namespace="http://amx.com/mexico/telcel/esb/v1_1"/>
+			<xs:element name="consultarOfertaException" type="tns:SafinServicesException"/>
+			<xs:element name="esFineqFuturoException" type="tns:SafinServicesException"/>
+			<xs:complexType name="ConsultarCredito">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+					<xs:element name="consultarCliente" type="tns:ConsultarCreditoPetType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ConsultarCreditoPetType">
+				<xs:sequence>
+					<xs:element name="usuario" type="xs:string"/>
+					<xs:element name="passw" type="xs:string"/>
+					<xs:element minOccurs="0" name="rfc" type="xs:string"/>
+					<xs:element minOccurs="0" name="nombre" type="xs:string"/>
+					<xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+					<xs:element minOccurs="0" name="curp" type="xs:string"/>
+					<xs:element minOccurs="0" name="idSistema" type="xs:int"/>
+					<xs:element minOccurs="0" name="region" type="xs:string"/>
+					<xs:element minOccurs="0" name="clasificacionCLiente" type="xs:string"/>
+					<xs:element minOccurs="0" name="clasificacionBuro" type="xs:string"/>
+					<xs:element minOccurs="0" name="idFormaPago" type="xs:string"/>
+					<xs:element minOccurs="0" name="icc" type="xs:int"/>
+					<xs:element minOccurs="0" name="bcScore" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ConsultarCreditoResponse">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+					<xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+					<xs:element name="consultarCreditoResponse" type="tns:ConsultarCreditoRespType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ConsultarCreditoRespType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="idConsulta" type="xs:int"/>
+					<xs:element minOccurs="0" name="limiteCredito" type="xs:double"/>
+					<xs:element minOccurs="0" name="creditoRestante" type="xs:double"/>
+					<xs:element minOccurs="0" name="creditoUtilizado" type="xs:double"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="SafinServicesException">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+					<xs:element name="detailFail" type="ns1:DetailFailType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="OfertarCliente">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+					<xs:element name="ofertarCliente" type="tns:OfertarClientePetType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="OfertarClientePetType">
+				<xs:sequence>
+					<xs:element name="usuario" type="xs:string"/>
+					<xs:element name="passw" type="xs:string"/>
+					<xs:element minOccurs="0" name="clasificacionCLiente" type="xs:string"/>
+					<xs:element minOccurs="0" name="rfc" type="xs:string"/>
+					<xs:element minOccurs="0" name="nombre" type="xs:string"/>
+					<xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+					<xs:element minOccurs="0" name="curp" type="xs:string"/>
+					<xs:element minOccurs="0" name="idProducto" type="xs:int"/>
+					<xs:element minOccurs="0" name="cvePlan" type="xs:string"/>
+					<xs:element name="region" type="xs:string"/>
+					<xs:element name="numParcialidades" type="xs:int"/>
+					<xs:element name="idMovimiento" type="xs:int"/>
+					<xs:element name="idCanal" type="xs:int"/>
+					<xs:element name="idMercado" type="xs:int"/>
+					<xs:element minOccurs="0" name="costoBaseEquipo" type="xs:double"/>
+					<xs:element minOccurs="0" name="sobrePrecio" type="xs:double"/>
+					<xs:element minOccurs="0" name="clasificacionBuro" type="xs:string"/>
+					<xs:element minOccurs="0" name="idFormaPago" type="xs:string"/>
+					<xs:element name="idSistema" type="xs:int"/>
+					<xs:element minOccurs="0" name="cveMarca" type="xs:string"/>
+					<xs:element minOccurs="0" name="cveModelo" type="xs:string"/>
+					<xs:element minOccurs="0" name="numeroEmpleado" type="xs:string"/>
+					<xs:element minOccurs="0" name="fuerzaVenta" type="xs:string"/>
+					<xs:element minOccurs="0" name="telefono" type="xs:string"/>
+					<xs:element minOccurs="0" name="icc" type="xs:int"/>
+					<xs:element minOccurs="0" name="bcScore" type="xs:int"/>
+					<xs:element minOccurs="0" name="costoAmigoKit" type="xs:double"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="OfertarClienteResponse">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+					<xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+					<xs:element name="ofertarClienteResponse" type="tns:OfertarClienteRespType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="OfertarClienteRespType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="oferta" type="tns:OfertaType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="OfertaType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="limiteCredito" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoEnganche" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoFinanciado" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoParcialidad" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoSobrePrecio" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoTotal" type="xs:double"/>
+					<xs:element minOccurs="0" name="pctEnganche" type="xs:double"/>
+					<xs:element minOccurs="0" name="idOferta" type="xs:int"/>
+					<xs:element minOccurs="0" name="creditoRestante" type="xs:double"/>
+					<xs:element minOccurs="0" name="creditoUtilizado" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoEngancheIva" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoFinanciadoIva" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoParcialidadIva" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoSobrePrecioIva" type="xs:double"/>
+					<xs:element minOccurs="0" name="montoTotalIva" type="xs:double"/>
+					<xs:element minOccurs="0" name="cat" type="xs:double"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="RecalcularOferta">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+					<xs:element name="recalcularOfertPetType" type="tns:RecalcularOfertaPetType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="RecalcularOfertaPetType">
+				<xs:sequence>
+					<xs:element name="usuario" type="xs:string"/>
+					<xs:element name="passw" type="xs:string"/>
+					<xs:element name="idOferta" type="xs:int"/>
+					<xs:element name="aportacionVol" type="xs:double"/>
+					<xs:element name="region" type="xs:int"/>
+					<xs:element name="idSistema" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="RecalcularOfertaResponse">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+					<xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+					<xs:element name="recalcularOfertaRespType" type="tns:RecalcularOfertaRespType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="RecalcularOfertaRespType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="oferta" type="tns:OfertaType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CederDerechos">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+					<xs:element name="cederDerechos" type="tns:CederDerechosPetType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CederDerechosPetType">
+				<xs:sequence>
+					<xs:element name="usuario" type="xs:string"/>
+					<xs:element name="passw" type="xs:string"/>
+					<xs:element name="idSistema" type="xs:int"/>
+					<xs:element name="clienteCedente" type="tns:Cliente"/>
+					<xs:element name="clienteCesionario" type="tns:Cliente"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Cliente">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="rfc" type="xs:string"/>
+					<xs:element minOccurs="0" name="nombre" type="xs:string"/>
+					<xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+					<xs:element minOccurs="0" name="curp" type="xs:string"/>
+					<xs:element minOccurs="0" name="region" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CederDerechosResponse">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+					<xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+					<xs:element name="cederDerechosResponse" type="tns:CederDerechosRespType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="CederDerechosRespType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="idCesion" type="xs:int"/>
+					<xs:element minOccurs="0" name="limiteCredito" type="xs:double"/>
+					<xs:element minOccurs="0" name="creditoRestante" type="xs:double"/>
+					<xs:element minOccurs="0" name="creditoUtilizado" type="xs:double"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ReservarCredito">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+					<xs:element name="reservarCredito" type="tns:ReservarCreditoPetType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ReservarCreditoPetType">
+				<xs:sequence>
+					<xs:element name="usuario" type="xs:string"/>
+					<xs:element name="passw" type="xs:string"/>
+					<xs:element minOccurs="0" name="rfc" type="xs:string"/>
+					<xs:element minOccurs="0" name="nombre" type="xs:string"/>
+					<xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+					<xs:element minOccurs="0" name="curp" type="xs:string"/>
+					<xs:element minOccurs="0" name="idSistema" type="xs:int"/>
+					<xs:element minOccurs="0" name="region" type="xs:string"/>
+					<xs:element minOccurs="0" name="idOferta" type="xs:int"/>
+					<xs:element minOccurs="0" name="idTramite" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ReservarCreditoResponse">
+				<xs:sequence>
+					<xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+					<xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+					<xs:element name="reservarCreditoResponse" type="tns:ReservarCreditoRespType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ReservarCreditoRespType">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="idReserva" type="xs:int"/>
+					<xs:element minOccurs="0" name="limiteCredito" type="xs:double"/>
+					<xs:element minOccurs="0" name="creditoRestante" type="xs:double"/>
+					<xs:element minOccurs="0" name="creditoUtilizado" type="xs:double"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="PeticionType">
+				<xs:sequence>
+					<xs:element name="usuario" type="xs:string"/>
+					<xs:element name="passw" type="xs:string"/>
+					<xs:element minOccurs="0" name="folioSisact" type="xs:int"/>
+					<xs:element minOccurs="0" name="rfc" type="xs:string"/>
+					<xs:element minOccurs="0" name="nombre" type="xs:string"/>
+					<xs:element name="numParcialidades" type="xs:int"/>
+					<xs:element name="idSistema" type="xs:int"/>
+					<xs:element name="idProducto" type="xs:int"/>
+					<xs:element name="idMercado" type="xs:int"/>
+					<xs:element name="idMovimiento" type="xs:int"/>
+					<xs:element name="idCanal" type="xs:int"/>
+					<xs:element minOccurs="0" name="costoBaseEquipo" type="xs:double"/>
+					<xs:element minOccurs="0" name="limiteDeCredito" type="xs:double"/>
+					<xs:element minOccurs="0" name="sobrePrecio" type="xs:double"/>
+					<xs:element minOccurs="0" name="pctEnganche" type="xs:double"/>
+					<xs:element name="region" type="xs:string"/>
+					<xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="clasificacionCLiente" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="consultarCreditoException" nillable="true" type="tns:SafinServicesException"/>
+			<xs:element name="ofertarClienteException" nillable="true" type="tns:SafinServicesException"/>
+			<xs:element name="recalcularOfertaException" nillable="true" type="tns:SafinServicesException"/>
+			<xs:element name="reservarCreditoException" nillable="true" type="tns:SafinServicesException"/>
+			<xs:element name="consultarCredito" nillable="true" type="tns:ConsultarCredito"/>
+			<xs:element name="consultarCreditoResponse" nillable="true" type="tns:ConsultarCreditoResponse"/>
+			<xs:element name="ofertarCliente" nillable="true" type="tns:OfertarCliente"/>
+			<xs:element name="ofertarClienteResponse" nillable="true" type="tns:OfertarClienteResponse"/>
+			<xs:element name="recalcularOferta" nillable="true" type="tns:RecalcularOferta"/>
+			<xs:element name="recalcularOfertaResponse" nillable="true" type="tns:RecalcularOfertaResponse"/>
+			<xs:element name="cederDerechos" nillable="true" type="tns:CederDerechos"/>
+			<xs:element name="cederDerechosResponse" nillable="true" type="tns:CederDerechosResponse"/>
+			<xs:element name="reservarCredito" nillable="true" type="tns:ReservarCredito"/>
+			<xs:element name="reservarCreditoResponse" nillable="true" type="tns:ReservarCreditoResponse"/>
+		</xs:schema>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://amx.com/mexico/telcel/esb/v1_1" elementFormDefault="qualified" targetNamespace="http://amx.com/mexico/telcel/esb/v1_1" version="1.0">
+			<xs:complexType name="ControlDataRequestType">
+				<xs:sequence>
+					<xs:element name="messageUUID" type="xs:string"/>
+					<xs:element name="requestDate" type="xs:dateTime"/>
+					<xs:element name="sendBy" type="xs:string"/>
+					<xs:element name="version" type="xs:string"/>
+					<xs:element minOccurs="0" name="ipClient" type="xs:string"/>
+					<xs:element minOccurs="0" name="ipServer" type="xs:string"/>
+					<xs:element minOccurs="0" name="user" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ControlDataResponseType">
+				<xs:sequence>
+					<xs:element name="messageUUID" type="xs:string"/>
+					<xs:element name="responseDate" type="xs:anySimpleType"/>
+					<xs:element name="sendBy" type="xs:string"/>
+					<xs:element minOccurs="0" name="latency" type="xs:long"/>
+					<xs:element name="version" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="DetailResponseType">
+				<xs:sequence>
+					<xs:element name="code" type="xs:string"/>
+					<xs:element minOccurs="0" name="severityLevel" type="xs:int"/>
+					<xs:element name="description" type="xs:string"/>
+					<xs:element minOccurs="0" name="actor" type="xs:string"/>
+					<xs:element minOccurs="0" name="businessMeaning" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="DetailFailType">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" name="errors" type="tns:ErrorType"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="ErrorType">
+				<xs:sequence>
+					<xs:element name="code" type="xs:string"/>
+					<xs:element name="severityLevel" type="xs:int"/>
+					<xs:element name="description" type="xs:string"/>
+					<xs:element minOccurs="0" name="actor" type="xs:string"/>
+					<xs:element name="businessMeaning" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="ofertarCliente">
+		<wsdl:part element="ns1:ofertarCliente" name="consultarOfertaRequest"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="recalcularOferta">
+		<wsdl:part element="ns1:recalcularOferta" name="recalcularOfertaRequest"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="consultarCredito">
+		<wsdl:part element="ns1:consultarCredito" name="consultarCreditoRequest"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConsultarCreditoException">
+		<wsdl:part element="ns1:consultarCreditoException" name="ConsultarCreditoException"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="consultarCreditoResponse">
+		<wsdl:part element="ns1:consultarCreditoResponse" name="consultarCreditoResponse"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ReservarCreditoException">
+		<wsdl:part element="ns1:reservarCreditoException" name="ReservarCreditoException"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ofertarClienteResponse">
+		<wsdl:part element="ns1:ofertarClienteResponse" name="ofertarClienteResponse"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="cederDerechos">
+		<wsdl:part element="ns1:cederDerechos" name="cederDerechosRequest"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="cederDerechosResponse">
+		<wsdl:part element="ns1:cederDerechosResponse" name="cederDerechosResponse"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="recalcularOfertaResponse">
+		<wsdl:part element="ns1:recalcularOfertaResponse" name="recalcularOfertaResponse"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="reservarCreditoResponse">
+		<wsdl:part element="ns1:reservarCreditoResponse" name="reservarCreditoResponse"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="OfertarClienteException">
+		<wsdl:part element="ns1:ofertarClienteException" name="OfertarClienteException"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="RecalcularOfertaException">
+		<wsdl:part element="ns1:recalcularOfertaException" name="RecalcularOfertaException"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="reservarCredito">
+		<wsdl:part element="ns1:reservarCredito" name="reservarCreditoRequest"> </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="SafinServices">
+		<wsdl:operation name="consultarCredito">
+			<wsdl:input message="ns1:consultarCredito" name="consultarCredito"> </wsdl:input>
+			<wsdl:output message="ns1:consultarCreditoResponse" name="consultarCreditoResponse"> </wsdl:output>
+			<wsdl:fault message="ns1:ConsultarCreditoException" name="ConsultarCreditoException"> </wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ofertarCliente">
+			<wsdl:input message="ns1:ofertarCliente" name="ofertarCliente"> </wsdl:input>
+			<wsdl:output message="ns1:ofertarClienteResponse" name="ofertarClienteResponse"> </wsdl:output>
+			<wsdl:fault message="ns1:OfertarClienteException" name="OfertarClienteException"> </wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="recalcularOferta">
+			<wsdl:input message="ns1:recalcularOferta" name="recalcularOferta"> </wsdl:input>
+			<wsdl:output message="ns1:recalcularOfertaResponse" name="recalcularOfertaResponse"> </wsdl:output>
+			<wsdl:fault message="ns1:RecalcularOfertaException" name="RecalcularOfertaException"> </wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cederDerechos">
+			<wsdl:input message="ns1:cederDerechos" name="cederDerechos"> </wsdl:input>
+			<wsdl:output message="ns1:cederDerechosResponse" name="cederDerechosResponse"> </wsdl:output>
+			<wsdl:fault message="ns1:ReservarCreditoException" name="ReservarCreditoException"> </wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="reservarCredito">
+			<wsdl:input message="ns1:reservarCredito" name="reservarCredito"> </wsdl:input>
+			<wsdl:output message="ns1:reservarCreditoResponse" name="reservarCreditoResponse"> </wsdl:output>
+			<wsdl:fault message="ns1:ReservarCreditoException" name="ReservarCreditoException"> </wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

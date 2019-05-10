@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Captura Datos Credit Check</title>
+	<style type="text/css">
+/*<![CDATA[*/
+input {
+	margin: 0;
+}
+
+label {
+	display: inline-block;
+	width: 150px;
+	margin-right: 20px;
+}
+
+input[type="text"] {
+	margin-bottom: 1px;
+}
+
+#columnasGenerales, #ofertaCliente, #columnasCedente,
+	#columnasRecalcular, #columnasReservar {
+	column-count: 3;
+	column-gap: 30px;
+}
+/*]]>*/
+</style>
+
+</h:head>
+
+<h:body>
+
+	<h1>Consulta Información Credit Check</h1>
+
+	<hr size="5" noshade="noshade" />
+
+	<h:form>
+
+		<p:panel id="columnasGenerales" header="Información básica">
+
+			<p:panelGrid columns="3" layout="grid">
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="tipoPersona" value="Tipo de persona" />
+					<p:selectOneMenu id="tipoPersona"
+						value="#{creditCheckController.creditCheckPojo.tipoPersona}"
+						style="width:125px">
+						<f:selectItem itemLabel="FISICA" itemValue="FISICA" />
+						<f:selectItem itemLabel="MORAL" itemValue="MORAL" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="tipoLinea" value="Tipo de Línea" />
+					<p:selectOneMenu id="tipoLinea"
+						value="#{creditCheckController.creditCheckPojo.tipoLinea}"
+						style="width:125px">
+						<f:selectItem itemLabel="DATOS" itemValue="D" />
+						<f:selectItem itemLabel="VOZ" itemValue="V" />
+					</p:selectOneMenu>
+
+				</h:panelGroup>
+
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="tipoPlan" value="Tipo de Plan" />
+					<p:selectOneMenu id="tipoPlan"
+						value="#{creditCheckController.creditCheckPojo.tipoPlan}"
+						style="width:125px">
+						<f:selectItem itemLabel="MIXTO" itemValue="M" />
+						<f:selectItem itemLabel="NORMAL" itemValue="N" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="tipoPlazo" value="Tipo de Plazo" />
+					<p:selectOneMenu id="tipoPlazo"
+						value="#{creditCheckController.creditCheckPojo.tipoPlazo}"
+						style="width:125px">
+						<f:selectItem itemLabel="FORZOSO" itemValue="F" />
+						<f:selectItem itemLabel="LIBRE" itemValue="L" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="tipoTramite" value="Tipo de trámite" />
+					<p:selectOneMenu id="tipoTramite"
+						value="#{creditCheckController.creditCheckPojo.tipoTramite}"
+						style="width:125px">
+						<f:selectItem itemLabel="ACTIVACION" itemValue="ACT" />
+						<f:selectItem itemLabel="CAMBIO DE EQUIPO" itemValue="SW" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="marca" value="Marca" />
+					<p:selectOneMenu id="marca"
+						value="#{creditCheckController.creditCheckPojo.marca}"
+						style="width:125px">
+						<f:selectItem itemLabel="ACER" itemValue="ACER" />
+						<f:selectItem itemLabel="AIRCLIC" itemValue="AIRCLIC" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="fuerzaVenta" value="Fuerza de Venta" />
+					<p:selectOneMenu id="fuerzaVenta"
+						value="#{creditCheckController.creditCheckPojo.fuerzaVenta}"
+						style="width:125px">
+						<f:selectItem itemLabel="111" itemValue="111" />
+						<f:selectItem itemLabel="11ATEL" itemValue="11ATEL" />
+						<f:selectItem itemLabel="11CONTA" itemValue="11CONTA" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="proyecto" value="Proyecto" />
+					<p:selectOneMenu id="proyecto"
+						value="#{creditCheckController.creditCheckPojo.proyecto}"
+						style="width:125px">
+						<f:selectItem itemLabel="COPPEL" itemValue="COPPEL" />
+						<f:selectItem itemLabel="TELMEX" itemValue="TELMEX" />
+						<f:selectItem itemLabel="VENTA EN LINEA"
+							itemValue="VENTA EN LINEA" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="formaPago" value="Forma de Pago" />
+					<p:selectOneMenu id="formaPago"
+						value="#{creditCheckController.creditCheckPojo.formaPago}"
+						style="width:125px">
+						<f:selectItem itemLabel="DOMICILIACION" itemValue="DOMICILIACION" />
+						<f:selectItem itemLabel="EFECTIVO" itemValue="EFECTIVO" />
+						<f:selectItem itemLabel="TARJETA DE CREDITO"
+							itemValue="TARJETA DE CREDITO" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="modelo" value="Modelo" />
+					<p:selectOneMenu id="modelo"
+						value="#{creditCheckController.creditCheckPojo.modelo}"
+						style="width:125px">
+						<f:selectItem itemLabel="NOKIA 6630 GSM"
+							itemValue="NOKIA 6630 GSM" />
+						<f:selectItem itemLabel="NOKIA 6670 GSM"
+							itemValue="NOKIA 6670 GSM" />
+						<f:selectItem itemLabel="NOKIA 6682 GSM"
+							itemValue="NOKIA 6682 GSM" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="canalVenta" value="Canal de Venta" />
+					<p:selectOneMenu id="canalVenta"
+						value="#{creditCheckController.creditCheckPojo.canalVenta}"
+						style="width:125px">
+						<f:selectItem itemLabel="CACS" itemValue="CACS" />
+						<f:selectItem itemLabel="CADENAS COMERCIALES"
+							itemValue="CADENAS COMERCIALES" />
+						<f:selectItem itemLabel="CENTRO DE VENTAS TEL"
+							itemValue="CENTRO DE VENTAS TEL" />
+						<f:selectItem itemLabel="CVT/CCT" itemValue="CVT/CCT" />
+						<f:selectItem itemLabel="DATOS" itemValue="DATOS" />
+						<f:selectItem itemLabel="DISTRIBUIDOR" itemValue="DISTRIBUIDOR" />
+						<f:selectItem itemLabel="INTEGRADOR" itemValue="INTEGRADOR" />
+						<f:selectItem itemLabel="PYMES" itemValue="PYMES" />
+						<f:selectItem itemLabel="TELEMARKETING" itemValue="TELEMARKETING" />
+						<f:selectItem itemLabel="VENTAS CORPORATIVAS"
+							itemValue="VENTAS CORPORATIVAS" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="mercado" value="Mercado" />
+					<p:selectOneMenu id="mercado"
+						value="#{creditCheckController.creditCheckPojo.mercado}"
+						style="width:125px">
+						<f:selectItem itemLabel="CORPORATIVO" itemValue="CORPORATIVO" />
+						<f:selectItem itemLabel="MASIVO" itemValue="MASIVO" />
+						<f:selectItem itemLabel="PYME" itemValue="PYME" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="modalidadInvestigacion"
+						value="Modalidad Investigación" />
+					<p:selectOneMenu id="modalidadInvestigacion"
+						value="#{creditCheckController.creditCheckPojo.modalidadInvestigacion}"
+						style="width:125px">
+						<f:selectItem itemLabel="INMEDIATA" itemValue="INMEDIATA" />
+						<f:selectItem itemLabel="DIFERIDA" itemValue="DIFERIDA" />
+						<f:selectItem itemLabel="N/A" itemValue="N/A" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="region" value="Region" />
+					<p:selectOneMenu id="region"
+						value="#{creditCheckController.creditCheckPojo.region}"
+						style="width:125px">
+						<f:selectItem itemLabel="R01" itemValue="R01" />
+						<f:selectItem itemLabel="R02" itemValue="R02" />
+						<f:selectItem itemLabel="R03" itemValue="R03" />
+						<f:selectItem itemLabel="R04" itemValue="R04" />
+						<f:selectItem itemLabel="R05" itemValue="R05" />
+						<f:selectItem itemLabel="R06" itemValue="R06" />
+						<f:selectItem itemLabel="R07" itemValue="R07" />
+						<f:selectItem itemLabel="R08" itemValue="R08" />
+						<f:selectItem itemLabel="R09" itemValue="R09" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<h:outputText value="Venta plazos: " />
+					<p:selectBooleanButton id="ventaPlazos"
+						value="#{creditCheckController.creditCheckPojo.ventaPlazos}"
+						onLabel="Yes" offLabel="No" style="width:60px" />
+				</h:panelGroup>
+
+
+			</p:panelGrid>
+
+		</p:panel>
+
+		<p:panel id="columnasCedente" header="Datos del cliente">
+
+			<p:panelGrid columns="3" layout="grid">
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="razonSocial" value="Razón Social"
+						styleClass="requiredLb1" />
+					<h:inputText id="razonSocial" label="Razón Social"
+						value="#{creditCheckController.creditCheckPojo.razonSocial}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="nombre" value="Nombre" styleClass="requiredLb1" />
+					<h:inputText id="nombre" label="Nombre"
+						value="#{creditCheckController.creditCheckPojo.nombre}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="apellidoPaterno" value="Apellido Paterno"
+						styleClass="requiredLb1" />
+					<h:inputText id="apellidoPaterno" label="Apellido Paterno"
+						value="#{creditCheckController.creditCheckPojo.apellidoPaterno}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="apellidoMaterno" value="Apellido Materno"
+						styleClass="requiredLb1" />
+					<h:inputText id="apellidoMaterno" label="Apellido Materno"
+						value="#{creditCheckController.creditCheckPojo.apellidoMaterno}" />
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="fechaNacimiento" value="Fecha de Nacimiento" />
+					<p:calendar id="fechaNacimiento"
+						value="#{creditCheckController.creditCheckPojo.fechaNacimiento}"
+						showOn="button" />
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="sexo" value="Sexo" />
+					<p:selectOneMenu id="sexo"
+						value="#{creditCheckController.creditCheckPojo.sexo}"
+						style="width:125px">
+						<f:selectItem itemLabel="Hombre" itemValue="M" />
+						<f:selectItem itemLabel="Mujer" itemValue="F" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="rfc" value="RFC" styleClass="requiredLb1" />
+					<h:inputText id="rfc" label="RFC"
+						value="#{creditCheckController.creditCheckPojo.rfc}" />
+				</h:panelGroup>
+
+				<!-- Falta definir estados como catalogo, el valor de envio no es el correcto-->
+				<h:panelGroup layout="block">
+					<p:outputLabel for="estado" value="Estado:" />
+					<p:selectOneMenu id="estado"
+						value="#{creditCheckController.creditCheckPojo.estado}"
+						style="width:125px">
+						<f:selectItem itemLabel="Aguascalientes"
+							itemValue="Aguascalientes" />
+						<f:selectItem itemLabel="Baja California"
+							itemValue="Baja California" />
+						<f:selectItem itemLabel="Baja California Sur"
+							itemValue="Baja California Sur" />
+						<f:selectItem itemLabel="Campeche" itemValue="Campeche" />
+						<f:selectItem itemLabel="Ciudad de México"
+							itemValue="Ciudad de México" />
+						<f:selectItem itemLabel="Chihuahua" itemValue="Chihuahua" />
+						<f:selectItem itemLabel="Chiapas" itemValue="Chiapas" />
+						<f:selectItem itemLabel="Coahuila" itemValue="Coahuila" />
+						<f:selectItem itemLabel="Colima" itemValue="Colima" />
+						<f:selectItem itemLabel="Distrito federal"
+							itemValue="Distrito federal" />
+						<f:selectItem itemLabel="Durango" itemValue="Durango" />
+						<f:selectItem itemLabel="Estado de mexico"
+							itemValue="Estado de mexico" />
+						<f:selectItem itemLabel="Guerrero" itemValue="Guerrero" />
+						<f:selectItem itemLabel="Guanajuato" itemValue="Guanajuato" />
+						<f:selectItem itemLabel="Hidalgo" itemValue="Hidalgo" />
+						<f:selectItem itemLabel="Jalisco" itemValue="Jalisco" />
+						<f:selectItem itemLabel="Michoacán" itemValue="Michoacán" />
+						<f:selectItem itemLabel="Morelos" itemValue="Morelos" />
+						<f:selectItem itemLabel="Nayarit" itemValue="Nayarit" />
+						<f:selectItem itemLabel="Nuevo León" itemValue="Nuevo León" />
+						<f:selectItem itemLabel="Oaxaca" itemValue="Oaxaca" />
+						<f:selectItem itemLabel="Puebla" itemValue="Puebla" />
+						<f:selectItem itemLabel="Querétaro" itemValue="Querétaro" />
+						<f:selectItem itemLabel="Quintana Roo" itemValue="Quintana Roo" />
+						<f:selectItem itemLabel="Sinaloa" itemValue="Sinaloa" />
+						<f:selectItem itemLabel="San Luis Potosí"
+							itemValue="San Luis Potosí" />
+						<f:selectItem itemLabel="Sonora" itemValue="Sonora" />
+						<f:selectItem itemLabel="Tabasco" itemValue="Tabasco" />
+						<f:selectItem itemLabel="Tamaulipas" itemValue="Tamaulipas" />
+						<f:selectItem itemLabel="Tlaxcala" itemValue="Tlaxcala" />
+						<f:selectItem itemLabel="Veracruz" itemValue="Veracruz" />
+						<f:selectItem itemLabel="Yucatán" itemValue="Yucatán" />
+						<f:selectItem itemLabel="Zacatecas" itemValue="Zacatecas" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+				<h:panelGroup layout="block">
+					<h:outputLabel for="delegacionMunicipio"
+						value="Delegación/Municipio" styleClass="requiredLb1" />
+					<h:inputText id="delegacionMunicipio" label="Delegación/Municipio"
+						value="#{creditCheckController.creditCheckPojo.delegacionMunicipio}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="calle" value="Calle" styleClass="requiredLb1" />
+					<h:inputText id="calle" label="Calle"
+						value="#{creditCheckController.creditCheckPojo.calle}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="numExterior" value="Número Exterior"
+						styleClass="requiredLb1" />
+					<h:inputText id="numExterior" label="Número Exterior"
+						value="#{creditCheckController.creditCheckPojo.numeroExterior}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="coloniaPoblacion" value="Colonia/Población"
+						styleClass="requiredLb1" />
+					<h:inputText id="coloniaPoblacion" label="Colonia/Población"
+						value="#{creditCheckController.creditCheckPojo.coloniaPoblacion}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="ciudad" value="Ciudad" styleClass="requiredLb1" />
+					<h:inputText id="ciudad" label="Ciudad"
+						value="#{creditCheckController.creditCheckPojo.ciudad}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="codigoPostal" value="Código Postal"
+						styleClass="requiredLb1" />
+					<h:inputText id="codigoPostal" label="Código Postal"
+						value="#{creditCheckController.creditCheckPojo.codigoPostal}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="telefonoCasa" value="Teléfono Casa"
+						styleClass="requiredLb1" />
+					<h:inputText id="telefonoCasa" label="Teléfono Casa"
+						value="#{creditCheckController.creditCheckPojo.telefonoCasa}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="telefonoOficina" value="Teléfono Oficina"
+						styleClass="requiredLb1" />
+					<h:inputText id="telefonoOficina" label="Teléfono Oficina"
+						value="#{creditCheckController.creditCheckPojo.telefonoOficina}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="telefonoReferencia" value="Teléfono Referencia"
+						styleClass="requiredLb1" />
+					<h:inputText id="telefonoReferencia" label="Teléfono Referencia"
+						value="#{creditCheckController.creditCheckPojo.telefonoReferencia}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="nombreReferencia" value="Nombre Referencia"
+						styleClass="requiredLb1" />
+					<h:inputText id="nombreReferencia" label="Nombre Referencia"
+						value="#{creditCheckController.creditCheckPojo.nombreReferencia}" />
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="creditoAutomotriz" value="Crédito Automotriz" />
+					<p:selectOneMenu id="creditoAutomotriz"
+						value="#{creditCheckController.creditCheckPojo.creditoAutomotriz}"
+						style="width:125px">
+						<f:selectItem itemLabel="No tiene cuenta automotriz" itemValue="F" />
+						<f:selectItem itemLabel="Si tiene cuenta automotriz" itemValue="V" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+
+				<h:panelGroup layout="block">
+					<p:outputLabel for="creditoBancario" value="Crédito Bancario" />
+					<p:selectOneMenu id="creditoBancario"
+						value="#{creditCheckController.creditCheckPojo.creditoBancario}"
+						style="width:125px">
+						<f:selectItem itemLabel="No tiene cuenta bancaria" itemValue="F" />
+						<f:selectItem itemLabel="Si tiene cuenta bancaria" itemValue="V" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="tarjetaCredito" value="Tarjeta de Crédito"
+						styleClass="requiredLb1" />
+					<h:inputText id="tarjetaCredito" label="Tarjeta de Crédito"
+						value="#{creditCheckController.creditCheckPojo.tarjetaCredito}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="vigenciaTarjeta" value="Vigencia Tarjeta"
+						styleClass="requiredLb1" />
+					<h:inputText id="vigenciaTarjeta" label="Vigencia Tarjeta"
+						value="#{creditCheckController.creditCheckPojo.vigenciaTarjeta}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="claveBanco" value="Clave Banco"
+						styleClass="requiredLb1" />
+					<h:inputText id="claveBanco" label="Clave Banco"
+						value="#{creditCheckController.creditCheckPojo.claveBanco}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="digitosTC" value="Digitos TC"
+						styleClass="requiredLb1" />
+					<h:inputText id="digitosTC" label="Digitos TC"
+						value="#{creditCheckController.creditCheckPojo.digitosTC}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="cvv" value="CVV" styleClass="requiredLb1" />
+					<h:inputText id="cvv" label="CVV"
+						value="#{creditCheckController.creditCheckPojo.cvv}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="folioSistema" value="Folio Sistema"
+						styleClass="requiredLb1" />
+					<h:inputText id="folioSistema" label="Folio Sistema"
+						value="#{creditCheckController.creditCheckPojo.folioSistema}" />
+				</h:panelGroup>
+			</p:panelGrid>
+		</p:panel>
+
+		<p:panel id="ofertaCliente" header="Datos del equipo">
+			<p:panelGrid columns="3" layout="grid">
+				<h:panelGroup layout="block">
+					<h:outputLabel for="depositoInicial" value="Depósito Inicial"
+						styleClass="requiredLb1" />
+					<p:inputNumber id="depositoInicial"
+						value="#{creditCheckController.creditCheckPojo.depositoInicial}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="renta" value="Renta" styleClass="requiredLb1" />
+					<p:inputNumber id="renta"
+						value="#{creditCheckController.creditCheckPojo.renta}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="montoServicio" value="Monto Servicio"
+						styleClass="requiredLb1" />
+					<p:inputNumber id="montoServicio"
+						value="#{creditCheckController.creditCheckPojo.montoServicio}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="precioLista" value="Precio Lista"
+						styleClass="requiredLb1" />
+					<p:inputNumber id="precioLista"
+						value="#{creditCheckController.creditCheckPojo.precioLista}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="precioKit" value="Precio Kit"
+						styleClass="requiredLb1" />
+					<p:inputNumber id="precioKit"
+						value="#{creditCheckController.creditCheckPojo.precioKit}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="anticipo" value="Anticipo"
+						styleClass="requiredLb1" />
+					<p:inputNumber id="anticipo"
+						value="#{creditCheckController.creditCheckPojo.anticipo}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="costoBaseEquipo" value="Costo Base"
+						styleClass="requiredLb1" />
+					<p:inputNumber id="costoBaseEquipo"
+						value="#{creditCheckController.creditCheckPojo.costoBaseEquipo}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="parcialidades" value="Parcialidades"
+						styleClass="requiredLb1" />
+					<p:inputNumber id="parcialidades"
+						value="#{creditCheckController.creditCheckPojo.parcialidades}" />
+				</h:panelGroup>
+
+				<h:panelGroup layout="block">
+					<h:outputLabel for="sobreprecio" value="Sobre Precio"
+						styleClass="requiredLb1" />
+					<p:inputNumber id="sobreprecio"
+						value="#{creditCheckController.creditCheckPojo.sobreprecio}" />
+				</h:panelGroup>
+			</p:panelGrid>
+		</p:panel>
+
+		<h:panelGroup layout="block">
+			<p:button value="Consultar"></p:button>
+		</h:panelGroup>
+
+
+		<p:panel header="Respuesta Consulta">
+
+			<h:panelGroup layout="block">
+				<label for="msg" style="alignment-adjust: auto"></label>
+				<textarea id="msg" style="width: 800px; height: 100px"></textarea>
+			</h:panelGroup>
+
+		</p:panel>
+
+
+
+
+	</h:form>
+
+</h:body>
+</html>
+

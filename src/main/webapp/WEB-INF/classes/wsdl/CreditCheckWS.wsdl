@@ -1,0 +1,549 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="CreditCheckWS" targetNamespace="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/" schemaLocation="CreditCheckWS_schema1.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="idProviderBcResponse">
+		<part name="parameters" element="tns:idProviderBcResponse"> </part>
+	</message>
+	<message name="anacrAdeudo">
+		<part name="parameters" element="tns:anacrAdeudo"> </part>
+	</message>
+	<message name="idProviderBc">
+		<part name="parameters" element="tns:idProviderBc"> </part>
+	</message>
+	<message name="evaluacionTramite">
+		<part name="parameters" element="tns:evaluacionTramite"> </part>
+	</message>
+	<message name="historicoPagosM2KResponse">
+		<part name="parameters" element="tns:historicoPagosM2KResponse"> </part>
+	</message>
+	<message name="listaNegraResponse">
+		<part name="parameters" element="tns:listaNegraResponse"> </part>
+	</message>
+	<message name="repoBcTelcoIcc">
+		<part name="parameters" element="tns:repoBcTelcoIcc"> </part>
+	</message>
+	<message name="equipoPremiumResponse">
+		<part name="parameters" element="tns:equipoPremiumResponse"> </part>
+	</message>
+	<message name="adeudoHstPagosM2KResponse">
+		<part name="parameters" element="tns:adeudoHstPagosM2KResponse"> </part>
+	</message>
+	<message name="idProvBcIcc">
+		<part name="parameters" element="tns:idProvBcIcc"> </part>
+	</message>
+	<message name="historicoBc">
+		<part name="parameters" element="tns:historicoBc"> </part>
+	</message>
+	<message name="idProvBcTelcoIccResponse">
+		<part name="parameters" element="tns:idProvBcTelcoIccResponse"> </part>
+	</message>
+	<message name="idProvBcIccResponse">
+		<part name="parameters" element="tns:idProvBcIccResponse"> </part>
+	</message>
+	<message name="limiteCreditoResponse">
+		<part name="parameters" element="tns:limiteCreditoResponse"> </part>
+	</message>
+	<message name="rangoEquipoResponse">
+		<part name="parameters" element="tns:rangoEquipoResponse"> </part>
+	</message>
+	<message name="adeudoHstPagosM2K">
+		<part name="parameters" element="tns:adeudoHstPagosM2K"> </part>
+	</message>
+	<message name="depPlanLibre">
+		<part name="parameters" element="tns:depPlanLibre"> </part>
+	</message>
+	<message name="cargoInterredes">
+		<part name="parameters" element="tns:cargoInterredes"> </part>
+	</message>
+	<message name="idProvBcTelcoIcc">
+		<part name="parameters" element="tns:idProvBcTelcoIcc"> </part>
+	</message>
+	<message name="anacrHistoricoResponse">
+		<part name="parameters" element="tns:anacrHistoricoResponse"> </part>
+	</message>
+	<message name="listaNegra">
+		<part name="parameters" element="tns:listaNegra"> </part>
+	</message>
+	<message name="reporteBcResponse">
+		<part name="parameters" element="tns:reporteBcResponse"> </part>
+	</message>
+	<message name="planesLibresResponse">
+		<part name="parameters" element="tns:planesLibresResponse"> </part>
+	</message>
+	<message name="financiamientoResponse">
+		<part name="parameters" element="tns:financiamientoResponse"> </part>
+	</message>
+	<message name="lineasAutorizadasResponse">
+		<part name="parameters" element="tns:lineasAutorizadasResponse"> </part>
+	</message>
+	<message name="financiamiento">
+		<part name="parameters" element="tns:financiamiento"> </part>
+	</message>
+	<message name="depositoRenta">
+		<part name="parameters" element="tns:depositoRenta"> </part>
+	</message>
+	<message name="evaluacionTramiteResponse">
+		<part name="parameters" element="tns:evaluacionTramiteResponse"> </part>
+	</message>
+	<message name="historicoPagosM2K">
+		<part name="parameters" element="tns:historicoPagosM2K"> </part>
+	</message>
+	<message name="reporteBcMorales">
+		<part name="parameters" element="tns:reporteBcMorales"> </part>
+	</message>
+	<message name="historicoBcResponse">
+		<part name="parameters" element="tns:historicoBcResponse"> </part>
+	</message>
+	<message name="equipoPremium">
+		<part name="parameters" element="tns:equipoPremium"> </part>
+	</message>
+	<message name="lineasAutorizadasEdadResponse">
+		<part name="parameters" element="tns:lineasAutorizadasEdadResponse"> </part>
+	</message>
+	<message name="verificacionDomiciliariaResponse">
+		<part name="parameters" element="tns:verificacionDomiciliariaResponse"> </part>
+	</message>
+	<message name="rangoEquipo">
+		<part name="parameters" element="tns:rangoEquipo"> </part>
+	</message>
+	<message name="repoBcIcc">
+		<part name="parameters" element="tns:repoBcIcc"> </part>
+	</message>
+	<message name="lineasAutorizadasEdad">
+		<part name="parameters" element="tns:lineasAutorizadasEdad"> </part>
+	</message>
+	<message name="reporteBc">
+		<part name="parameters" element="tns:reporteBc"> </part>
+	</message>
+	<message name="repoBcTelcoIccResponse">
+		<part name="parameters" element="tns:repoBcTelcoIccResponse"> </part>
+	</message>
+	<message name="limiteCredito">
+		<part name="parameters" element="tns:limiteCredito"> </part>
+	</message>
+	<message name="lineasAutorizadas">
+		<part name="parameters" element="tns:lineasAutorizadas"> </part>
+	</message>
+	<message name="reporteBcMoralesResponse">
+		<part name="parameters" element="tns:reporteBcMoralesResponse"> </part>
+	</message>
+	<message name="verificacionDomiciliaria">
+		<part name="parameters" element="tns:verificacionDomiciliaria"> </part>
+	</message>
+	<message name="depositoRentaResponse">
+		<part name="parameters" element="tns:depositoRentaResponse"> </part>
+	</message>
+	<message name="gamaPlanResponse">
+		<part name="parameters" element="tns:gamaPlanResponse"> </part>
+	</message>
+	<message name="cargoInterredesResponse">
+		<part name="parameters" element="tns:cargoInterredesResponse"> </part>
+	</message>
+	<message name="scoreCCS">
+		<part name="parameters" element="tns:scoreCCS"> </part>
+	</message>
+	<message name="planesLibres">
+		<part name="parameters" element="tns:planesLibres"> </part>
+	</message>
+	<message name="anacrHistorico">
+		<part name="parameters" element="tns:anacrHistorico"> </part>
+	</message>
+	<message name="depPlanLibreResponse">
+		<part name="parameters" element="tns:depPlanLibreResponse"> </part>
+	</message>
+	<message name="anacrAdeudoResponse">
+		<part name="parameters" element="tns:anacrAdeudoResponse"> </part>
+	</message>
+	<message name="gamaPlan">
+		<part name="parameters" element="tns:gamaPlan"> </part>
+	</message>
+	<message name="depPlanForzosoResponse">
+		<part name="parameters" element="tns:depPlanForzosoResponse"> </part>
+	</message>
+	<message name="scoreCCSResponse">
+		<part name="parameters" element="tns:scoreCCSResponse"> </part>
+	</message>
+	<message name="depPlanForzoso">
+		<part name="parameters" element="tns:depPlanForzoso"> </part>
+	</message>
+	<message name="repoBcIccResponse">
+		<part name="parameters" element="tns:repoBcIccResponse"> </part>
+	</message>
+	<portType name="CreditCheckWS">
+		<operation name="evaluacionTramite">
+			<input message="tns:evaluacionTramite" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/evaluacionTramiteRequest"> </input>
+			<output message="tns:evaluacionTramiteResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/evaluacionTramiteResponse"> </output>
+		</operation>
+		<operation name="listaNegra">
+			<input message="tns:listaNegra" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/listaNegraRequest"> </input>
+			<output message="tns:listaNegraResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/listaNegraResponse"> </output>
+		</operation>
+		<operation name="depPlanLibre">
+			<input message="tns:depPlanLibre" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanLibreRequest"> </input>
+			<output message="tns:depPlanLibreResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanLibreResponse"> </output>
+		</operation>
+		<operation name="depPlanForzoso">
+			<input message="tns:depPlanForzoso" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanForzosoRequest"> </input>
+			<output message="tns:depPlanForzosoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depPlanForzosoResponse"> </output>
+		</operation>
+		<operation name="rangoEquipo">
+			<input message="tns:rangoEquipo" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/rangoEquipoRequest"> </input>
+			<output message="tns:rangoEquipoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/rangoEquipoResponse"> </output>
+		</operation>
+		<operation name="limiteCredito">
+			<input message="tns:limiteCredito" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/limiteCreditoRequest"> </input>
+			<output message="tns:limiteCreditoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/limiteCreditoResponse"> </output>
+		</operation>
+		<operation name="historicoPagosM2K">
+			<input message="tns:historicoPagosM2K" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoPagosM2KRequest"> </input>
+			<output message="tns:historicoPagosM2KResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoPagosM2KResponse"> </output>
+		</operation>
+		<operation name="adeudoHstPagosM2K">
+			<input message="tns:adeudoHstPagosM2K" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/adeudoHstPagosM2KRequest"> </input>
+			<output message="tns:adeudoHstPagosM2KResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/adeudoHstPagosM2KResponse"> </output>
+		</operation>
+		<operation name="idProviderBc">
+			<input message="tns:idProviderBc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProviderBcRequest"> </input>
+			<output message="tns:idProviderBcResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProviderBcResponse"> </output>
+		</operation>
+		<operation name="reporteBc">
+			<input message="tns:reporteBc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcRequest"> </input>
+			<output message="tns:reporteBcResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcResponse"> </output>
+		</operation>
+		<operation name="reporteBcMorales">
+			<input message="tns:reporteBcMorales" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcMoralesRequest"> </input>
+			<output message="tns:reporteBcMoralesResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/reporteBcMoralesResponse"> </output>
+		</operation>
+		<operation name="repoBcIcc">
+			<input message="tns:repoBcIcc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcIccRequest"> </input>
+			<output message="tns:repoBcIccResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcIccResponse"> </output>
+		</operation>
+		<operation name="idProvBcIcc">
+			<input message="tns:idProvBcIcc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcIccRequest"> </input>
+			<output message="tns:idProvBcIccResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcIccResponse"> </output>
+		</operation>
+		<operation name="repoBcTelcoIcc">
+			<input message="tns:repoBcTelcoIcc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcTelcoIccRequest"> </input>
+			<output message="tns:repoBcTelcoIccResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/repoBcTelcoIccResponse"> </output>
+		</operation>
+		<operation name="idProvBcTelcoIcc">
+			<input message="tns:idProvBcTelcoIcc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcTelcoIccRequest"> </input>
+			<output message="tns:idProvBcTelcoIccResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/idProvBcTelcoIccResponse"> </output>
+		</operation>
+		<operation name="historicoBc">
+			<input message="tns:historicoBc" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoBcRequest"> </input>
+			<output message="tns:historicoBcResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/historicoBcResponse"> </output>
+		</operation>
+		<operation name="scoreCCS">
+			<input message="tns:scoreCCS" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/scoreCCSRequest"> </input>
+			<output message="tns:scoreCCSResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/scoreCCSResponse"> </output>
+		</operation>
+		<operation name="planesLibres">
+			<input message="tns:planesLibres" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/planesLibresRequest"> </input>
+			<output message="tns:planesLibresResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/planesLibresResponse"> </output>
+		</operation>
+		<operation name="financiamiento">
+			<input message="tns:financiamiento" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/financiamientoRequest"> </input>
+			<output message="tns:financiamientoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/financiamientoResponse"> </output>
+		</operation>
+		<operation name="lineasAutorizadas">
+			<input message="tns:lineasAutorizadas" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasRequest"> </input>
+			<output message="tns:lineasAutorizadasResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasResponse"> </output>
+		</operation>
+		<operation name="lineasAutorizadasEdad">
+			<input message="tns:lineasAutorizadasEdad" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasEdadRequest"> </input>
+			<output message="tns:lineasAutorizadasEdadResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/lineasAutorizadasEdadResponse"> </output>
+		</operation>
+		<operation name="verificacionDomiciliaria">
+			<input message="tns:verificacionDomiciliaria" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/verificacionDomiciliariaRequest"> </input>
+			<output message="tns:verificacionDomiciliariaResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/verificacionDomiciliariaResponse"> </output>
+		</operation>
+		<operation name="cargoInterredes">
+			<input message="tns:cargoInterredes" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/cargoInterredesRequest"> </input>
+			<output message="tns:cargoInterredesResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/cargoInterredesResponse"> </output>
+		</operation>
+		<operation name="depositoRenta">
+			<input message="tns:depositoRenta" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depositoRentaRequest"> </input>
+			<output message="tns:depositoRentaResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/depositoRentaResponse"> </output>
+		</operation>
+		<operation name="gamaPlan">
+			<input message="tns:gamaPlan" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/gamaPlanRequest"> </input>
+			<output message="tns:gamaPlanResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/gamaPlanResponse"> </output>
+		</operation>
+		<operation name="anacrHistorico">
+			<input message="tns:anacrHistorico" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrHistoricoRequest"> </input>
+			<output message="tns:anacrHistoricoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrHistoricoResponse"> </output>
+		</operation>
+		<operation name="anacrAdeudo">
+			<input message="tns:anacrAdeudo" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrAdeudoRequest"> </input>
+			<output message="tns:anacrAdeudoResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/anacrAdeudoResponse"> </output>
+		</operation>
+		<operation name="equipoPremium">
+			<input message="tns:equipoPremium" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/equipoPremiumRequest"> </input>
+			<output message="tns:equipoPremiumResponse" wsam:Action="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/CreditCheckWS/equipoPremiumResponse"> </output>
+		</operation>
+	</portType>
+	<binding name="CreditCheckWSPortBinding" type="tns:CreditCheckWS">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="evaluacionTramite">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="listaNegra">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="depPlanLibre">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="depPlanForzoso">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="rangoEquipo">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="limiteCredito">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="historicoPagosM2K">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="adeudoHstPagosM2K">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="idProviderBc">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="reporteBc">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="reporteBcMorales">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="repoBcIcc">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="idProvBcIcc">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="repoBcTelcoIcc">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="idProvBcTelcoIcc">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="historicoBc">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="scoreCCS">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="planesLibres">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="financiamiento">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="lineasAutorizadas">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="lineasAutorizadasEdad">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="verificacionDomiciliaria">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="cargoInterredes">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="depositoRenta">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="gamaPlan">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="anacrHistorico">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="anacrAdeudo">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="equipoPremium">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="CreditCheckWS">
+		<port name="CreditCheckWSPort" binding="tns:CreditCheckWSPortBinding">
+			<soap:address location="http://191.9.3.249:9080/CreditCheckWS/service"/>
+		</port>
+	</service>
+</definitions>

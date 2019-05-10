@@ -1,0 +1,57 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <body>
+        <ui:composition template="./template.xhtml">
+            <ui:define name="top">
+                <h2>Confirmación de información</h2>
+            </ui:define>
+            <ui:define name="content">
+                <p:panel header="Información Cliente">
+                    <h:outputText value="RFC" styleClass="optionalLb1"/>
+                    <h:outputText id="rfc" value="#{safin-view.rfc}"/>
+                    
+                    <h:outputText value="Nombres" styleClass="optionalLb1"/>
+                    <h:outputText id="nombres" value="#{safin-view.nombres}"/>
+                    
+                    <h:outputText value="Apellidos" styleClass="optionalLb1"/>
+                    <h:outputText id="apellidos" value="#{safin-view.apellidos}"/>
+                    
+                    <h:outputText value="CURP" styleClass="optionalLb1"/>
+                    <h:outputText id="curp" value="#{safin-view.curp}"/>
+                    
+                    <h:outputText value="Id Sistema" styleClass="optionalLb1"/>
+                    <h:outputText id="idSistema" value="#{safin-view.idSistema}"/>
+                    
+                    <h:outputText value="Region" styleClass="optionalLb1"/>
+                    <h:outputText id="region" value="#{safin-view.region}"/>
+                    
+                    <h:outputText value="Clasificación Cliente" styleClass="optionalLb1"/>
+                    <h:outputText id="clasificacionCliente" value="#{safin-view.clasificacionCliente}"/>
+                    
+                    <h:outputText value="Clasificación Buró" styleClass="optionalLb1"/>
+                    <h:outputText id="clasificacionBuro" value="#{safin-view.clasificacionBuro}"/>
+                    
+                    <h:outputText value="Forma de Pago" styleClass="optionalLb1"/>
+                    <h:outputText id="idFormaPago" value="#{safin-view.idFormaPago}"/>
+                    
+                    <h:outputText value="ICC" styleClass="optionalLb1"/>
+                    <h:outputText id="icc" value="#{safin-view.icc}"/>
+                    
+                    <h:outputText value="Score Buro" styleClass="optionalLb1"/>
+                    <h:outputText id="scoreBuro" value="#{safin-view.scoreBuro}"/>
+                </p:panel>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

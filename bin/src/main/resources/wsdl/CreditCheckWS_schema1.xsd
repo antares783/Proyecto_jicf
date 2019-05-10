@@ -1,0 +1,338 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/" version="1.0" targetNamespace="http://ws.ccsws.dapmov.gsac.sds.di.telcel.com.mx/">
+	<xs:element name="adeudoHstPagosM2K" type="tns:adeudoHstPagosM2K"/>
+	<xs:element name="adeudoHstPagosM2KResponse" type="tns:adeudoHstPagosM2KResponse"/>
+	<xs:element name="anacrAdeudo" type="tns:anacrAdeudo"/>
+	<xs:element name="anacrAdeudoResponse" type="tns:anacrAdeudoResponse"/>
+	<xs:element name="anacrHistorico" type="tns:anacrHistorico"/>
+	<xs:element name="anacrHistoricoResponse" type="tns:anacrHistoricoResponse"/>
+	<xs:element name="cargoInterredes" type="tns:cargoInterredes"/>
+	<xs:element name="cargoInterredesResponse" type="tns:cargoInterredesResponse"/>
+	<xs:element name="depPlanForzoso" type="tns:depPlanForzoso"/>
+	<xs:element name="depPlanForzosoResponse" type="tns:depPlanForzosoResponse"/>
+	<xs:element name="depPlanLibre" type="tns:depPlanLibre"/>
+	<xs:element name="depPlanLibreResponse" type="tns:depPlanLibreResponse"/>
+	<xs:element name="depositoRenta" type="tns:depositoRenta"/>
+	<xs:element name="depositoRentaResponse" type="tns:depositoRentaResponse"/>
+	<xs:element name="equipoPremium" type="tns:equipoPremium"/>
+	<xs:element name="equipoPremiumResponse" type="tns:equipoPremiumResponse"/>
+	<xs:element name="evaluacionTramite" type="tns:evaluacionTramite"/>
+	<xs:element name="evaluacionTramiteResponse" type="tns:evaluacionTramiteResponse"/>
+	<xs:element name="financiamiento" type="tns:financiamiento"/>
+	<xs:element name="financiamientoResponse" type="tns:financiamientoResponse"/>
+	<xs:element name="gamaPlan" type="tns:gamaPlan"/>
+	<xs:element name="gamaPlanResponse" type="tns:gamaPlanResponse"/>
+	<xs:element name="historicoBc" type="tns:historicoBc"/>
+	<xs:element name="historicoBcResponse" type="tns:historicoBcResponse"/>
+	<xs:element name="historicoPagosM2K" type="tns:historicoPagosM2K"/>
+	<xs:element name="historicoPagosM2KResponse" type="tns:historicoPagosM2KResponse"/>
+	<xs:element name="idProvBcIcc" type="tns:idProvBcIcc"/>
+	<xs:element name="idProvBcIccResponse" type="tns:idProvBcIccResponse"/>
+	<xs:element name="idProvBcTelcoIcc" type="tns:idProvBcTelcoIcc"/>
+	<xs:element name="idProvBcTelcoIccResponse" type="tns:idProvBcTelcoIccResponse"/>
+	<xs:element name="idProviderBc" type="tns:idProviderBc"/>
+	<xs:element name="idProviderBcResponse" type="tns:idProviderBcResponse"/>
+	<xs:element name="limiteCredito" type="tns:limiteCredito"/>
+	<xs:element name="limiteCreditoResponse" type="tns:limiteCreditoResponse"/>
+	<xs:element name="lineasAutorizadas" type="tns:lineasAutorizadas"/>
+	<xs:element name="lineasAutorizadasEdad" type="tns:lineasAutorizadasEdad"/>
+	<xs:element name="lineasAutorizadasEdadResponse" type="tns:lineasAutorizadasEdadResponse"/>
+	<xs:element name="lineasAutorizadasResponse" type="tns:lineasAutorizadasResponse"/>
+	<xs:element name="listaNegra" type="tns:listaNegra"/>
+	<xs:element name="listaNegraResponse" type="tns:listaNegraResponse"/>
+	<xs:element name="planesLibres" type="tns:planesLibres"/>
+	<xs:element name="planesLibresResponse" type="tns:planesLibresResponse"/>
+	<xs:element name="rangoEquipo" type="tns:rangoEquipo"/>
+	<xs:element name="rangoEquipoResponse" type="tns:rangoEquipoResponse"/>
+	<xs:element name="repoBcIcc" type="tns:repoBcIcc"/>
+	<xs:element name="repoBcIccResponse" type="tns:repoBcIccResponse"/>
+	<xs:element name="repoBcTelcoIcc" type="tns:repoBcTelcoIcc"/>
+	<xs:element name="repoBcTelcoIccResponse" type="tns:repoBcTelcoIccResponse"/>
+	<xs:element name="reporteBc" type="tns:reporteBc"/>
+	<xs:element name="reporteBcMorales" type="tns:reporteBcMorales"/>
+	<xs:element name="reporteBcMoralesResponse" type="tns:reporteBcMoralesResponse"/>
+	<xs:element name="reporteBcResponse" type="tns:reporteBcResponse"/>
+	<xs:element name="scoreCCS" type="tns:scoreCCS"/>
+	<xs:element name="scoreCCSResponse" type="tns:scoreCCSResponse"/>
+	<xs:element name="verificacionDomiciliaria" type="tns:verificacionDomiciliaria"/>
+	<xs:element name="verificacionDomiciliariaResponse" type="tns:verificacionDomiciliariaResponse"/>
+	<xs:complexType name="anacrAdeudo">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="anacrAdeudoResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="reporteBc">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="reporteBcResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="idProvBcIcc">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="idProvBcIccResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="planesLibres">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="planesLibresResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lineasAutorizadas">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lineasAutorizadasResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="repoBcTelcoIcc">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="repoBcTelcoIccResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="idProviderBc">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="idProviderBcResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="repoBcIcc">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="repoBcIccResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="depPlanLibre">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="depPlanLibreResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cargoInterredes">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cargoInterredesResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="historicoBc">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="historicoBcResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="financiamiento">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="financiamientoResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="gamaPlan">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="gamaPlanResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="depPlanForzoso">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="depPlanForzosoResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="reporteBcMorales">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="reporteBcMoralesResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listaNegra">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listaNegraResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="historicoPagosM2K">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="historicoPagosM2KResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="anacrHistorico">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="anacrHistoricoResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lineasAutorizadasEdad">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="lineasAutorizadasEdadResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="evaluacionTramite">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="evaluacionTramiteResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="equipoPremium">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="equipoPremiumResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rangoEquipo">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="rangoEquipoResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="scoreCCS">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="scoreCCSResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="depositoRenta">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="depositoRentaResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="idProvBcTelcoIcc">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="idProvBcTelcoIccResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="adeudoHstPagosM2K">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="adeudoHstPagosM2KResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="limiteCredito">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="limiteCreditoResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="verificacionDomiciliaria">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="verificacionDomiciliariaResponse">
+		<xs:sequence>
+			<xs:element name="xml" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
