@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.11 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.05.10 a las 11:50:20 AM CDT 
+// Generado el: 2019.05.14 a las 07:28:27 PM CDT 
 //
 
 
@@ -109,70 +109,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Add }
-     * 
-     */
-    public Add createAdd() {
-        return new Add();
-    }
-
-    /**
-     * Create an instance of {@link AddResponse }
-     * 
-     */
-    public AddResponse createAddResponse() {
-        return new AddResponse();
-    }
-
-    /**
-     * Create an instance of {@link Subtract }
-     * 
-     */
-    public Subtract createSubtract() {
-        return new Subtract();
-    }
-
-    /**
-     * Create an instance of {@link SubtractResponse }
-     * 
-     */
-    public SubtractResponse createSubtractResponse() {
-        return new SubtractResponse();
-    }
-
-    /**
-     * Create an instance of {@link Multiply }
-     * 
-     */
-    public Multiply createMultiply() {
-        return new Multiply();
-    }
-
-    /**
-     * Create an instance of {@link MultiplyResponse }
-     * 
-     */
-    public MultiplyResponse createMultiplyResponse() {
-        return new MultiplyResponse();
-    }
-
-    /**
-     * Create an instance of {@link Divide }
-     * 
-     */
-    public Divide createDivide() {
-        return new Divide();
-    }
-
-    /**
-     * Create an instance of {@link DivideResponse }
-     * 
-     */
-    public DivideResponse createDivideResponse() {
-        return new DivideResponse();
     }
 
     /**
@@ -853,6 +789,70 @@ public class ObjectFactory {
      */
     public ErrorType createErrorType() {
         return new ErrorType();
+    }
+
+    /**
+     * Create an instance of {@link Add }
+     * 
+     */
+    public Add createAdd() {
+        return new Add();
+    }
+
+    /**
+     * Create an instance of {@link AddResponse }
+     * 
+     */
+    public AddResponse createAddResponse() {
+        return new AddResponse();
+    }
+
+    /**
+     * Create an instance of {@link Subtract }
+     * 
+     */
+    public Subtract createSubtract() {
+        return new Subtract();
+    }
+
+    /**
+     * Create an instance of {@link SubtractResponse }
+     * 
+     */
+    public SubtractResponse createSubtractResponse() {
+        return new SubtractResponse();
+    }
+
+    /**
+     * Create an instance of {@link Multiply }
+     * 
+     */
+    public Multiply createMultiply() {
+        return new Multiply();
+    }
+
+    /**
+     * Create an instance of {@link MultiplyResponse }
+     * 
+     */
+    public MultiplyResponse createMultiplyResponse() {
+        return new MultiplyResponse();
+    }
+
+    /**
+     * Create an instance of {@link Divide }
+     * 
+     */
+    public Divide createDivide() {
+        return new Divide();
+    }
+
+    /**
+     * Create an instance of {@link DivideResponse }
+     * 
+     */
+    public DivideResponse createDivideResponse() {
+        return new DivideResponse();
     }
 
     /**

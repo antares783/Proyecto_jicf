@@ -3,6 +3,18 @@
   <persistence-unit name="com.telcel.gam_SIEV_war_0.0.1-SNAPSHOTPU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>siev</jta-data-source>
+    <class>com.telcel.gam.siev.modelo.TcCredcheckEstados</class>
+    <class>com.telcel.gam.siev.modelo.TtWsLlamadaRespuesta</class>
+    <class>com.telcel.gam.siev.modelo.TcSistemasCatalogos</class>
+    <class>com.telcel.gam.siev.modelo.TcSafinCanales</class>
+    <class>com.telcel.gam.siev.modelo.TcMarca</class>
+    <class>com.telcel.gam.siev.modelo.TcSafinMercados</class>
+    <class>com.telcel.gam.siev.modelo.TcCredcheckCanalesVenta</class>
+    <class>com.telcel.gam.siev.modelo.TcTipoPlazo</class>
+    <class>com.telcel.gam.siev.modelo.TcSafinTiposProducto</class>
+    <class>com.telcel.gam.siev.modelo.TcSafinSistemas</class>
+    <class>com.telcel.gam.siev.modelo.TcModelo</class>
+    <class>com.telcel.gam.siev.modelo.TcSafinMovimientos</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>

@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="88d5541d-2ab8-4954-832d-69733e437aac" activeEnvironment="Default" name="SAFIN" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="e0e1dc66-4033-47c9-9c35-dd5342870387" wsaVersion="NONE" name="SafinServicesSoapBinding" type="wsdl" bindingName="{http://safinservices.dcol.gds.sds.di.telcel.mexico.amx.com.mx/}SafinServicesSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices?wsdl"><con:part><con:url>http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SafinServices" targetNamespace="http://safinservices.dcol.gds.sds.di.telcel.mexico.amx.com.mx/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://safinservices.dcol.gds.sds.di.telcel.mexico.amx.com.mx/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices">
+  <wsdl:import location="http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices?wsdl=SafinServices.wsdl" namespace="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices"></wsdl:import>
+  <wsdl:binding name="SafinServicesSoapBinding" type="ns1:SafinServices">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarCredito">
+      <soap:operation soapAction="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/consultarCredito" style="document"/>
+      <wsdl:input name="consultarCredito">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarCreditoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ConsultarCreditoException">
+        <soap:fault name="ConsultarCreditoException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ofertarCliente">
+      <soap:operation soapAction="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/ofertarCliente" style="document"/>
+      <wsdl:input name="ofertarCliente">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ofertarClienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="OfertarClienteException">
+        <soap:fault name="OfertarClienteException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recalcularOferta">
+      <soap:operation soapAction="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/recalcularOferta" style="document"/>
+      <wsdl:input name="recalcularOferta">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recalcularOfertaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RecalcularOfertaException">
+        <soap:fault name="RecalcularOfertaException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cederDerechos">
+      <soap:operation soapAction="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/cederDerechos" style="document"/>
+      <wsdl:input name="cederDerechos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cederDerechosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ReservarCreditoException">
+        <soap:fault name="ReservarCreditoException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reservarCredito">
+      <soap:operation soapAction="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/reservarCredito" style="document"/>
+      <wsdl:input name="reservarCredito">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="reservarCreditoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ReservarCreditoException">
+        <soap:fault name="ReservarCreditoException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SafinServices">
+    <wsdl:port binding="tns:SafinServicesSoapBinding" name="SafinServicesPort">
+      <soap:address location="http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices?wsdl=SafinServices.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SafinServices" targetNamespace="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:ns1="http://amx.com/mexico/telcel/esb/v1_1">
+      <xs:import namespace="http://amx.com/mexico/telcel/esb/v1_1"/>
+      <xs:element name="consultarOfertaException" type="tns:SafinServicesException"/>
+      <xs:element name="esFineqFuturoException" type="tns:SafinServicesException"/>
+      <xs:complexType name="ConsultarCredito">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+          <xs:element name="consultarCliente" type="tns:ConsultarCreditoPetType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConsultarCreditoPetType">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string"/>
+          <xs:element name="passw" type="xs:string"/>
+          <xs:element minOccurs="0" name="rfc" type="xs:string"/>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+          <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+          <xs:element minOccurs="0" name="curp" type="xs:string"/>
+          <xs:element minOccurs="0" name="idSistema" type="xs:int"/>
+          <xs:element minOccurs="0" name="region" type="xs:string"/>
+          <xs:element minOccurs="0" name="clasificacionCLiente" type="xs:string"/>
+          <xs:element minOccurs="0" name="clasificacionBuro" type="xs:string"/>
+          <xs:element minOccurs="0" name="idFormaPago" type="xs:string"/>
+          <xs:element minOccurs="0" name="icc" type="xs:int"/>
+          <xs:element minOccurs="0" name="bcScore" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConsultarCreditoResponse">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+          <xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+          <xs:element name="consultarCreditoResponse" type="tns:ConsultarCreditoRespType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConsultarCreditoRespType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idConsulta" type="xs:int"/>
+          <xs:element minOccurs="0" name="limiteCredito" type="xs:double"/>
+          <xs:element minOccurs="0" name="creditoRestante" type="xs:double"/>
+          <xs:element minOccurs="0" name="creditoUtilizado" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SafinServicesException">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+          <xs:element name="detailFail" type="ns1:DetailFailType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OfertarCliente">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+          <xs:element name="ofertarCliente" type="tns:OfertarClientePetType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OfertarClientePetType">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string"/>
+          <xs:element name="passw" type="xs:string"/>
+          <xs:element minOccurs="0" name="clasificacionCLiente" type="xs:string"/>
+          <xs:element minOccurs="0" name="rfc" type="xs:string"/>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+          <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+          <xs:element minOccurs="0" name="curp" type="xs:string"/>
+          <xs:element minOccurs="0" name="idProducto" type="xs:int"/>
+          <xs:element minOccurs="0" name="cvePlan" type="xs:string"/>
+          <xs:element name="region" type="xs:string"/>
+          <xs:element name="numParcialidades" type="xs:int"/>
+          <xs:element name="idMovimiento" type="xs:int"/>
+          <xs:element name="idCanal" type="xs:int"/>
+          <xs:element name="idMercado" type="xs:int"/>
+          <xs:element minOccurs="0" name="costoBaseEquipo" type="xs:double"/>
+          <xs:element minOccurs="0" name="sobrePrecio" type="xs:double"/>
+          <xs:element minOccurs="0" name="clasificacionBuro" type="xs:string"/>
+          <xs:element minOccurs="0" name="idFormaPago" type="xs:string"/>
+          <xs:element name="idSistema" type="xs:int"/>
+          <xs:element minOccurs="0" name="cveMarca" type="xs:string"/>
+          <xs:element minOccurs="0" name="cveModelo" type="xs:string"/>
+          <xs:element minOccurs="0" name="numeroEmpleado" type="xs:string"/>
+          <xs:element minOccurs="0" name="fuerzaVenta" type="xs:string"/>
+          <xs:element minOccurs="0" name="telefono" type="xs:string"/>
+          <xs:element minOccurs="0" name="icc" type="xs:int"/>
+          <xs:element minOccurs="0" name="bcScore" type="xs:int"/>
+          <xs:element minOccurs="0" name="costoAmigoKit" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OfertarClienteResponse">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+          <xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+          <xs:element name="ofertarClienteResponse" type="tns:OfertarClienteRespType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OfertarClienteRespType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="oferta" type="tns:OfertaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OfertaType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="limiteCredito" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoEnganche" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoFinanciado" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoParcialidad" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoSobrePrecio" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoTotal" type="xs:double"/>
+          <xs:element minOccurs="0" name="pctEnganche" type="xs:double"/>
+          <xs:element minOccurs="0" name="idOferta" type="xs:int"/>
+          <xs:element minOccurs="0" name="creditoRestante" type="xs:double"/>
+          <xs:element minOccurs="0" name="creditoUtilizado" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoEngancheIva" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoFinanciadoIva" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoParcialidadIva" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoSobrePrecioIva" type="xs:double"/>
+          <xs:element minOccurs="0" name="montoTotalIva" type="xs:double"/>
+          <xs:element minOccurs="0" name="cat" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RecalcularOferta">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+          <xs:element name="recalcularOfertPetType" type="tns:RecalcularOfertaPetType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RecalcularOfertaPetType">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string"/>
+          <xs:element name="passw" type="xs:string"/>
+          <xs:element name="idOferta" type="xs:int"/>
+          <xs:element name="aportacionVol" type="xs:double"/>
+          <xs:element name="region" type="xs:int"/>
+          <xs:element name="idSistema" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RecalcularOfertaResponse">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+          <xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+          <xs:element name="recalcularOfertaRespType" type="tns:RecalcularOfertaRespType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RecalcularOfertaRespType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="oferta" type="tns:OfertaType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CederDerechos">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+          <xs:element name="cederDerechos" type="tns:CederDerechosPetType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CederDerechosPetType">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string"/>
+          <xs:element name="passw" type="xs:string"/>
+          <xs:element name="idSistema" type="xs:int"/>
+          <xs:element name="clienteCedente" type="tns:Cliente"/>
+          <xs:element name="clienteCesionario" type="tns:Cliente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Cliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="rfc" type="xs:string"/>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+          <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+          <xs:element minOccurs="0" name="curp" type="xs:string"/>
+          <xs:element minOccurs="0" name="region" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CederDerechosResponse">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+          <xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+          <xs:element name="cederDerechosResponse" type="tns:CederDerechosRespType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CederDerechosRespType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idCesion" type="xs:int"/>
+          <xs:element minOccurs="0" name="limiteCredito" type="xs:double"/>
+          <xs:element minOccurs="0" name="creditoRestante" type="xs:double"/>
+          <xs:element minOccurs="0" name="creditoUtilizado" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReservarCredito">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataRequestType"/>
+          <xs:element name="reservarCredito" type="tns:ReservarCreditoPetType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReservarCreditoPetType">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string"/>
+          <xs:element name="passw" type="xs:string"/>
+          <xs:element minOccurs="0" name="rfc" type="xs:string"/>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+          <xs:element minOccurs="0" name="apellidos" type="xs:string"/>
+          <xs:element minOccurs="0" name="curp" type="xs:string"/>
+          <xs:element minOccurs="0" name="idSistema" type="xs:int"/>
+          <xs:element minOccurs="0" name="region" type="xs:string"/>
+          <xs:element minOccurs="0" name="idOferta" type="xs:int"/>
+          <xs:element minOccurs="0" name="idTramite" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReservarCreditoResponse">
+        <xs:sequence>
+          <xs:element name="controlData" type="ns1:ControlDataResponseType"/>
+          <xs:element name="detailResponse" type="ns1:DetailResponseType"/>
+          <xs:element name="reservarCreditoResponse" type="tns:ReservarCreditoRespType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReservarCreditoRespType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idReserva" type="xs:int"/>
+          <xs:element minOccurs="0" name="limiteCredito" type="xs:double"/>
+          <xs:element minOccurs="0" name="creditoRestante" type="xs:double"/>
+          <xs:element minOccurs="0" name="creditoUtilizado" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PeticionType">
+        <xs:sequence>
+          <xs:element name="usuario" type="xs:string"/>
+          <xs:element name="passw" type="xs:string"/>
+          <xs:element minOccurs="0" name="folioSisact" type="xs:int"/>
+          <xs:element minOccurs="0" name="rfc" type="xs:string"/>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+          <xs:element name="numParcialidades" type="xs:int"/>
+          <xs:element name="idSistema" type="xs:int"/>
+          <xs:element name="idProducto" type="xs:int"/>
+          <xs:element name="idMercado" type="xs:int"/>
+          <xs:element name="idMovimiento" type="xs:int"/>
+          <xs:element name="idCanal" type="xs:int"/>
+          <xs:element minOccurs="0" name="costoBaseEquipo" type="xs:double"/>
+          <xs:element minOccurs="0" name="limiteDeCredito" type="xs:double"/>
+          <xs:element minOccurs="0" name="sobrePrecio" type="xs:double"/>
+          <xs:element minOccurs="0" name="pctEnganche" type="xs:double"/>
+          <xs:element name="region" type="xs:string"/>
+          <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="clasificacionCLiente" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="consultarCreditoException" nillable="true" type="tns:SafinServicesException"/>
+      <xs:element name="ofertarClienteException" nillable="true" type="tns:SafinServicesException"/>
+      <xs:element name="recalcularOfertaException" nillable="true" type="tns:SafinServicesException"/>
+      <xs:element name="reservarCreditoException" nillable="true" type="tns:SafinServicesException"/>
+      <xs:element name="consultarCredito" nillable="true" type="tns:ConsultarCredito"/>
+      <xs:element name="consultarCreditoResponse" nillable="true" type="tns:ConsultarCreditoResponse"/>
+      <xs:element name="ofertarCliente" nillable="true" type="tns:OfertarCliente"/>
+      <xs:element name="ofertarClienteResponse" nillable="true" type="tns:OfertarClienteResponse"/>
+      <xs:element name="recalcularOferta" nillable="true" type="tns:RecalcularOferta"/>
+      <xs:element name="recalcularOfertaResponse" nillable="true" type="tns:RecalcularOfertaResponse"/>
+      <xs:element name="cederDerechos" nillable="true" type="tns:CederDerechos"/>
+      <xs:element name="cederDerechosResponse" nillable="true" type="tns:CederDerechosResponse"/>
+      <xs:element name="reservarCredito" nillable="true" type="tns:ReservarCredito"/>
+      <xs:element name="reservarCreditoResponse" nillable="true" type="tns:ReservarCreditoResponse"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://amx.com/mexico/telcel/esb/v1_1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://amx.com/mexico/telcel/esb/v1_1">
+      <xs:complexType name="ControlDataRequestType">
+        <xs:sequence>
+          <xs:element name="messageUUID" type="xs:string"/>
+          <xs:element name="requestDate" type="xs:dateTime"/>
+          <xs:element name="sendBy" type="xs:string"/>
+          <xs:element name="version" type="xs:string"/>
+          <xs:element minOccurs="0" name="ipClient" type="xs:string"/>
+          <xs:element minOccurs="0" name="ipServer" type="xs:string"/>
+          <xs:element minOccurs="0" name="user" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ControlDataResponseType">
+        <xs:sequence>
+          <xs:element name="messageUUID" type="xs:string"/>
+          <xs:element name="responseDate" type="xs:anySimpleType"/>
+          <xs:element name="sendBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="latency" type="xs:long"/>
+          <xs:element name="version" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DetailResponseType">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string"/>
+          <xs:element minOccurs="0" name="severityLevel" type="xs:int"/>
+          <xs:element name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="actor" type="xs:string"/>
+          <xs:element minOccurs="0" name="businessMeaning" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DetailFailType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="errors" type="tns:ErrorType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ErrorType">
+        <xs:sequence>
+          <xs:element name="code" type="xs:string"/>
+          <xs:element name="severityLevel" type="xs:int"/>
+          <xs:element name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="actor" type="xs:string"/>
+          <xs:element name="businessMeaning" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ofertarCliente">
+    <wsdl:part element="ns1:ofertarCliente" name="consultarOfertaRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recalcularOferta">
+    <wsdl:part element="ns1:recalcularOferta" name="recalcularOfertaRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCredito">
+    <wsdl:part element="ns1:consultarCredito" name="consultarCreditoRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultarCreditoException">
+    <wsdl:part element="ns1:consultarCreditoException" name="ConsultarCreditoException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCreditoResponse">
+    <wsdl:part element="ns1:consultarCreditoResponse" name="consultarCreditoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReservarCreditoException">
+    <wsdl:part element="ns1:reservarCreditoException" name="ReservarCreditoException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ofertarClienteResponse">
+    <wsdl:part element="ns1:ofertarClienteResponse" name="ofertarClienteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cederDerechos">
+    <wsdl:part element="ns1:cederDerechos" name="cederDerechosRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cederDerechosResponse">
+    <wsdl:part element="ns1:cederDerechosResponse" name="cederDerechosResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recalcularOfertaResponse">
+    <wsdl:part element="ns1:recalcularOfertaResponse" name="recalcularOfertaResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reservarCreditoResponse">
+    <wsdl:part element="ns1:reservarCreditoResponse" name="reservarCreditoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OfertarClienteException">
+    <wsdl:part element="ns1:ofertarClienteException" name="OfertarClienteException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RecalcularOfertaException">
+    <wsdl:part element="ns1:recalcularOfertaException" name="RecalcularOfertaException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="reservarCredito">
+    <wsdl:part element="ns1:reservarCredito" name="reservarCreditoRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SafinServices">
+    <wsdl:operation name="consultarCredito">
+      <wsdl:input message="ns1:consultarCredito" name="consultarCredito"></wsdl:input>
+      <wsdl:output message="ns1:consultarCreditoResponse" name="consultarCreditoResponse"></wsdl:output>
+      <wsdl:fault message="ns1:ConsultarCreditoException" name="ConsultarCreditoException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ofertarCliente">
+      <wsdl:input message="ns1:ofertarCliente" name="ofertarCliente"></wsdl:input>
+      <wsdl:output message="ns1:ofertarClienteResponse" name="ofertarClienteResponse"></wsdl:output>
+      <wsdl:fault message="ns1:OfertarClienteException" name="OfertarClienteException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recalcularOferta">
+      <wsdl:input message="ns1:recalcularOferta" name="recalcularOferta"></wsdl:input>
+      <wsdl:output message="ns1:recalcularOfertaResponse" name="recalcularOfertaResponse"></wsdl:output>
+      <wsdl:fault message="ns1:RecalcularOfertaException" name="RecalcularOfertaException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cederDerechos">
+      <wsdl:input message="ns1:cederDerechos" name="cederDerechos"></wsdl:input>
+      <wsdl:output message="ns1:cederDerechosResponse" name="cederDerechosResponse"></wsdl:output>
+      <wsdl:fault message="ns1:ReservarCreditoException" name="ReservarCreditoException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="reservarCredito">
+      <wsdl:input message="ns1:reservarCredito" name="reservarCredito"></wsdl:input>
+      <wsdl:output message="ns1:reservarCreditoResponse" name="reservarCreditoResponse"></wsdl:output>
+      <wsdl:fault message="ns1:ReservarCreditoException" name="ReservarCreditoException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices</con:endpoint><con:endpoint>http://VI8G02304EXMXCO:8098/mockSafinServicesSoapBinding</con:endpoint></con:endpoints><con:operation id="2ef1007c-3bc7-4ac4-95e9-31a83e7abdd3" isOneWay="false" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/cederDerechos" name="cederDerechos" bindingOperationName="cederDerechos" type="Request-Response" outputName="cederDerechosResponse" inputName="cederDerechos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1091b4f9-525c-44f4-83d4-24a47fc081a3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:saf="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:v1="http://amx.com/mexico/telcel/esb/v1_1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <saf:cederDerechos>\r
+         <controlData>\r
+            <v1:messageUUID>?</v1:messageUUID>\r
+            <v1:requestDate>?</v1:requestDate>\r
+            <v1:sendBy>?</v1:sendBy>\r
+            <v1:version>?</v1:version>\r
+            <!--Optional:-->\r
+            <v1:ipClient>?</v1:ipClient>\r
+            <!--Optional:-->\r
+            <v1:ipServer>?</v1:ipServer>\r
+            <!--Optional:-->\r
+            <v1:user>?</v1:user>\r
+         </controlData>\r
+         <cederDerechos>\r
+            <usuario>?</usuario>\r
+            <passw>?</passw>\r
+            <idSistema>?</idSistema>\r
+            <clienteCedente>\r
+               <!--Optional:-->\r
+               <rfc>?</rfc>\r
+               <!--Optional:-->\r
+               <nombre>?</nombre>\r
+               <!--Optional:-->\r
+               <apellidos>?</apellidos>\r
+               <!--Optional:-->\r
+               <curp>?</curp>\r
+               <!--Optional:-->\r
+               <region>?</region>\r
+            </clienteCedente>\r
+            <clienteCesionario>\r
+               <!--Optional:-->\r
+               <rfc>?</rfc>\r
+               <!--Optional:-->\r
+               <nombre>?</nombre>\r
+               <!--Optional:-->\r
+               <apellidos>?</apellidos>\r
+               <!--Optional:-->\r
+               <curp>?</curp>\r
+               <!--Optional:-->\r
+               <region>?</region>\r
+            </clienteCesionario>\r
+         </cederDerechos>\r
+      </saf:cederDerechos>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/cederDerechos"/></con:call></con:operation><con:operation id="3311f85a-856a-41b5-8ba8-9f3137b6220b" isOneWay="false" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/consultarCredito" name="consultarCredito" bindingOperationName="consultarCredito" type="Request-Response" outputName="consultarCreditoResponse" inputName="consultarCredito" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2630d3f2-7d95-49ad-984e-fd62397c5347" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://VI8G02304EXMXCO:8098/mockSafinServicesSoapBinding</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/consultarCredito"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f4dc1b71-6557-4d85-a9a1-178b9042e87b" name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices</con:endpoint><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/consultarCredito"/></con:call></con:operation><con:operation id="7a6d5128-a91b-41b8-96f1-35e3d5dfa589" isOneWay="false" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/ofertarCliente" name="ofertarCliente" bindingOperationName="ofertarCliente" type="Request-Response" outputName="ofertarClienteResponse" inputName="ofertarCliente" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7f93143f-85c2-4495-9d95-dca7fe23d76b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://VI8G02304EXMXCO:8098/mockSafinServicesSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:saf="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:v1="http://amx.com/mexico/telcel/esb/v1_1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <saf:ofertarCliente>\r
+         <controlData>\r
+            <v1:messageUUID>312312</v1:messageUUID>\r
+            <v1:requestDate>2019-04-17T10:23:23.555</v1:requestDate>\r
+            <v1:sendBy>SISACT</v1:sendBy>
+            <v1:version>1.0</v1:version>
+            <!--Optional:-->
+            <v1:ipClient>1.1.1.1</v1:ipClient>
+            <!--Optional:-->
+            <v1:ipServer>1.1.1.1</v1:ipServer>
+            <!--Optional:-->
+            <v1:user>lromeroh</v1:user>
+         </controlData>\r
+         <ofertarCliente>\r
+            <usuario>ECAC</usuario>\r
+            <passw>3c4C!#</passw>\r
+            <!--Optional:-->\r
+            <clasificacionCLiente>BUENO1</clasificacionCLiente>\r
+            <!--Optional:-->\r
+            <rfc>ACRM881012HRF</rfc>\r
+            <!--Optional:-->\r
+            <nombre>MARTIN ALEXIS</nombre>\r
+            <!--Optional:-->\r
+            <apellidos>ACOSTA RODRIGUEZ</apellidos>\r
+            <!--Optional:-->\r
+            <curp></curp>\r
+            <!--Optional:-->\r
+            <idProducto>1</idProducto>\r
+            <!--Optional:-->\r
+            <cvePlan>S01L09</cvePlan>\r
+            <region>9</region>\r
+            <numParcialidades>24</numParcialidades>\r
+            <idMovimiento>1</idMovimiento>\r
+            <idCanal>1</idCanal>\r
+            <idMercado>1</idMercado>\r
+            <!--Optional:-->\r
+            <costoBaseEquipo>34000</costoBaseEquipo>\r
+            <!--Optional:-->\r
+            <sobrePrecio>0</sobrePrecio>\r
+            <!--Optional:-->\r
+            <clasificacionBuro>BUENO1</clasificacionBuro>\r
+            <!--Optional:-->\r
+            <idFormaPago>EF</idFormaPago>\r
+            <idSistema>1</idSistema>\r
+            <!--Optional:-->\r
+            <cveMarca>APPLE</cveMarca>\r
+            <!--Optional:-->\r
+            <cveModelo>IPHONE</cveModelo>\r
+            <!--Optional:-->\r
+            <numeroEmpleado>12345</numeroEmpleado>\r
+            <!--Optional:-->\r
+            <fuerzaVenta>FZ1</fuerzaVenta>\r
+            <!--Optional:-->\r
+            <telefono>5514324003</telefono>\r
+            <!--Optional:-->\r
+            <icc>240</icc>\r
+            <!--Optional:-->\r
+            <bcScore>1000</bcScore>\r
+            <!--Optional:-->\r
+            <costoAmigoKit>111</costoAmigoKit>\r
+         </ofertarCliente>\r
+      </saf:ofertarCliente>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/ofertarCliente"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3d6edfd3-a7d8-41f3-bd94-63c13a352fc2" isOneWay="false" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/recalcularOferta" name="recalcularOferta" bindingOperationName="recalcularOferta" type="Request-Response" outputName="recalcularOfertaResponse" inputName="recalcularOferta" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b5ac6863-ca35-4c77-98af-4c5b40d1dfb2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://VI8G02304EXMXCO:8098/mockSafinServicesSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:saf="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:v1="http://amx.com/mexico/telcel/esb/v1_1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <saf:recalcularOferta>\r
+         <controlData>\r
+            <v1:messageUUID>312312</v1:messageUUID>
+            <v1:requestDate>2019-04-17T10:23:23.555</v1:requestDate>
+            <v1:sendBy>SISACT</v1:sendBy>
+            <v1:version>1.0</v1:version>
+            <!--Optional:-->
+            <v1:ipClient>1.1.1.1</v1:ipClient>
+            <!--Optional:-->
+            <v1:ipServer>1.1.1.1</v1:ipServer>
+            <!--Optional:-->
+            <v1:user>lromeroh</v1:user>
+         </controlData>\r
+         <recalcularOfertPetType>\r
+            <usuario>ECAC</usuario>\r
+            <passw>3c4C!#</passw>\r
+            <idOferta>106400</idOferta>\r
+            <aportacionVol>-5000</aportacionVol>\r
+            <region></region>\r
+            <idSistema></idSistema>\r
+         </recalcularOfertPetType>\r
+      </saf:recalcularOferta>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/recalcularOferta"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cd4d2165-ae09-4057-b890-f60becb13c4d" isOneWay="false" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/reservarCredito" name="reservarCredito" bindingOperationName="reservarCredito" type="Request-Response" outputName="reservarCreditoResponse" inputName="reservarCredito" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="85d239f9-f215-4f89-a9c2-6fd20eaddad2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:saf="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:v1="http://amx.com/mexico/telcel/esb/v1_1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <saf:reservarCredito>\r
+         <controlData>\r
+            <v1:messageUUID>?</v1:messageUUID>\r
+            <v1:requestDate>?</v1:requestDate>\r
+            <v1:sendBy>?</v1:sendBy>\r
+            <v1:version>?</v1:version>\r
+            <!--Optional:-->\r
+            <v1:ipClient>?</v1:ipClient>\r
+            <!--Optional:-->\r
+            <v1:ipServer>?</v1:ipServer>\r
+            <!--Optional:-->\r
+            <v1:user>?</v1:user>\r
+         </controlData>\r
+         <reservarCredito>\r
+            <usuario>?</usuario>\r
+            <passw>?</passw>\r
+            <!--Optional:-->\r
+            <rfc>?</rfc>\r
+            <!--Optional:-->\r
+            <nombre>?</nombre>\r
+            <!--Optional:-->\r
+            <apellidos>?</apellidos>\r
+            <!--Optional:-->\r
+            <curp>?</curp>\r
+            <!--Optional:-->\r
+            <idSistema>?</idSistema>\r
+            <!--Optional:-->\r
+            <region>?</region>\r
+            <!--Optional:-->\r
+            <idOferta>?</idOferta>\r
+            <!--Optional:-->\r
+            <idTramite>?</idTramite>\r
+         </reservarCredito>\r
+      </saf:reservarCredito>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/reservarCredito"/></con:call></con:operation></con:interface><con:mockService id="4cfe6edf-7ec2-4db4-9110-f39d492c6721" port="8098" path="/mockSafinServicesSoapBinding" host="VI8G02304EXMXCO" name="SafinServicesSoapBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="cederDerechos" id="ffbc2c4c-caf0-413f-b299-82fc4f21579e" interface="SafinServicesSoapBinding" operation="cederDerechos"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="fb79ba61-e353-40a7-baab-cf6b01ebf9dc" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:saf="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:v1="http://amx.com/mexico/telcel/esb/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <saf:cederDerechosResponse>
+         <controlData>
+            <v1:messageUUID>?</v1:messageUUID>
+            <v1:responseDate>?</v1:responseDate>
+            <v1:sendBy>?</v1:sendBy>
+            <!--Optional:-->
+            <v1:latency>?</v1:latency>
+            <v1:version>?</v1:version>
+         </controlData>
+         <detailResponse>
+            <v1:code>?</v1:code>
+            <!--Optional:-->
+            <v1:severityLevel>?</v1:severityLevel>
+            <v1:description>?</v1:description>
+            <!--Optional:-->
+            <v1:actor>?</v1:actor>
+            <!--Optional:-->
+            <v1:businessMeaning>?</v1:businessMeaning>
+         </detailResponse>
+         <cederDerechosResponse>
+            <!--Optional:-->
+            <idCesion>?</idCesion>
+            <!--Optional:-->
+            <limiteCredito>?</limiteCredito>
+            <!--Optional:-->
+            <creditoRestante>?</creditoRestante>
+            <!--Optional:-->
+            <creditoUtilizado>?</creditoUtilizado>
+         </cederDerechosResponse>
+      </saf:cederDerechosResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/cederDerechos"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="consultarCredito" id="41aa9101-b1a5-4631-8d84-9a75874f6701" interface="SafinServicesSoapBinding" operation="consultarCredito"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="31b23dc4-5be4-4219-aa19-6f1f7a6197a1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns3:consultarCreditoResponse xmlns:ns2="http://amx.com/mexico/telcel/esb/v1_1" xmlns:ns3="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices">
+         <controlData>
+            <ns2:messageUUID>12234-2455-3333</ns2:messageUUID>
+            <ns2:responseDate>2019-05-03T10:43:23.042-05:00</ns2:responseDate>
+            <ns2:sendBy>SAFIN</ns2:sendBy>
+            <ns2:latency>1</ns2:latency>
+            <ns2:version>2.0</ns2:version>
+         </controlData>
+         <detailResponse>
+            <ns2:code>00</ns2:code>
+            <ns2:severityLevel>0</ns2:severityLevel>
+            <ns2:description>Operación exitosa</ns2:description>
+            <ns2:actor>SAFIN</ns2:actor>
+            <ns2:businessMeaning>EXITO</ns2:businessMeaning>
+         </detailResponse>
+         <consultarCreditoResponse>
+            <idConsulta>1</idConsulta>
+            <limiteCredito>40000.0</limiteCredito>
+            <creditoRestante>30000.0</creditoRestante>
+            <creditoUtilizado>10000.0</creditoUtilizado>
+         </consultarCreditoResponse>
+      </ns3:consultarCreditoResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/consultarCredito"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="ofertarCliente" id="b08200d9-0c89-45f9-8817-02e84f624135" interface="SafinServicesSoapBinding" operation="ofertarCliente"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="0e1bb1eb-15f3-4d3a-a211-dccdcbe9f3bb" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns3:ofertarClienteResponse xmlns:ns2="http://amx.com/mexico/telcel/esb/v1_1" xmlns:ns3="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices">
+         <controlData>
+            <ns2:messageUUID>12234-2455-3333</ns2:messageUUID>
+            <ns2:responseDate>2019-05-03T11:03:06.090-05:00</ns2:responseDate>
+            <ns2:sendBy>SAFIN</ns2:sendBy>
+            <ns2:latency>1</ns2:latency>
+            <ns2:version>2.0</ns2:version>
+         </controlData>
+         <detailResponse>
+            <ns2:code>00</ns2:code>
+            <ns2:severityLevel>0</ns2:severityLevel>
+            <ns2:description>Operación exitosa</ns2:description>
+            <ns2:actor>SAFIN</ns2:actor>
+            <ns2:businessMeaning>EXITO</ns2:businessMeaning>
+         </detailResponse>
+         <ofertarClienteResponse>
+            <oferta>
+               <limiteCredito>40000.0</limiteCredito>
+               <montoEnganche>0.0</montoEnganche>
+               <montoFinanciado>34000.0</montoFinanciado>
+               <montoParcialidad>1416.66</montoParcialidad>
+               <montoSobrePrecio>0.0</montoSobrePrecio>
+               <montoTotal>34000.0</montoTotal>
+               <pctEnganche>0.0</pctEnganche>
+               <creditoRestante>6000.0</creditoRestante>
+               <creditoUtilizado>34000.0</creditoUtilizado>
+               <montoEngancheIva>0.0</montoEngancheIva>
+               <montoFinanciadoIva>39440.0</montoFinanciadoIva>
+               <montoParcialidadIva>1643.3256</montoParcialidadIva>
+               <montoSobrePrecioIva>0.0</montoSobrePrecioIva>
+               <montoTotalIva>39440.0</montoTotalIva>
+               <cat>10.0</cat>
+            </oferta>
+         </ofertarClienteResponse>
+      </ns3:ofertarClienteResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/ofertarCliente"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="recalcularOferta" id="175a534b-ad24-4711-8611-897a674edae5" interface="SafinServicesSoapBinding" operation="recalcularOferta"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="d5da2aac-1c75-47ed-ae97-cf0a21124ac2" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns3:recalcularOfertaResponse xmlns:ns2="http://amx.com/mexico/telcel/esb/v1_1" xmlns:ns3="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices">
+         <controlData>
+            <ns2:messageUUID>312312</ns2:messageUUID>
+            <ns2:responseDate>2019-05-03T16:03:24.243Z</ns2:responseDate>
+            <ns2:sendBy>SAFIN</ns2:sendBy>
+            <ns2:latency>1004</ns2:latency>
+            <ns2:version>1.0</ns2:version>
+         </controlData>
+         <detailResponse>
+            <ns2:code>00</ns2:code>
+            <ns2:severityLevel>0</ns2:severityLevel>
+            <ns2:description>Operación exitosa</ns2:description>
+            <ns2:actor>SISACT</ns2:actor>
+            <ns2:businessMeaning/>
+         </detailResponse>
+         <recalcularOfertaRespType>
+            <oferta>
+               <limiteCredito>11212.14</limiteCredito>
+               <montoEnganche>-4217.42</montoEnganche>
+               <montoFinanciado>11212.14</montoFinanciado>
+               <montoParcialidad>934.34</montoParcialidad>
+               <montoSobrePrecio>2656.72</montoSobrePrecio>
+               <montoTotal>6994.72</montoTotal>
+               <pctEnganche>-107.78</pctEnganche>
+               <idOferta>107770</idOferta>
+            </oferta>
+         </recalcularOfertaRespType>
+      </ns3:recalcularOfertaResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/recalcularOferta"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="reservarCredito" id="6bcda82a-c47c-49d9-bec3-0499a3a73f00" interface="SafinServicesSoapBinding" operation="reservarCredito"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="de7fa49d-7c3a-42c0-b244-417634f0e8cb" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:saf="http://www.amx.com.mx/mexico/telcel/di/sds/gds/dcol/safinservices" xmlns:v1="http://amx.com/mexico/telcel/esb/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <saf:reservarCreditoResponse>
+         <controlData>
+            <v1:messageUUID>?</v1:messageUUID>
+            <v1:responseDate>?</v1:responseDate>
+            <v1:sendBy>?</v1:sendBy>
+            <!--Optional:-->
+            <v1:latency>?</v1:latency>
+            <v1:version>?</v1:version>
+         </controlData>
+         <detailResponse>
+            <v1:code>?</v1:code>
+            <!--Optional:-->
+            <v1:severityLevel>?</v1:severityLevel>
+            <v1:description>?</v1:description>
+            <!--Optional:-->
+            <v1:actor>?</v1:actor>
+            <!--Optional:-->
+            <v1:businessMeaning>?</v1:businessMeaning>
+         </detailResponse>
+         <reservarCreditoResponse>
+            <!--Optional:-->
+            <idReserva>?</idReserva>
+            <!--Optional:-->
+            <limiteCredito>?</limiteCredito>
+            <!--Optional:-->
+            <creditoRestante>?</creditoRestante>
+            <!--Optional:-->
+            <creditoUtilizado>?</creditoUtilizado>
+         </reservarCreditoResponse>
+      </saf:reservarCreditoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://localhost:9080/mexico/telcel/di/sds/gds/dcol/safinservices/reservarCredito"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

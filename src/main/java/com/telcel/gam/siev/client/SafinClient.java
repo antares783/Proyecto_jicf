@@ -98,7 +98,7 @@ public class SafinClient extends WebServiceGatewaySupport{
         ofertarClientePetType.setRegion(pojo.getRegion());
         ofertarClientePetType.setNumParcialidades(pojo.getParcialidades());
         ofertarClientePetType.setIdMovimiento(Integer.parseInt(pojo.getMovimiento()));
-        ofertarClientePetType.setIdCanal(Integer.parseInt(pojo.getIdCanal()));
+//        ofertarClientePetType.setIdCanal(Integer.parseInt(pojo.getIdCanal()));
         ofertarClientePetType.setIdMercado(Integer.parseInt(pojo.getIdMercado()));
         ofertarClientePetType.setCostoBaseEquipo(pojo.getCostoBase());
         ofertarClientePetType.setSobrePrecio(pojo.getSobrePrecio());

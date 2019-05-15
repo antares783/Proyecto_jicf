@@ -33,13 +33,17 @@ input[type="text"] {
 	column-count: 2;
 	column-gap: 25px;
 }
+.ui-inputtext, .ui-inputfield{
+    text-transform: uppercase;    
+    }
 /*]]>*/
 </style>
 </h:head>
 
 
 <h:body>
-	<h1>Consulta Informaci&oacute;n De Evaluaci&oacute;n</h1>
+<!-- 	<p:outputLabel for="@next" value="Sistema Integrado de Evaluación" /> -->
+	<h1>Sistema Integrado de Evaluación</h1>
 	<h:form>
 
 		<p:outputPanel>
@@ -52,28 +56,36 @@ input[type="text"] {
 						<p:outputLabel for="razonSocial" value="Razón Social"
 							styleClass="requiredLb1" />
 						<p:inputText id="razonSocial" label="Razón Social"
-							value="#{sievController.sievPojo.razonSocial}" required="true"/>
+							value="#{sievController.sievPojo.razonSocial}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="nombre" value="Nombre"
 							styleClass="requiredLb1" />
 						<p:inputText id="nombre" label="Nombre"
-							value="#{sievController.sievPojo.nombre}" required="true"/>
+							value="#{sievController.sievPojo.nombre}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="apellidoPaterno" value="Apellido Paterno"
 							styleClass="requiredLb1" />
 						<p:inputText id="apellidoPaterno" label="Apellido Paterno"
-							value="#{sievController.sievPojo.apellidoPaterno}" required="true"/>
+							value="#{sievController.sievPojo.apellidoPaterno}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="apellidoMaterno" value="Apellido Materno"
 							styleClass="requiredLb1" />
 						<p:inputText id="apellidoMaterno" label="Apellido Materno"
-							value="#{sievController.sievPojo.apellidoMaterno}" required="true"/>
+							value="#{sievController.sievPojo.apellidoMaterno}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 
@@ -99,13 +111,17 @@ input[type="text"] {
 					<h:panelGroup layout="block">
 						<p:outputLabel for="rfc" value="RFC" styleClass="requiredLb1" />
 						<p:inputText id="rfc" label="RFC"
-							value="#{sievController.sievPojo.rfc}" required="true"/>
+							value="#{sievController.sievPojo.rfc}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 					
 					<h:panelGroup layout="block">
 						<p:outputLabel for="curp" value="CURP" styleClass="requiredLb1" />
 						<p:inputText id="curp" label="CURP"
-							value="#{sievController.sievPojo.curp}" required="true"/>
+							value="#{sievController.sievPojo.curp}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<!-- Falta definir estados como catalogo, el valor de envio no es el correcto-->
@@ -163,69 +179,89 @@ input[type="text"] {
 						<p:outputLabel for="delegacionMunicipio"
 							value="Delegación/Municipio" styleClass="requiredLb1" />
 						<p:inputText id="delegacionMunicipio" label="Delegación/Municipio"
-							value="#{sievController.sievPojo.delegacionMunicipio}" required="true"/>
+							value="#{sievController.sievPojo.delegacionMunicipio}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="calle" value="Calle" styleClass="requiredLb1" />
 						<p:inputText id="calle" label="Calle"
-							value="#{sievController.sievPojo.calle}" required="true"/>
+							value="#{sievController.sievPojo.calle}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="numExterior" value="Número Exterior"
 							styleClass="requiredLb1" />
 						<p:inputText id="numExterior" label="Número Exterior"
-							value="#{sievController.sievPojo.numeroExterior}" required="true"/>
+							value="#{sievController.sievPojo.numeroExterior}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="coloniaPoblacion" value="Colonia/Población"
 							styleClass="requiredLb1" />
 						<p:inputText id="coloniaPoblacion" label="Colonia/Población"
-							value="#{sievController.sievPojo.coloniaPoblacion}" required="true"/>
+							value="#{sievController.sievPojo.coloniaPoblacion}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="ciudad" value="Ciudad"
 							styleClass="requiredLb1" />
 						<p:inputText id="ciudad" label="Ciudad"
-							value="#{sievController.sievPojo.ciudad}" required="true"/>
+							value="#{sievController.sievPojo.ciudad}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="codigoPostal" value="Código Postal"
 							styleClass="requiredLb1" />
 						<p:inputText id="codigoPostal" label="Código Postal"
-							value="#{sievController.sievPojo.codigoPostal}" required="true" />
+							value="#{sievController.sievPojo.codigoPostal}" required="true" >
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="telefonoCasa" value="Teléfono Casa"
 							styleClass="requiredLb1" />
 						<p:inputText id="telefonoCasa" label="Teléfono Casa"
-							value="#{sievController.sievPojo.telefonoCasa}" required="true"/>
+							value="#{sievController.sievPojo.telefonoCasa}" required="true">
+							<p:keyFilter regEx="/[+1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="telefonoOficina" value="Teléfono Oficina"
 							styleClass="requiredLb1" />
 						<p:inputText id="telefonoOficina" label="Teléfono Oficina"
-							value="#{sievController.sievPojo.telefonoOficina}" required="true"/>
+							value="#{sievController.sievPojo.telefonoOficina}" required="true">
+							<p:keyFilter regEx="/[+1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="telefonoReferencia"
 							value="Teléfono Referencia" styleClass="requiredLb1" />
 						<p:inputText id="telefonoReferencia" label="Teléfono Referencia"
-							value="#{sievController.sievPojo.telefonoReferencia}" required="true"/>
+							value="#{sievController.sievPojo.telefonoReferencia}" required="true">
+							<p:keyFilter regEx="/[+1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="nombreReferencia" value="Nombre Referencia"
 							styleClass="requiredLb1" />
 						<p:inputText id="nombreReferencia" label="Nombre Referencia"
-							value="#{sievController.sievPojo.nombreReferencia}" required="true"/>
+							value="#{sievController.sievPojo.nombreReferencia}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 
@@ -259,41 +295,53 @@ input[type="text"] {
 						<p:outputLabel for="tarjetaCredito" value="Tarjeta de Crédito"
 							styleClass="requiredLb1" />
 						<p:inputText id="tarjetaCredito" label="Tarjeta de Crédito"
-							value="#{sievController.sievPojo.tarjetaCredito}" />
+							value="#{sievController.sievPojo.tarjetaCredito}" >
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="vigenciaTarjeta" value="Vigencia Tarjeta"
 							styleClass="requiredLb1" />
 						<p:inputText id="vigenciaTarjeta" label="Vigencia Tarjeta"
-							value="#{sievController.sievPojo.vigenciaTarjeta}" />
+							value="#{sievController.sievPojo.vigenciaTarjeta}"  minValue="0" maxValue="9999">
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="claveBanco" value="Clave Banco"
 							styleClass="requiredLb1" />
 						<p:inputText id="claveBanco" label="Clave Banco"
-							value="#{sievController.sievPojo.claveBanco}" />
+							value="#{sievController.sievPojo.claveBanco}" >
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="digitosTC" value="Digitos TC"
 							styleClass="requiredLb1" />
 						<p:inputText id="digitosTC" label="Digitos TC"
-							value="#{sievController.sievPojo.digitosTC}" />
+							value="#{sievController.sievPojo.digitosTC}" >
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="cvv" value="CVV" styleClass="requiredLb1" />
 						<p:inputText id="cvv" label="CVV"
-							value="#{sievController.sievPojo.cvv}" />
+							value="#{sievController.sievPojo.cvv}" minValue="0" maxValue="999">
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="folioSistema" value="Folio Sistema"
 							styleClass="requiredLb1" />
 						<p:inputText id="folioSistema" label="Folio Sistema"
-							value="#{sievController.sievPojo.folioSistema}" />
+							value="#{sievController.sievPojo.folioSistema}" >
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 				</p:panelGrid>
 			</p:panel>
@@ -822,63 +870,55 @@ input[type="text"] {
 			<p:panel header="Datos del equipo">
 				<p:panelGrid columns="3" cellpadding="5" layout="grid">
 					<h:panelGroup layout="block">
-						<h:outputLabel for="depositoInicial" value="Depósito Inicial"
-							styleClass="requiredLb1" />
+						<h:outputLabel for="depositoInicial" value="Depósito Inicial"/>
 						<p:inputNumber id="depositoInicial"
-							value="#{sievController.sievPojo.depositoInicial}"  required="true"/>
+							value="#{sievController.sievPojo.depositoInicial}" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="renta" value="Renta" styleClass="requiredLb1" />
+						<h:outputLabel for="renta" value="Renta"/>
 						<p:inputNumber id="renta"
 							value="#{sievController.sievPojo.renta}" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="montoServicio" value="Monto Servicio"
-							styleClass="requiredLb1" />
+						<h:outputLabel for="montoServicio" value="Monto Servicio"/>
 						<p:inputNumber id="montoServicio"
 							value="#{sievController.sievPojo.montoServicio}" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="precioLista" value="Precio Lista"
-							styleClass="requiredLb1" />
+						<h:outputLabel for="precioLista" value="Precio Lista"/>
 						<p:inputNumber id="precioLista"
 							value="#{sievController.sievPojo.precioLista}" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="precioKit" value="Precio Kit"
-							styleClass="requiredLb1" />
+						<h:outputLabel for="precioKit" value="Precio Kit"/>
 						<p:inputNumber id="precioKit"
 							value="#{sievController.sievPojo.precioKit}" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="anticipo" value="Anticipo"
-							styleClass="requiredLb1" />
+						<h:outputLabel for="anticipo" value="Anticipo"/>
 						<p:inputNumber id="anticipo"
 							value="#{sievController.sievPojo.anticipo}" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="costoBaseEquipo" value="Costo Base"
-							styleClass="requiredLb1" />
+						<h:outputLabel for="costoBaseEquipo" value="Costo Base"/>
 						<p:inputNumber id="costoBaseEquipo"
 							value="#{sievController.sievPojo.costoBaseEquipo}" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="parcialidades" value="Parcialidades"
-							styleClass="requiredLb1" />
+						<h:outputLabel for="parcialidades" value="Parcialidades"/>
 						<p:inputNumber id="parcialidades"
 							value="#{sievController.sievPojo.parcialidades}" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="sobreprecio" value="Sobre Precio"
-							styleClass="requiredLb1" />
+						<h:outputLabel for="sobreprecio" value="Sobre Precio"/>
 						<p:inputNumber id="sobreprecio"
 							value="#{sievController.sievPojo.sobreprecio}" required="true"/>
 					</h:panelGroup>
@@ -1084,16 +1124,12 @@ input[type="text"] {
 						</p:selectOneMenu>
 					</h:panelGroup>
 
-					<h:panelGroup layout="block">
-						<p:outputLabel for="idCanal" value="Canal" />
-						<p:selectOneMenu id="idCanal"
-							value="#{sievController.sievPojo.idCanal}" required="true">
-							<f:selectItem itemValue="" itemLabel="Selección..." />
-							<f:selectItem itemValue="1" itemLabel="DAT" />
-							<f:selectItem itemValue="2" itemLabel="CAC" />
-							<f:selectItem itemValue="3" itemLabel="TELEFONICO" />
-						</p:selectOneMenu>
-					</h:panelGroup>
+<!-- 					<h:panelGroup layout="block"> -->
+<!-- 						<p:outputLabel for="idCanal" value="Canal" /> -->
+<!-- 						<p:selectOneMenu id="idCanal" value="#{sievController.sievPojo.idCanal}" required="true"> -->
+<!-- 							<f:selectItems value="#{sievController.lista}" var="canal" itemValue="canal.clave" itemLabel="canal.canal"/> -->
+<!-- 						</p:selectOneMenu> -->
+<!-- 					</h:panelGroup> -->
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="idMercado" value="Mercado"/>
@@ -1134,30 +1170,40 @@ input[type="text"] {
 					<h:panelGroup layout="block">
 						<p:outputLabel for="numEmpleado" value="Número Empleado" />
 						<p:inputText id="numEmpleado"
-							value="#{sievController.sievPojo.numEmpleado}" required="true" />
+							value="#{sievController.sievPojo.numEmpleado}" required="true" >
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="clasiCliente" value="Clasificación Cliente" />
 						<p:inputText type="text" id="clasiCliente"
-							value="#{sievController.sievPojo.clasificacionCliente}" required="true"/>
+							value="#{sievController.sievPojo.clasificacionCliente}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="clasiBuro" value="Clasificación Buro" />
 						<p:inputText type="text" id="clasiBuro"
-							value="#{sievController.sievPojo.clasificacionCliente}" required="true"/>
+							value="#{sievController.sievPojo.clasificacionCliente}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="icc" value="ICC" />
-						<p:inputText id="icc" value="#{sievController.sievPojo.icc}" required="true"/>
+						<p:inputText id="icc" value="#{sievController.sievPojo.icc}" required="true">
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="scoreBuro" value="Score Buró" />
 						<p:inputText type="number" id="scoreBuro"
-							value="#{sievController.sievPojo.scoreBuro}" required="true"/>
+							value="#{sievController.sievPojo.scoreBuro}" required="true">
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
 					</h:panelGroup>
 
 				</p:panelGrid>
@@ -1169,10 +1215,10 @@ input[type="text"] {
 
 				<p:panelGrid columns="2" cellpadding="5" layout="grid">
 					<h:panelGroup layout="block">
-						<p:outputLabel for="idOferta" value="ID Oferta" required="true"/>
+						<p:outputLabel for="idOferta" value="ID Oferta" />
 						<p:inputNumber id="idOferta"
 							value="#{sievController.sievPojo.idOferta}"
-							decimalPlaces="0" />
+							decimalPlaces="0" required="true"/>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
@@ -1190,7 +1236,7 @@ input[type="text"] {
 
 		<p:panelGrid columns="2"  cellpadding="1" layout="grid">
 			<h:panelGroup layout="block">
-				<p:commandButton value="Submit"
+				<p:commandButton value="Consultar"
 					actionListener="#{sievController.submit()}" ajax="false" />
 			</h:panelGroup>
 			<h:panelGroup layout="block">
