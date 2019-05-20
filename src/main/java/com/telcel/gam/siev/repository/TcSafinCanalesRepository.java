@@ -1,11 +1,11 @@
-package com.telcel.gam.siev.repositorio;
+package com.telcel.gam.siev.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.telcel.gam.siev.modelo.TcSafinCanales;
 
-@Component("canal")
+@Repository
 public interface TcSafinCanalesRepository extends JpaRepository<TcSafinCanales, Long>{
 
 }

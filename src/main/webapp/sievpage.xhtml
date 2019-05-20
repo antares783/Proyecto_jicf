@@ -132,46 +132,8 @@ input[type="text"] {
 							style="width:125px" required="true">
 							<f:selectItem itemLabel="Select..."
 								itemValue="" />
-							<f:selectItem itemLabel="Aguascalientes"
-								itemValue="Aguascalientes" />
-							<f:selectItem itemLabel="Baja California"
-								itemValue="Baja California" />
-							<f:selectItem itemLabel="Baja California Sur"
-								itemValue="Baja California Sur" />
-							<f:selectItem itemLabel="Campeche" itemValue="Campeche" />
-							<f:selectItem itemLabel="Ciudad de México"
-								itemValue="Ciudad de México" />
-							<f:selectItem itemLabel="Chihuahua" itemValue="Chihuahua" />
-							<f:selectItem itemLabel="Chiapas" itemValue="Chiapas" />
-							<f:selectItem itemLabel="Coahuila" itemValue="Coahuila" />
-							<f:selectItem itemLabel="Colima" itemValue="Colima" />
-							<f:selectItem itemLabel="Distrito federal"
-								itemValue="Distrito federal" />
-							<f:selectItem itemLabel="Durango" itemValue="Durango" />
-							<f:selectItem itemLabel="Estado de mexico"
-								itemValue="Estado de mexico" />
-							<f:selectItem itemLabel="Guerrero" itemValue="Guerrero" />
-							<f:selectItem itemLabel="Guanajuato" itemValue="Guanajuato" />
-							<f:selectItem itemLabel="Hidalgo" itemValue="Hidalgo" />
-							<f:selectItem itemLabel="Jalisco" itemValue="Jalisco" />
-							<f:selectItem itemLabel="Michoacán" itemValue="Michoacán" />
-							<f:selectItem itemLabel="Morelos" itemValue="Morelos" />
-							<f:selectItem itemLabel="Nayarit" itemValue="Nayarit" />
-							<f:selectItem itemLabel="Nuevo León" itemValue="Nuevo León" />
-							<f:selectItem itemLabel="Oaxaca" itemValue="Oaxaca" />
-							<f:selectItem itemLabel="Puebla" itemValue="Puebla" />
-							<f:selectItem itemLabel="Querétaro" itemValue="Querétaro" />
-							<f:selectItem itemLabel="Quintana Roo" itemValue="Quintana Roo" />
-							<f:selectItem itemLabel="Sinaloa" itemValue="Sinaloa" />
-							<f:selectItem itemLabel="San Luis Potosí"
-								itemValue="San Luis Potosí" />
-							<f:selectItem itemLabel="Sonora" itemValue="Sonora" />
-							<f:selectItem itemLabel="Tabasco" itemValue="Tabasco" />
-							<f:selectItem itemLabel="Tamaulipas" itemValue="Tamaulipas" />
-							<f:selectItem itemLabel="Tlaxcala" itemValue="Tlaxcala" />
-							<f:selectItem itemLabel="Veracruz" itemValue="Veracruz" />
-							<f:selectItem itemLabel="Yucatán" itemValue="Yucatán" />
-							<f:selectItem itemLabel="Zacatecas" itemValue="Zacatecas" />
+							<f:selectItems value="#{sievController.listaEstados}" var="edo" itemValue="#{edo.clave}" itemLabel="#{edo.estado}"/>
+<!-- 							<f:selectItems value="#{sievController.lista}" var="canal" itemValue="#{canal.clave}" itemLabel="#{canal.canal}"/> -->
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -758,9 +720,7 @@ input[type="text"] {
 							value="#{sievController.sievPojo.fuerzaVenta}"
 							style="width:125px" required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="111" itemValue="111" />
-							<f:selectItem itemLabel="11ATEL" itemValue="11ATEL" />
-							<f:selectItem itemLabel="11CONTA" itemValue="11CONTA" />
+							<f:selectItems value="#{sievController.listaFuerzaVentas}" var="fuerza" itemLabel="#{fuerza.fuerzaVenta}" itemValue="#{fuerza.fuerzaVenta}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -1124,12 +1084,13 @@ input[type="text"] {
 						</p:selectOneMenu>
 					</h:panelGroup>
 
-<!-- 					<h:panelGroup layout="block"> -->
-<!-- 						<p:outputLabel for="idCanal" value="Canal" /> -->
-<!-- 						<p:selectOneMenu id="idCanal" value="#{sievController.sievPojo.idCanal}" required="true"> -->
-<!-- 							<f:selectItems value="#{sievController.lista}" var="canal" itemValue="canal.clave" itemLabel="canal.canal"/> -->
-<!-- 						</p:selectOneMenu> -->
-<!-- 					</h:panelGroup> -->
+					<h:panelGroup layout="block">
+						<p:outputLabel for="idCanal" value="Canal" />
+						<p:selectOneMenu id="idCanal" value="#{sievController.sievPojo.idCanal}" required="true">
+							<f:selectItem itemValue="" itemLabel="Selección..." />
+							<f:selectItems value="#{sievController.lista}" var="canal" itemValue="#{canal.clave}" itemLabel="#{canal.canal}"/>
+						</p:selectOneMenu>
+					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="idMercado" value="Mercado"/>

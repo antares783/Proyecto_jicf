@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>SIEV 1.0</title>
+	<style type="text/css">
+/*<![CDATA[*/
+input {
+	margin: 0;
+}
+
+label {
+	display: inline-block;
+	width: 150px;
+	margin-right: 5px;
+}
+
+input[type="text"] {
+	margin-bottom: 1px;
+}
+
+#columnas, #columnaEquipo, #columnasSafin {
+	column-count: 3;
+	column-gap: 25px;
+}
+
+#columnascliente {
+	column-count: 2;
+	column-gap: 25px;
+}
+.ui-inputtext, .ui-inputfield{
+    text-transform: uppercase;    
+    }
+/*]]>*/
+</style>
+</h:head>
+
+
+<h:body>
+<!-- 	<p:outputLabel for="@next" value="Sistema Integrado de Evaluación" /> -->
+	<h1>Sistema Integrado de Evaluación</h1>
+	<h:form>
+
+		<p:outputPanel>
+
+			<p:panel id='columnascliente' header="Datos del cliente">
+
+				<p:panelGrid columns="2" cellpadding="5" layout="grid">
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="razonSocial" value="Razón Social"
+							styleClass="requiredLb1" />
+						<p:inputText id="razonSocial" label="Razón Social"
+							value="#{sievController.sievPojo.razonSocial}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="nombre" value="Nombre"
+							styleClass="requiredLb1" />
+						<p:inputText id="nombre" label="Nombre"
+							value="#{sievController.sievPojo.nombre}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="apellidoPaterno" value="Apellido Paterno"
+							styleClass="requiredLb1" />
+						<p:inputText id="apellidoPaterno" label="Apellido Paterno"
+							value="#{sievController.sievPojo.apellidoPaterno}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="apellidoMaterno" value="Apellido Materno"
+							styleClass="requiredLb1" />
+						<p:inputText id="apellidoMaterno" label="Apellido Materno"
+							value="#{sievController.sievPojo.apellidoMaterno}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="fechaNacimiento" value="Fecha de Nacimiento" />
+						<p:calendar id="fechaNacimiento"
+							value="#{sievController.sievPojo.fechaNacimiento}"
+							showOn="button" required="true"/>
+					</h:panelGroup>
+
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="sexo" value="Sexo" />
+						<p:selectOneMenu id="sexo"
+							value="#{sievController.sievPojo.sexo}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Select..." itemValue="" />
+							<f:selectItem itemLabel="Hombre" itemValue="M" />
+							<f:selectItem itemLabel="Mujer" itemValue="F" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="rfc" value="RFC" styleClass="requiredLb1" />
+						<p:inputText id="rfc" label="RFC"
+							value="#{sievController.sievPojo.rfc}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+					
+					<h:panelGroup layout="block">
+						<p:outputLabel for="curp" value="CURP" styleClass="requiredLb1" />
+						<p:inputText id="curp" label="CURP"
+							value="#{sievController.sievPojo.curp}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<!-- Falta definir estados como catalogo, el valor de envio no es el correcto-->
+					<h:panelGroup layout="block">
+						<p:outputLabel for="estado" value="Estado:" />
+						<p:selectOneMenu id="estado"
+							value="#{sievController.sievPojo.estado}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Select..."
+								itemValue="" />
+							<f:selectItem itemLabel="Aguascalientes"
+								itemValue="Aguascalientes" />
+							<f:selectItem itemLabel="Baja California"
+								itemValue="Baja California" />
+							<f:selectItem itemLabel="Baja California Sur"
+								itemValue="Baja California Sur" />
+							<f:selectItem itemLabel="Campeche" itemValue="Campeche" />
+							<f:selectItem itemLabel="Ciudad de México"
+								itemValue="Ciudad de México" />
+							<f:selectItem itemLabel="Chihuahua" itemValue="Chihuahua" />
+							<f:selectItem itemLabel="Chiapas" itemValue="Chiapas" />
+							<f:selectItem itemLabel="Coahuila" itemValue="Coahuila" />
+							<f:selectItem itemLabel="Colima" itemValue="Colima" />
+							<f:selectItem itemLabel="Distrito federal"
+								itemValue="Distrito federal" />
+							<f:selectItem itemLabel="Durango" itemValue="Durango" />
+							<f:selectItem itemLabel="Estado de mexico"
+								itemValue="Estado de mexico" />
+							<f:selectItem itemLabel="Guerrero" itemValue="Guerrero" />
+							<f:selectItem itemLabel="Guanajuato" itemValue="Guanajuato" />
+							<f:selectItem itemLabel="Hidalgo" itemValue="Hidalgo" />
+							<f:selectItem itemLabel="Jalisco" itemValue="Jalisco" />
+							<f:selectItem itemLabel="Michoacán" itemValue="Michoacán" />
+							<f:selectItem itemLabel="Morelos" itemValue="Morelos" />
+							<f:selectItem itemLabel="Nayarit" itemValue="Nayarit" />
+							<f:selectItem itemLabel="Nuevo León" itemValue="Nuevo León" />
+							<f:selectItem itemLabel="Oaxaca" itemValue="Oaxaca" />
+							<f:selectItem itemLabel="Puebla" itemValue="Puebla" />
+							<f:selectItem itemLabel="Querétaro" itemValue="Querétaro" />
+							<f:selectItem itemLabel="Quintana Roo" itemValue="Quintana Roo" />
+							<f:selectItem itemLabel="Sinaloa" itemValue="Sinaloa" />
+							<f:selectItem itemLabel="San Luis Potosí"
+								itemValue="San Luis Potosí" />
+							<f:selectItem itemLabel="Sonora" itemValue="Sonora" />
+							<f:selectItem itemLabel="Tabasco" itemValue="Tabasco" />
+							<f:selectItem itemLabel="Tamaulipas" itemValue="Tamaulipas" />
+							<f:selectItem itemLabel="Tlaxcala" itemValue="Tlaxcala" />
+							<f:selectItem itemLabel="Veracruz" itemValue="Veracruz" />
+							<f:selectItem itemLabel="Yucatán" itemValue="Yucatán" />
+							<f:selectItem itemLabel="Zacatecas" itemValue="Zacatecas" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="delegacionMunicipio"
+							value="Delegación/Municipio" styleClass="requiredLb1" />
+						<p:inputText id="delegacionMunicipio" label="Delegación/Municipio"
+							value="#{sievController.sievPojo.delegacionMunicipio}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="calle" value="Calle" styleClass="requiredLb1" />
+						<p:inputText id="calle" label="Calle"
+							value="#{sievController.sievPojo.calle}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="numExterior" value="Número Exterior"
+							styleClass="requiredLb1" />
+						<p:inputText id="numExterior" label="Número Exterior"
+							value="#{sievController.sievPojo.numeroExterior}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="coloniaPoblacion" value="Colonia/Población"
+							styleClass="requiredLb1" />
+						<p:inputText id="coloniaPoblacion" label="Colonia/Población"
+							value="#{sievController.sievPojo.coloniaPoblacion}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="ciudad" value="Ciudad"
+							styleClass="requiredLb1" />
+						<p:inputText id="ciudad" label="Ciudad"
+							value="#{sievController.sievPojo.ciudad}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="codigoPostal" value="Código Postal"
+							styleClass="requiredLb1" />
+						<p:inputText id="codigoPostal" label="Código Postal"
+							value="#{sievController.sievPojo.codigoPostal}" required="true" >
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="telefonoCasa" value="Teléfono Casa"
+							styleClass="requiredLb1" />
+						<p:inputText id="telefonoCasa" label="Teléfono Casa"
+							value="#{sievController.sievPojo.telefonoCasa}" required="true">
+							<p:keyFilter regEx="/[+1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="telefonoOficina" value="Teléfono Oficina"
+							styleClass="requiredLb1" />
+						<p:inputText id="telefonoOficina" label="Teléfono Oficina"
+							value="#{sievController.sievPojo.telefonoOficina}" required="true">
+							<p:keyFilter regEx="/[+1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="telefonoReferencia"
+							value="Teléfono Referencia" styleClass="requiredLb1" />
+						<p:inputText id="telefonoReferencia" label="Teléfono Referencia"
+							value="#{sievController.sievPojo.telefonoReferencia}" required="true">
+							<p:keyFilter regEx="/[+1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="nombreReferencia" value="Nombre Referencia"
+							styleClass="requiredLb1" />
+						<p:inputText id="nombreReferencia" label="Nombre Referencia"
+							value="#{sievController.sievPojo.nombreReferencia}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="creditoAutomotriz" value="Crédito Automotriz" />
+						<p:selectOneMenu id="creditoAutomotriz"
+							value="#{sievController.sievPojo.creditoAutomotriz}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Seleccion..."
+								itemValue="" />
+							<f:selectItem itemLabel="No tiene cuenta automotriz"
+								itemValue="F" />
+							<f:selectItem itemLabel="Si tiene cuenta automotriz"
+								itemValue="V" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="creditoBancario" value="Crédito Bancario" />
+						<p:selectOneMenu id="creditoBancario"
+							value="#{sievController.sievPojo.creditoBancario}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Seleccion..." itemValue="" />
+							<f:selectItem itemLabel="No tiene cuenta bancaria" itemValue="F" />
+							<f:selectItem itemLabel="Si tiene cuenta bancaria" itemValue="V" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="tarjetaCredito" value="Tarjeta de Crédito"
+							styleClass="requiredLb1" />
+						<p:inputText id="tarjetaCredito" label="Tarjeta de Crédito"
+							value="#{sievController.sievPojo.tarjetaCredito}" >
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="vigenciaTarjeta" value="Vigencia Tarjeta"
+							styleClass="requiredLb1" />
+						<p:inputText id="vigenciaTarjeta" label="Vigencia Tarjeta"
+							value="#{sievController.sievPojo.vigenciaTarjeta}"  minValue="0" maxValue="9999">
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="claveBanco" value="Clave Banco"
+							styleClass="requiredLb1" />
+						<p:inputText id="claveBanco" label="Clave Banco"
+							value="#{sievController.sievPojo.claveBanco}" >
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="digitosTC" value="Digitos TC"
+							styleClass="requiredLb1" />
+						<p:inputText id="digitosTC" label="Digitos TC"
+							value="#{sievController.sievPojo.digitosTC}" >
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="cvv" value="CVV" styleClass="requiredLb1" />
+						<p:inputText id="cvv" label="CVV"
+							value="#{sievController.sievPojo.cvv}" minValue="0" maxValue="999">
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="folioSistema" value="Folio Sistema"
+							styleClass="requiredLb1" />
+						<p:inputText id="folioSistema" label="Folio Sistema"
+							value="#{sievController.sievPojo.folioSistema}" >
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+				</p:panelGrid>
+			</p:panel>
+
+
+			<p:panel id="columnas" header="Datos Generales">
+				<p:panelGrid columns="3" cellpadding="5" layout="grid">
+					<h:panelGroup layout="block">
+						<p:outputLabel for="tipoPersona" value="Tipo de persona" />
+						<p:selectOneMenu id="tipoPersona"
+							value="#{sievController.sievPojo.tipoPersona}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="FISICA" itemValue="FISICA" />
+							<f:selectItem itemLabel="MORAL" itemValue="MORAL" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+					<h:panelGroup layout="block">
+						<p:outputLabel for="tipoLinea" value="Tipo de Línea" />
+						<p:selectOneMenu id="tipoLinea"
+							value="#{sievController.sievPojo.tipoLinea}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="DATOS" itemValue="D" />
+							<f:selectItem itemLabel="VOZ" itemValue="V" />
+						</p:selectOneMenu>
+
+					</h:panelGroup>
+					<h:panelGroup layout="block">
+						<p:outputLabel for="tipoPlan" value="Tipo de Plan" />
+						<p:selectOneMenu id="tipoPlan"
+							value="#{sievController.sievPojo.tipoPlan}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="MIXTO" itemValue="M" />
+							<f:selectItem itemLabel="NORMAL" itemValue="N" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+					<h:panelGroup layout="block">
+						<p:outputLabel for="tipoPlazo" value="Tipo de Plazo" />
+						<p:selectOneMenu id="tipoPlazo"
+							value="#{sievController.sievPojo.tipoPlazo}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="FORZOSO" itemValue="F" />
+							<f:selectItem itemLabel="LIBRE" itemValue="L" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="marca" value="Marca" />
+						<p:selectOneMenu id="marca"
+							value="#{sievController.sievPojo.marca}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="3I" itemValue="1644" />
+							<f:selectItem itemLabel="3JTECH" itemValue="1645" />
+							<f:selectItem itemLabel="ACER" itemValue="1646" />
+							<f:selectItem itemLabel="AIRCLIC" itemValue="1648" />
+							<f:selectItem itemLabel="AIRIS" itemValue="1649" />
+							<f:selectItem itemLabel="AIRLINK" itemValue="1650" />
+							<f:selectItem itemLabel="ALCATEL" itemValue="1651" />
+							<f:selectItem itemLabel="AMBICOM" itemValue="1652" />
+							<f:selectItem itemLabel="AMOI" itemValue="1653" />
+							<f:selectItem itemLabel="ANDA" itemValue="1654" />
+							<f:selectItem itemLabel="ANTARES" itemValue="1655" />
+							<f:selectItem itemLabel="APPLE" itemValue="1656" />
+							<f:selectItem itemLabel="ASTUS" itemValue="1657" />
+							<f:selectItem itemLabel="ASUS" itemValue="1658" />
+							<f:selectItem itemLabel="ATT3812" itemValue="1659" />
+							<f:selectItem itemLabel="AUDIOVOX" itemValue="1660" />
+							<f:selectItem itemLabel="AUTOCAB" itemValue="1661" />
+							<f:selectItem itemLabel="AVANTE" itemValue="1662" />
+							<f:selectItem itemLabel="AVANTEL" itemValue="1663" />
+							<f:selectItem itemLabel="AVL" itemValue="1664" />
+							<f:selectItem itemLabel="AVVIO" itemValue="1665" />
+							<f:selectItem itemLabel="AXESSTEL" itemValue="1666" />
+							<f:selectItem itemLabel="AZUMI" itemValue="1667" />
+							<f:selectItem itemLabel="BENEFON GSM" itemValue="1668" />
+							<f:selectItem itemLabel="BENQ GSM" itemValue="1669" />
+							<f:selectItem itemLabel="BIRD GSM" itemValue="1670" />
+							<f:selectItem itemLabel="BLACKBERRY" itemValue="1671" />
+							<f:selectItem itemLabel="BLACK VIEW" itemValue="1672" />
+							<f:selectItem itemLabel="Black View" itemValue="1968" />
+							<f:selectItem itemLabel="BLACKBERRY" itemValue="1673" />
+							<f:selectItem itemLabel="BLACKPHONE" itemValue="1674" />
+							<f:selectItem itemLabel="BLAUPUNKT" itemValue="1675" />
+							<f:selectItem itemLabel="BLU" itemValue="1676" />
+							<f:selectItem itemLabel="BLUE" itemValue="1677" />
+							<f:selectItem itemLabel="BLACKPHONE" itemValue="1678" />
+							<f:selectItem itemLabel="CALAMP" itemValue="1679" />
+							<f:selectItem itemLabel="CAMOS" itemValue="1680" />
+							<f:selectItem itemLabel="CAPITEL GSM" itemValue="1681" />
+							<f:selectItem itemLabel="CAST" itemValue="1682" />
+							<f:selectItem itemLabel="CATERPILLAR B15 GSM" itemValue="1683" />
+							<f:selectItem itemLabel="CCWW" itemValue="1684" />
+							<f:selectItem itemLabel="CELL CAST" itemValue="1685" />
+							<f:selectItem itemLabel="CELL CAST GSM" itemValue="1686" />
+							<f:selectItem itemLabel="CELL MODE LTD" itemValue="1687" />
+							<f:selectItem itemLabel="CELLO" itemValue="1688" />
+							<f:selectItem itemLabel="CINGULAR" itemValue="1689" />
+							<f:selectItem itemLabel="CINTERION" itemValue="1690" />
+							<f:selectItem itemLabel="CINTERION" itemValue="1691" />
+							<f:selectItem itemLabel="CISCO" itemValue="1692" />
+							<f:selectItem itemLabel="CITICOM" itemValue="1693" />
+							<f:selectItem itemLabel="CITRIC" itemValue="1694" />
+							<f:selectItem itemLabel="CLARION" itemValue="1695" />
+							<f:selectItem itemLabel="CMCS" itemValue="1696" />
+							<f:selectItem itemLabel="CONVERSION" itemValue="1697" />
+							<f:selectItem itemLabel="COBAN" itemValue="1698" />
+							<f:selectItem itemLabel="COMPLETE CARD" itemValue="1699" />
+							<f:selectItem itemLabel="CONCOX" itemValue="1700" />
+							<f:selectItem itemLabel="CONEL" itemValue="1701" />
+							<f:selectItem itemLabel="COPILOTO" itemValue="1702" />
+							<f:selectItem itemLabel="CROSS" itemValue="1703" />
+							<f:selectItem itemLabel="CROW" itemValue="1704" />
+							<f:selectItem itemLabel="CTRACK" itemValue="1705" />
+							<f:selectItem itemLabel="CYRUS WIRELESS" itemValue="1706" />
+							<f:selectItem itemLabel="DAPENG" itemValue="1707" />
+							<f:selectItem itemLabel="DATALOGIC" itemValue="1708" />
+							<f:selectItem itemLabel="DATAONLINE" itemValue="1709" />
+							<f:selectItem itemLabel="DATAW" itemValue="1710" />
+							<f:selectItem itemLabel="NO CONSIDERAR" itemValue="1711" />
+							<f:selectItem itemLabel="DCT VEGA GSM" itemValue="1712" />
+							<f:selectItem itemLabel="DELL" itemValue="1713" />
+							<f:selectItem itemLabel="DEXMA" itemValue="1714" />
+							<f:selectItem itemLabel="DIAMONDTEL" itemValue="1715" />
+							<f:selectItem itemLabel="DIGI TRANSPORT" itemValue="1716" />
+							<f:selectItem itemLabel="DISNEY" itemValue="1717" />
+							<f:selectItem itemLabel="DLINK" itemValue="1718" />
+							<f:selectItem itemLabel="DMP" itemValue="1719" />
+							<f:selectItem itemLabel="DOLPHIN" itemValue="1720" />
+							<f:selectItem itemLabel="DOPPIO" itemValue="1721" />
+							<f:selectItem itemLabel="DSC" itemValue="1722" />
+							<f:selectItem itemLabel="EBS" itemValue="1723" />
+							<f:selectItem itemLabel="ECCEL" itemValue="1724" />
+							<f:selectItem itemLabel="EDGERR PRUEBAS" itemValue="1725" />
+							<f:selectItem itemLabel="EFISAT" itemValue="1726" />
+							<f:selectItem itemLabel="ELMO" itemValue="1727" />
+							<f:selectItem itemLabel="ELTEL" itemValue="1728" />
+							<f:selectItem itemLabel="ENCORE NETWORKS" itemValue="1729" />
+							<f:selectItem itemLabel="ENFORA" itemValue="1730" />
+							<f:selectItem itemLabel="EPCOM" itemValue="1731" />
+							<f:selectItem itemLabel="ERCO GENER" itemValue="1732" />
+							<f:selectItem itemLabel="ERICSSON" itemValue="1733" />
+							<f:selectItem itemLabel="ERM" itemValue="1734" />
+							<f:selectItem itemLabel="ETEN" itemValue="1735" />
+							<f:selectItem itemLabel="ETROS" itemValue="1736" />
+							<f:selectItem itemLabel="EUDOX" itemValue="1737" />
+							<f:selectItem itemLabel="FALCOM" itemValue="1738" />
+							<f:selectItem itemLabel="FIREFLY" itemValue="1739" />
+							<f:selectItem itemLabel="FORTA" itemValue="1740" />
+							<f:selectItem itemLabel="FOUR FAITH" itemValue="1741" />
+							<f:selectItem itemLabel="FOUR-FAITH" itemValue="1742" />
+							<f:selectItem itemLabel="FPSECURITY" itemValue="1743" />
+							<f:selectItem itemLabel="FP Security" itemValue="1969" />
+							<f:selectItem itemLabel="FREETEL" itemValue="1744" />
+							<f:selectItem itemLabel="FRESHFUN" itemValue="1745" />
+							<f:selectItem itemLabel="FUCTION" itemValue="1970" />
+							<f:selectItem itemLabel="FUJITSU" itemValue="1746" />
+							<f:selectItem itemLabel="FULMAR" itemValue="1747" />
+							<f:selectItem itemLabel="FUNCTION" itemValue="1748" />
+							<f:selectItem itemLabel="GE" itemValue="1749" />
+							<f:selectItem itemLabel="GENERICO" itemValue="1750" />
+							<f:selectItem itemLabel="GEOTHENTIC" itemValue="1751" />
+							<f:selectItem itemLabel="GEOM" itemValue="1752" />
+							<f:selectItem itemLabel="GLOBAL TRACK" itemValue="1753" />
+							<f:selectItem itemLabel="GLOBE" itemValue="1754" />
+							<f:selectItem itemLabel="GLOBE WAVE" itemValue="1755" />
+							<f:selectItem itemLabel="GLOFISH" itemValue="1756" />
+							<f:selectItem itemLabel="GMOBILE" itemValue="1757" />
+							<f:selectItem itemLabel="GPST" itemValue="1758" />
+							<f:selectItem itemLabel="GRADIENTE GSM" itemValue="1759" />
+							<f:selectItem itemLabel="GSMART" itemValue="1760" />
+							<f:selectItem itemLabel="GTE" itemValue="1761" />
+							<f:selectItem itemLabel="GUANRI" itemValue="1762" />
+							<f:selectItem itemLabel="AIKO" itemValue="1647" />
+							<f:selectItem itemLabel="HACER" itemValue="1763" />
+							<f:selectItem itemLabel="HAIER GSM" itemValue="1764" />
+							<f:selectItem itemLabel="HANDHELD UNITECH" itemValue="1765" />
+							<f:selectItem itemLabel="HANDSPRING PALM GSM" itemValue="1766" />
+							<f:selectItem itemLabel="HELIOS" itemValue="1767" />
+							<f:selectItem itemLabel="HISENSE" itemValue="1768" />
+							<f:selectItem itemLabel="HONEY" itemValue="1769" />
+							<f:selectItem itemLabel="HONGDIAN" itemValue="1770" />
+							<f:selectItem itemLabel="HOPON GSM" itemValue="1771" />
+							<f:selectItem itemLabel="HP" itemValue="1772" />
+							<f:selectItem itemLabel="HTC" itemValue="1773" />
+							<f:selectItem itemLabel="HUAWEI" itemValue="1774" />
+							<f:selectItem itemLabel="HUNTER" itemValue="1775" />
+							<f:selectItem itemLabel="HYDROGEN" itemValue="1776" />
+							<f:selectItem itemLabel="HYPERCOM" itemValue="1777" />
+							<f:selectItem itemLabel="ICOM" itemValue="1778" />
+							<f:selectItem itemLabel="I-MATE GSM" itemValue="1779" />
+							<f:selectItem itemLabel="IMOBIL" itemValue="1780" />
+							<f:selectItem itemLabel="INCO" itemValue="1781" />
+							<f:selectItem itemLabel="INDRA" itemValue="1782" />
+							<f:selectItem itemLabel="INGENICO" itemValue="1783" />
+							<f:selectItem itemLabel="INNOSTREAM GSM" itemValue="1784" />
+							<f:selectItem itemLabel="INTEL" itemValue="1785" />
+							<f:selectItem itemLabel="INTERMEC GSM" itemValue="1786" />
+							<f:selectItem itemLabel="INTERMEC GSM" itemValue="1787" />
+							<f:selectItem itemLabel="IPHONE" itemValue="1788" />
+							<f:selectItem itemLabel="IROBOTS" itemValue="1789" />
+							<f:selectItem itemLabel="ITS" itemValue="1790" />
+							<f:selectItem itemLabel="JRC" itemValue="1791" />
+							<f:selectItem itemLabel="JVC" itemValue="1792" />
+							<f:selectItem itemLabel="KOC" itemValue="1793" />
+							<f:selectItem itemLabel="KYO" itemValue="1794" />
+							<f:selectItem itemLabel="KYOTO" itemValue="1795" />
+							<f:selectItem itemLabel="LAIPAC" itemValue="1796" />
+							<f:selectItem itemLabel="LANIX" itemValue="1797" />
+							<f:selectItem itemLabel="LENOVO" itemValue="1798" />
+							<f:selectItem itemLabel="LG" itemValue="1799" />
+							<f:selectItem itemLabel="LMU" itemValue="1800" />
+							<f:selectItem itemLabel="LPL" itemValue="1801" />
+							<f:selectItem itemLabel="M4" itemValue="1802" />
+							<f:selectItem itemLabel="M4TEL" itemValue="1803" />
+							<f:selectItem itemLabel="MAXON" itemValue="1804" />
+							<f:selectItem itemLabel="MEEBOX" itemValue="1805" />
+							<f:selectItem itemLabel="MEI" itemValue="1806" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+			
+					<h:panelGroup layout="block">
+						<p:outputLabel for="modelo" value="Modelo" />
+						<p:selectOneMenu id="modelo"
+							value="#{sievController.sievPojo.modelo}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="NOKIA 1000" itemValue="23357" />
+							<f:selectItem itemLabel="NOKIA 101" itemValue="23358" />
+							<f:selectItem itemLabel="ALCATEL 1011A GSM" itemValue="20562" />
+							<f:selectItem itemLabel="ALCATEL 1017G" itemValue="20563" />
+							<f:selectItem itemLabel="NEC 101T GSM 3G" itemValue="21631" />
+							<f:selectItem itemLabel="NEC 101T GSM 3G" itemValue="21632" />
+							<f:selectItem itemLabel="NOK 1020 GSM, 3G, 4G" itemValue="21636" />
+							<f:selectItem itemLabel="NOK 1020 GSM, 3G, 4G" itemValue="21637" />
+							<f:selectItem itemLabel="COBAN ELECTRONICS 103 GSM" itemValue="22703" />
+							<f:selectItem itemLabel="NEC 103T" itemValue="21633" />
+							<f:selectItem itemLabel="NEC 103T" itemValue="21634" />
+							<f:selectItem itemLabel="NOKIA 104" itemValue="23359" />
+							<f:selectItem itemLabel="ALCATEL 1041A GSM" itemValue="20564" />
+							<f:selectItem itemLabel="ALCATEL 1041A GSM" itemValue="20565" />
+							<f:selectItem itemLabel="LAIPAC STARF 105 GSM" itemValue="22971" />
+							<f:selectItem itemLabel="AVVIO 105A GSM" itemValue="20833" />
+							<f:selectItem itemLabel="ALCATEL 1066G GSM" itemValue="20566" />
+							<f:selectItem itemLabel="ZONDA 1075 GSM" itemValue="22374" />
+							<f:selectItem itemLabel="ZONDA 1075 GSM" itemValue="22375" />
+							<f:selectItem itemLabel="ZONDA 1085 GSM" itemValue="24125" />
+							<f:selectItem itemLabel="ZONDA 1090 GSM" itemValue="22376" />
+							<f:selectItem itemLabel="ZONDA 1090 GSM" itemValue="22377" />
+							<f:selectItem itemLabel="ZONDA ZMEM-1098 GSM" itemValue="22378" />
+							<f:selectItem itemLabel="ZONDA ZMEM-1098 GSM" itemValue="22379" />
+							<f:selectItem itemLabel="ZONDA ZMEM-1099 GSM" itemValue="24126" />
+							<f:selectItem itemLabel="ENFORA 110-A GSM" itemValue="22739" />
+							<f:selectItem itemLabel="NOKIA 1100 GSM" itemValue="23360" />
+							<f:selectItem itemLabel="NOKIA 1108 GSM" itemValue="23361" />
+							<f:selectItem itemLabel="NOKIA 111 GSM" itemValue="21638" />
+							<f:selectItem itemLabel="NOKIA 111 GSM" itemValue="21639" />
+							<f:selectItem itemLabel="NOKIA 1110 GSM" itemValue="23362" />
+							<f:selectItem itemLabel="NOKIA 1112 GSM" itemValue="23363" />
+							<f:selectItem itemLabel="ERIC KRC1131" itemValue="22753" />
+							<f:selectItem itemLabel="OKI 1150" itemValue="23556" />
+							<f:selectItem itemLabel="NEC 120" itemValue="23326" />
+							<f:selectItem itemLabel="ENFORA GSM1208-B" itemValue="22740" />
+							<f:selectItem itemLabel="MOMENTUM 1211 GSM" itemValue="23093" />
+							<f:selectItem itemLabel="ENFORA 1218 GSM" itemValue="22741" />
+							<f:selectItem itemLabel="NOKIA 1220" itemValue="23364" />
+							<f:selectItem itemLabel="NOKIA 1221" itemValue="23365" />
+							<f:selectItem itemLabel="SONY 1300" itemValue="23918" />
+							<f:selectItem itemLabel="NOKIA 1320 GSM,3G,4G" itemValue="21640" />
+							<f:selectItem itemLabel="NOKIA 1320 GSM,3G,4G" itemValue="21641" />
+							<f:selectItem itemLabel="MIC LTE 1320/LUM 532" itemValue="21502" />
+							<f:selectItem itemLabel="LG 1400 GSM" itemValue="22989" />
+							<f:selectItem itemLabel="LG 1500 GSM" itemValue="22990" />
+							<f:selectItem itemLabel="NOKIA 1520 GSM" itemValue="21642" />
+							<f:selectItem itemLabel="ALCATEL 157 GS" itemValue="22494" />
+							<f:selectItem itemLabel="NOKIA 1616 GSM" itemValue="23366" />
+							<f:selectItem itemLabel="NOKIA 1661 GSM 3G" itemValue="21643" />
+							<f:selectItem itemLabel="NOKIA 1680 GSM" itemValue="21644" />
+							<f:selectItem itemLabel="MINI PHONE 168-3G GSM" itemValue="23068" />
+							<f:selectItem itemLabel="TANDY 17-1060A" itemValue="24039" />
+							<f:selectItem itemLabel="INGENICO 17910 GSM" itemValue="22950" />
+							<f:selectItem itemLabel="NOKIA 1800 GSM" itemValue="21645" />
+							<f:selectItem itemLabel="ZONDA 1840 GSM" itemValue="24127" />
+							<f:selectItem itemLabel="ZONDA 1860 GSM" itemValue="24128" />
+							<f:selectItem itemLabel="ZONDA 1880 ZMNG1880 GSM" itemValue="24129" />
+							<f:selectItem itemLabel="MOTOROLA 1900" itemValue="23103" />
+							<f:selectItem itemLabel="RIM 1902G GSM" itemValue="23687" />
+							<f:selectItem itemLabel="ZONDA 1920 GSM" itemValue="24130" />
+							<f:selectItem itemLabel="ZONDA ZMNG-1930 GSM" itemValue="22380" />
+							<f:selectItem itemLabel="ZONDA ZMNG-1930 GSM" itemValue="22381" />
+							<f:selectItem itemLabel="MITSUB 2000" itemValue="23069" />
+							<f:selectItem itemLabel="M.POS 2002 GSM" itemValue="23319" />
+							<f:selectItem itemLabel="NOKIA 201" itemValue="21646" />
+							<f:selectItem itemLabel="MRV LX1004S-201US" itemValue="23320" />
+							<f:selectItem itemLabel="NOKIA 205 GSM" itemValue="21647" />
+							<f:selectItem itemLabel="NOKIA 205 GSM" itemValue="21648" />
+							<f:selectItem itemLabel="DIAMONDTEL 20 X" itemValue="22724" />
+							<f:selectItem itemLabel="ERICSSON 210" itemValue="22754" />
+							<f:selectItem itemLabel="NOKIA 2120" itemValue="23367" />
+							<f:selectItem itemLabel="NOKIA 2160" itemValue="23368" />
+							<f:selectItem itemLabel="NOKIA 2180" itemValue="23369" />
+							<f:selectItem itemLabel="SONY 2200" itemValue="23919" />
+							<f:selectItem itemLabel="SKYPATROL GSM220820 GSM" itemValue="23880" />
+							<f:selectItem itemLabel="ERICSSON 2218Z GSM" itemValue="22755" />
+							<f:selectItem itemLabel="NOKIA 2220" itemValue="23370" />
+							<f:selectItem itemLabel="ENFORA 2238 GSM" itemValue="22742" />
+							<f:selectItem itemLabel="NOKIA 2260" itemValue="23371" />
+							<f:selectItem itemLabel="QUALCOM 2265" itemValue="23672" />
+							<f:selectItem itemLabel="MIXTELEMATICS 3707I GSM, 3G" itemValue="23088" />
+							<f:selectItem itemLabel="MIXTELEMATICS 2310i" itemValue="21510" />
+							<f:selectItem itemLabel="NOKIA 232" itemValue="23372" />
+							<f:selectItem itemLabel="NOKIA 2330 GSM" itemValue="21649" />
+							<f:selectItem itemLabel="NOKIA 2330 GSM" itemValue="21650" />
+							<f:selectItem itemLabel="NOKIA 239" itemValue="23373" />
+							<f:selectItem itemLabel="NOKIA 250" itemValue="23374" />
+							<f:selectItem itemLabel="NOKIA 252" itemValue="23375" />
+							<f:selectItem itemLabel="NOKIA 252 N" itemValue="23376" />
+							<f:selectItem itemLabel="PCD 252TL GSM" itemValue="23611" />
+							<f:selectItem itemLabel="NOKIA 2600B GSM" itemValue="23377" />
+							<f:selectItem itemLabel="NOKIA 2600 GSM" itemValue="23378" />
+							<f:selectItem itemLabel="MESSER TRIMBLE GPS" itemValue="23063" />
+							<f:selectItem itemLabel="NOKIA 2630" itemValue="21651" />
+							<f:selectItem itemLabel="NOKIA 2650 GSM" itemValue="23379" />
+							<f:selectItem itemLabel="NOKIA 2651 GSM" itemValue="23380" />
+							<f:selectItem itemLabel="NOKIA 2660 GSM" itemValue="23381" />
+							<f:selectItem itemLabel="NOKIA 2680 GSM" itemValue="21652" />
+							<f:selectItem itemLabel="NOKIA 2690 GSM" itemValue="21653" />
+							<f:selectItem itemLabel="TREO 270 GSM" itemValue="24075" />
+							<f:selectItem itemLabel="NOKIA 2760 GSM" itemValue="21654" />
+							<f:selectItem itemLabel="NOKIA 2760 GSM" itemValue="21655" />
+							<f:selectItem itemLabel="MOTOROLA 280 GSM" itemValue="23104" />
+							<f:selectItem itemLabel="NOKIA 282" itemValue="23382" />
+							<f:selectItem itemLabel="CELLOCATOR 28F GSM" itemValue="22691" />
+							<f:selectItem itemLabel="GTE 2GC300W" itemValue="22852" />
+							<f:selectItem itemLabel="HTC 2PS6500 GSM" itemValue="23647" />
+							<f:selectItem itemLabel="HTC 2PUK220 GSM" itemValue="20973" />
+							<f:selectItem itemLabel="HTC 2Q3F300 GSM" itemValue="20974" />
+							<f:selectItem itemLabel="HTC 2Q3F300PRM GSM" itemValue="20975" />
+							<f:selectItem itemLabel="ELMO TECH 2TRACK GSM" itemValue="22738" />
+							<f:selectItem itemLabel="NEC 300" itemValue="23327" />
+							<f:selectItem itemLabel="3000 STAR TAC" itemValue="23105" />
+							<f:selectItem itemLabel="NOKIA 302" itemValue="21656" />
+							<f:selectItem itemLabel="NOKIA 302" itemValue="21657" />
+							<f:selectItem itemLabel="ALCATEL GSM OT-3022G" itemValue="22495" />
+							<f:selectItem itemLabel="ALCATEL 306A GSM" itemValue="20567" />
+							<f:selectItem itemLabel="ALCATEL 306A GSM" itemValue="20568" />
+							<f:selectItem itemLabel="ALCATEL 3075A GSM,3G" itemValue="20569" />
+							<f:selectItem itemLabel="ALCATEL 3075A GSM,3G" itemValue="20570" />
+							<f:selectItem itemLabel="MOTOROLA 3097" itemValue="23106" />
+							<f:selectItem itemLabel="NOKIA 31 GSM" itemValue="23383" />
+							<f:selectItem itemLabel="PANTECH 310 GSM" itemValue="23626" />
+							<f:selectItem itemLabel="NOKIA 3100 GSM" itemValue="23384" />
+							<f:selectItem itemLabel="NOKIA 3109 GSM" itemValue="23385" />
+							<f:selectItem itemLabel="NOKIA 311 GSM 3G" itemValue="21658" />
+							<f:selectItem itemLabel="NOKIA 311 GSM 3G" itemValue="21659" />
+							<f:selectItem itemLabel="NOKIA 3120 GSM" itemValue="23386" />
+							<f:selectItem itemLabel="NOKIA 3120 3G GSM" itemValue="23387" />
+							<f:selectItem itemLabel="MOTOROLA 3160" itemValue="23107" />
+							<f:selectItem itemLabel="NOKIA 3200 GSM" itemValue="23388" />
+							<f:selectItem itemLabel="ENFORA 3208-1C GSM" itemValue="22743" />
+							<f:selectItem itemLabel="NOKIA 3220 GSM" itemValue="23389" />
+							<f:selectItem itemLabel="HUAWEI ETS-3223 GSM" itemValue="21010" />
+							<f:selectItem itemLabel="HUAWEI ETS-3223 GSM" itemValue="21011" />
+							<f:selectItem itemLabel="NOKIA 3230 GSM" itemValue="23390" />
+							<f:selectItem itemLabel="NOKIA 3250 GSM" itemValue="23391" />
+							<f:selectItem itemLabel="HUAWEI ETS 3253 GSM" itemValue="21012" />
+							<f:selectItem itemLabel="AUDIOVOX GDU-325/325XL" itemValue="22555" />
+							<f:selectItem itemLabel="NOKIA 3300 GSM" itemValue="23392" />
+							<f:selectItem itemLabel="NOK 3310" itemValue="23393" />
+							<f:selectItem itemLabel="NOKIA 3320" itemValue="23394" />
+							<f:selectItem itemLabel="3321 GSM" itemValue="23395" />
+							<f:selectItem itemLabel="NOKIA 3360" itemValue="23396" />
+							<f:selectItem itemLabel="NOKIA 3390" itemValue="23397" />
+							<f:selectItem itemLabel="NOKIA 3395 GSM" itemValue="23398" />
+							<f:selectItem itemLabel="TANDY 350" itemValue="24040" />
+							<f:selectItem itemLabel="3500" itemValue="21660" />
+							<f:selectItem itemLabel="NOKIA 3500" itemValue="21661" />
+							<f:selectItem itemLabel="MITSUB 3500PK" itemValue="23070" />
+							<f:selectItem itemLabel="HUAWEI 3511 GSM" itemValue="21013" />
+							<f:selectItem itemLabel="NOKIA 3520" itemValue="23399" />
+							<f:selectItem itemLabel="NOKIA 3555 GSM" itemValue="23400" />
+							<f:selectItem itemLabel="NOKIA 3560 GSM" itemValue="23401" />
+							<f:selectItem itemLabel="NOKIA 3586 TDMA" itemValue="23402" />
+							<f:selectItem itemLabel="NOKIA 3590 GSM" itemValue="23403" />
+							<f:selectItem itemLabel="NOKIA 3595 GSM" itemValue="23404" />
+							<f:selectItem itemLabel="NOKIA 3650 GSM" itemValue="23405" />
+							<f:selectItem itemLabel="CELLOCATOR 370-20 GSM" itemValue="22692" />
+							<f:selectItem itemLabel="MIXTELEMATICS 3707I GSM, 3G" itemValue="23089" />
+							<f:selectItem itemLabel="MIXTELEMATICS 3707i" itemValue="21511" />
+							<f:selectItem itemLabel="HP HIPAQ 3850 GSM" itemValue="22871" />
+							<f:selectItem itemLabel="MOTOROLA 388 GSM" itemValue="23108" />
+							<f:selectItem itemLabel="CELLOCATOR 390-10 GSM" itemValue="22693" />
+							<f:selectItem itemLabel="AVVIO 3-G 750 GSM" itemValue="20834" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+					
+					<h:panelGroup layout="block">
+						<p:outputLabel for="tipoTramite" value="Tipo de trámite" />
+						<p:selectOneMenu id="tipoTramite"
+							value="#{sievController.sievPojo.tipoTramite}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="ACTIVACION" itemValue="ACT" />
+							<f:selectItem itemLabel="CAMBIO DE EQUIPO" itemValue="SW" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+			
+					<h:panelGroup layout="block">
+						<p:outputLabel for="fuerzaVenta" value="Fuerza de Venta" />
+						<p:selectOneMenu id="fuerzaVenta"
+							value="#{sievController.sievPojo.fuerzaVenta}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="111" itemValue="111" />
+							<f:selectItem itemLabel="11ATEL" itemValue="11ATEL" />
+							<f:selectItem itemLabel="11CONTA" itemValue="11CONTA" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="proyecto" value="Proyecto" />
+						<p:selectOneMenu id="proyecto"
+							value="#{sievController.sievPojo.proyecto}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="COPPEL" itemValue="COPPEL" />
+							<f:selectItem itemLabel="TELMEX" itemValue="TELMEX" />
+							<f:selectItem itemLabel="VENTA EN LINEA"
+								itemValue="VENTA EN LINEA" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="formaPago" value="Forma de Pago" />
+						<p:selectOneMenu id="formaPago"
+							value="#{sievController.sievPojo.formaPago}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="DOMICILIACION" itemValue="DOMICILIACION" />
+							<f:selectItem itemLabel="EFECTIVO" itemValue="EFECTIVO" />
+							<f:selectItem itemLabel="TARJETA DE CREDITO"
+								itemValue="TARJETA DE CREDITO" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="canalVenta" value="Canal de Venta" />
+						<p:selectOneMenu id="canalVenta"
+							value="#{sievController.sievPojo.canalVenta}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="CACS" itemValue="CACS" />
+							<f:selectItem itemLabel="CADENAS COMERCIALES"
+								itemValue="CADENAS COMERCIALES" />
+							<f:selectItem itemLabel="CENTRO DE VENTAS TEL"
+								itemValue="CENTRO DE VENTAS TEL" />
+							<f:selectItem itemLabel="CVT/CCT" itemValue="CVT/CCT" />
+							<f:selectItem itemLabel="DATOS" itemValue="DATOS" />
+							<f:selectItem itemLabel="DISTRIBUIDOR" itemValue="DISTRIBUIDOR" />
+							<f:selectItem itemLabel="INTEGRADOR" itemValue="INTEGRADOR" />
+							<f:selectItem itemLabel="PYMES" itemValue="PYMES" />
+							<f:selectItem itemLabel="TELEMARKETING" itemValue="TELEMARKETING" />
+							<f:selectItem itemLabel="VENTAS CORPORATIVAS"
+								itemValue="VENTAS CORPORATIVAS" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="mercado" value="Mercado" />
+						<p:selectOneMenu id="mercado"
+							value="#{sievController.sievPojo.mercado}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="CORPORATIVO" itemValue="CORPORATIVO" />
+							<f:selectItem itemLabel="MASIVO" itemValue="MASIVO" />
+							<f:selectItem itemLabel="PYME" itemValue="PYME" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="modalidadInvestigacion"
+							value="Modalidad Investigación" />
+						<p:selectOneMenu id="modalidadInvestigacion"
+							value="#{sievController.sievPojo.modalidadInvestigacion}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Seleccion..." itemValue="" />
+							<f:selectItem itemLabel="INMEDIATA" itemValue="INMEDIATA" />
+							<f:selectItem itemLabel="DIFERIDA" itemValue="DIFERIDA" />
+							<f:selectItem itemLabel="N/A" itemValue="N/A" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="region" value="Region" />
+						<p:selectOneMenu id="region"
+							value="#{sievController.sievPojo.region}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Seleccion..." itemValue="" />
+							<f:selectItem itemLabel="R01" itemValue="R01" />
+							<f:selectItem itemLabel="R02" itemValue="R02" />
+							<f:selectItem itemLabel="R03" itemValue="R03" />
+							<f:selectItem itemLabel="R04" itemValue="R04" />
+							<f:selectItem itemLabel="R05" itemValue="R05" />
+							<f:selectItem itemLabel="R06" itemValue="R06" />
+							<f:selectItem itemLabel="R07" itemValue="R07" />
+							<f:selectItem itemLabel="R08" itemValue="R08" />
+							<f:selectItem itemLabel="R09" itemValue="R09" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputText value="Venta plazos: " />
+						<p:selectBooleanButton id="ventaPlazos"
+							value="#{sievController.sievPojo.ventaPlazos}"
+							onLabel="Yes" offLabel="No" style="width:60px" required="true"/>
+					</h:panelGroup>
+
+				</p:panelGrid>
+
+			</p:panel>
+
+			<p:panel header="Datos del equipo">
+				<p:panelGrid columns="3" cellpadding="5" layout="grid">
+					<h:panelGroup layout="block">
+						<h:outputLabel for="depositoInicial" value="Depósito Inicial"/>
+						<p:inputNumber id="depositoInicial"
+							value="#{sievController.sievPojo.depositoInicial}" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputLabel for="renta" value="Renta"/>
+						<p:inputNumber id="renta"
+							value="#{sievController.sievPojo.renta}" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputLabel for="montoServicio" value="Monto Servicio"/>
+						<p:inputNumber id="montoServicio"
+							value="#{sievController.sievPojo.montoServicio}" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputLabel for="precioLista" value="Precio Lista"/>
+						<p:inputNumber id="precioLista"
+							value="#{sievController.sievPojo.precioLista}" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputLabel for="precioKit" value="Precio Kit"/>
+						<p:inputNumber id="precioKit"
+							value="#{sievController.sievPojo.precioKit}" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputLabel for="anticipo" value="Anticipo"/>
+						<p:inputNumber id="anticipo"
+							value="#{sievController.sievPojo.anticipo}" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputLabel for="costoBaseEquipo" value="Costo Base"/>
+						<p:inputNumber id="costoBaseEquipo"
+							value="#{sievController.sievPojo.costoBaseEquipo}" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputLabel for="parcialidades" value="Parcialidades"/>
+						<p:inputNumber id="parcialidades"
+							value="#{sievController.sievPojo.parcialidades}" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<h:outputLabel for="sobreprecio" value="Sobre Precio"/>
+						<p:inputNumber id="sobreprecio"
+							value="#{sievController.sievPojo.sobreprecio}" required="true"/>
+					</h:panelGroup>
+					
+					<h:panelGroup layout="block">
+						<p:outputLabel for="costoAmigoKit" value="Costo Amigo KIT" />
+						<p:inputNumber id="costoAmigoKit"
+							value="#{sievController.sievPojo.costoAmigoKit}" required="true"/>
+					</h:panelGroup>
+				</p:panelGrid>
+			</p:panel>
+		</p:outputPanel>
+
+		<p:outputPanel>
+			<p:panel id="columnasSafin" header="Oferta Cliente">
+				<p:panelGrid columns="3" cellpadding="5" layout="grid">
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="cvePlan" value="Plan" />
+						<p:selectOneMenu id="cvePlan"
+							value="#{sievController.sievPojo.cvePlan}"
+							style="width:125px" required="true">
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500" itemValue="231103" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500" itemValue="231112" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500" itemValue="231121" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500 VI" itemValue="231130" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500 VI" itemValue="231139" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500 VI" itemValue="231148" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000" itemValue="231105" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000" itemValue="231114" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000" itemValue="231123" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 Vi" itemValue="231132" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 Vi" itemValue="231141" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 Vi" itemValue="231150" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC" itemValue="231165" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC" itemValue="231166" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC" itemValue="231167" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC VI" itemValue="231168" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC VI" itemValue="231169" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC VI" itemValue="231170" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 CC" itemValue="231171" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 CC" itemValue="231172" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 CC" itemValue="231173" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 VI CC" itemValue="231174" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 VI CC" itemValue="231175" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 VI CC" itemValue="231176" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000" itemValue="231099" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000" itemValue="231108" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000" itemValue="231117" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000" itemValue="231100" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000" itemValue="231109" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000" itemValue="231118" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000" itemValue="231101" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000" itemValue="231110" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000" itemValue="231119" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000" itemValue="231102" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000" itemValue="231111" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000" itemValue="231120" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000" itemValue="231104" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000" itemValue="231113" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000" itemValue="231122" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000" itemValue="231106" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000" itemValue="231115" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000" itemValue="231124" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000" itemValue="231107" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000" itemValue="231116" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000" itemValue="231125" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000 VI" itemValue="231126" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000 VI" itemValue="231135" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000 VI" itemValue="231144" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 VI" itemValue="231127" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 VI" itemValue="231136" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 VI" itemValue="231145" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 VI" itemValue="231128" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 VI" itemValue="231137" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 VI" itemValue="231146" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000 VI" itemValue="231129" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000 VI" itemValue="231138" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000 VI" itemValue="231147" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000 VI" itemValue="231131" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000 VI" itemValue="231140" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000 VI" itemValue="231149" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000 VI" itemValue="231133" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000 VI" itemValue="231142" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000 VI" itemValue="231151" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231134" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231143" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231152" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC" itemValue="231153" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC" itemValue="231154" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC" itemValue="231155" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000" itemValue="231197" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000" itemValue="231195" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000" itemValue="231196" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC" itemValue="231207" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC" itemValue="231209" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC" itemValue="231212" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC" itemValue="231208" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC" itemValue="231211" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC" itemValue="231213" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000" itemValue="231159" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000" itemValue="231160" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000" itemValue="231161" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000" itemValue="231183" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000" itemValue="231184" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000" itemValue="231185" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000" itemValue="231189" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000" itemValue="231190" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000" itemValue="231191" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 CC" itemValue="231177" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 CC" itemValue="231178" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 CC" itemValue="231179" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC VI" itemValue="231156" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC VI" itemValue="231157" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC VI" itemValue="231158" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000 (VERSIÓN IPHONE)" itemValue="231200" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000 (VERSIÓN IPHONE)" itemValue="231198" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000 (VERSIÓN IPHONE)" itemValue="231199" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC VI" itemValue="231214" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC VI" itemValue="231216" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC VI" itemValue="231218" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC VI" itemValue="231215" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC VI" itemValue="231217" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC VI" itemValue="231219" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000 VI" itemValue="231162" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000 VI" itemValue="231163" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000 VI" itemValue="231164" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000 VI" itemValue="231186" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000 VI" itemValue="231187" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000 VI" itemValue="231188" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000 VI" itemValue="231192" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000 VI" itemValue="231193" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000 VI" itemValue="231194" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231180" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231181" />
+							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231182" />
+							<f:selectItem itemLabel="AMIGO FACIL 18M" itemValue="216711" />
+							<f:selectItem itemLabel="TINT PLUS TD EM300 AV A 18" itemValue="216715" />
+							<f:selectItem itemLabel="TINT PLUS TD EM100CB AV A 18" itemValue="216716" />
+							<f:selectItem itemLabel="BULK ALTO VOLUMEN 100M" itemValue="216720" />
+							<f:selectItem itemLabel="BULK ALTO VOLUMEN 30M" itemValue="216721" />
+							<f:selectItem itemLabel="BULK ALTO VOLUMEN 50M" itemValue="216722" />
+							<f:selectItem itemLabel="TELCEL TABLET  3500 MB" itemValue="225903" />
+							<f:selectItem itemLabel="TELCEL TABLET  3500 MB" itemValue="225904" />
+							<f:selectItem itemLabel="TELCEL TABLET  3500 MB CC" itemValue="225905" />
+							<f:selectItem itemLabel="TELCEL TABLET  3500 MB CC" itemValue="225906" />
+							<f:selectItem itemLabel="BULK BIDIRECCIONAL" itemValue="216723" />
+							<f:selectItem itemLabel="BULK UNIDIRECCIONAL" itemValue="216724" />
+							<f:selectItem itemLabel="PROTEC DIG CC SR 12" itemValue="216725" />
+							<f:selectItem itemLabel="TELCEL PLUS EMPR INT500 CB A 18" itemValue="216727" />
+							<f:selectItem itemLabel="TELCEL PLUS EMPR INT2000 CB A 18" itemValue="216728" />
+							<f:selectItem itemLabel="TPLUS EMPRESA 40 COST A 18" itemValue="216729" />
+							<f:selectItem itemLabel="TPLUS EMPRESA 100 COST A 18" itemValue="216730" />
+							<f:selectItem itemLabel="TPLUS EMPRESA 300 COST A 12" itemValue="216731" />
+							<f:selectItem itemLabel="TPLUS EMPRESA INT300 COST A 12" itemValue="216732" />
+							<f:selectItem itemLabel="TPLUS EMPRESA INT300 COST A 18" itemValue="216733" />
+							<f:selectItem itemLabel="TPLUS EMPRESA 40 COST B 18" itemValue="216736" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000" itemValue="225654" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000" itemValue="225655" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000" itemValue="225656" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000 VI" itemValue="225657" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000 VI" itemValue="225658" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000 VI" itemValue="225659" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000" itemValue="225672" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000" itemValue="225673" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000" itemValue="225674" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000 VI" itemValue="225675" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000 VI" itemValue="225676" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000 VI" itemValue="225677" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000" itemValue="225831" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000" itemValue="225832" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000" itemValue="225833" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000" itemValue="225837" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000" itemValue="225838" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000" itemValue="225839" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000" itemValue="225819" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000" itemValue="225820" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000" itemValue="225821" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000 VI" itemValue="225834" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000 VI" itemValue="225835" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000 VI" itemValue="225836" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000 VI" itemValue="225840" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000 VI" itemValue="225841" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000 VI" itemValue="225842" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000 VI" itemValue="225822" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000 VI" itemValue="225823" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000 VI" itemValue="225824" />
+							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 3000" itemValue="225573" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+					
+					
+					<h:panelGroup layout="block">
+						<p:outputLabel for="movimiento" value="Movimiento" />
+						<p:selectOneMenu id="movimiento"
+							value="#{sievController.sievPojo.movimiento}" required="true">
+							<f:selectItem itemValue="" itemLabel="Selección..." />
+							<f:selectItem itemValue="1" itemLabel="Activación" />
+							<f:selectItem itemValue="2" itemLabel="Renovación" />
+							<f:selectItem itemValue="3" itemLabel="Migración" />
+							<f:selectItem itemValue="4" itemLabel="Portabilidad" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+<!-- 					<h:panelGroup layout="block"> -->
+<!-- 						<p:outputLabel for="idCanal" value="Canal" /> -->
+<!-- 						<p:selectOneMenu id="idCanal" value="#{sievController.sievPojo.idCanal}" required="true"> -->
+<!-- 							<f:selectItems value="#{sievController.lista}" var="canal" itemValue="canal.clave" itemLabel="canal.canal"/> -->
+<!-- 						</p:selectOneMenu> -->
+<!-- 					</h:panelGroup> -->
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="idMercado" value="Mercado"/>
+						<p:selectOneMenu id="idMercado"
+							value="#{sievController.sievPojo.idMercado}" required="true">
+							<f:selectItem itemValue="" itemLabel="Selección..." />
+							<f:selectItem itemValue="1" itemLabel="MASIVO" />
+							<f:selectItem itemValue="2" itemLabel="PYME" />
+							<f:selectItem itemValue="3" itemLabel="CORPORATIVO" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="idSistema" value="Sistema" />
+						<p:selectOneMenu id="idSistema" style="width:200px"
+							value="#{sievController.sievPojo.idSistema}" required="true">
+							<f:selectItem itemValue="" itemLabel="Selección..." />
+							<f:selectItem itemValue="1" itemLabel="SISACT" />
+							<f:selectItem itemValue="2" itemLabel="ECAC" />
+							<f:selectItem itemValue="3" itemLabel="SICORE" />
+							<f:selectItem itemValue="4" itemLabel="SAFIN" />
+							<f:selectItem itemValue="5" itemLabel="SMART" />
+							<f:selectItem itemValue="6" itemLabel="CREDIT CHECK" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="idProducto" value="Producto" />
+						<p:selectOneMenu id="idProducto" style="width:200px"
+							value="#{sievController.sievPojo.idProducto}" required="true">
+							<f:selectItem itemValue="" itemLabel="Selección..." />
+							<f:selectItem itemValue="1" itemLabel="EQUIPO" />
+							<f:selectItem itemValue="2" itemLabel="ACCESORIO" />
+							<f:selectItem itemValue="3" itemLabel="SERVICIO" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="numEmpleado" value="Número Empleado" />
+						<p:inputText id="numEmpleado"
+							value="#{sievController.sievPojo.numEmpleado}" required="true" >
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="clasiCliente" value="Clasificación Cliente" />
+						<p:inputText type="text" id="clasiCliente"
+							value="#{sievController.sievPojo.clasificacionCliente}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="clasiBuro" value="Clasificación Buro" />
+						<p:inputText type="text" id="clasiBuro"
+							value="#{sievController.sievPojo.clasificacionCliente}" required="true">
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="icc" value="ICC" />
+						<p:inputText id="icc" value="#{sievController.sievPojo.icc}" required="true">
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="scoreBuro" value="Score Buró" />
+						<p:inputText type="number" id="scoreBuro"
+							value="#{sievController.sievPojo.scoreBuro}" required="true">
+							<p:keyFilter regEx="/[1234567890]/i"/>
+						</p:inputText>
+					</h:panelGroup>
+
+				</p:panelGrid>
+
+			</p:panel>
+
+
+			<p:panel id="columnasRecalcular" header="Recalcular Oferta">
+
+				<p:panelGrid columns="2" cellpadding="5" layout="grid">
+					<h:panelGroup layout="block">
+						<p:outputLabel for="idOferta" value="ID Oferta" />
+						<p:inputNumber id="idOferta"
+							value="#{sievController.sievPojo.idOferta}"
+							decimalPlaces="0" required="true"/>
+					</h:panelGroup>
+
+					<h:panelGroup layout="block">
+						<p:outputLabel for="aportacionVoluntaria"
+							value="Aportación Voluntaria" />
+						<p:inputNumber id="aportacionVoluntaria"
+							value="#{sievController.sievPojo.aportacionVoluntaria}" required="true"/>
+					</h:panelGroup>
+
+				</p:panelGrid>
+			</p:panel>
+
+		</p:outputPanel>
+
+
+		<p:panelGrid columns="2"  cellpadding="1" layout="grid">
+			<h:panelGroup layout="block">
+				<p:commandButton value="Consultar"
+					actionListener="#{sievController.submit()}" ajax="false" />
+			</h:panelGroup>
+			<h:panelGroup layout="block">
+				<p:commandButton value="Limpiar"
+					actionListener="#{sievController.limpiarDatos()}" ajax="false" />
+			</h:panelGroup>
+		</p:panelGrid>
+		<p:panel header="Respuesta Consulta">
+
+			<h:panelGroup layout="block">
+				<p:outputLabel for="msg" style="alignment-adjust: auto"></p:outputLabel>
+				<p:inputTextarea rows="6" cols="140" id="msg"
+					style="align-content: center;"
+					value="#{sievController.responseWS}" />
+			</h:panelGroup>
+		</p:panel>
+	</h:form>
+
+</h:body>
+
+</html>

@@ -1,14 +1,17 @@
 package com.telcel.gam.siev;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
-import com.telcel.gam.siev.client.SafinClient;
 
+import com.telcel.gam.siev.client.SievClient;
+/**
+ * Clase para configurar los datos de los clientes de los Web Service
+ * @author VI8G023
+ *
+ */
 @Configuration
-@Qualifier("SafinConfig")
-public class SafinConfig {
+public class SievConfig {
 
 	@Bean
     public Jaxb2Marshaller marshaller() {
@@ -20,10 +23,8 @@ public class SafinConfig {
     }
  
     @Bean
-    public SafinClient soapConnector(Jaxb2Marshaller marshaller) {
-        SafinClient client = new SafinClient();
-//        client.setDefaultUri("http://localhost:8098/mockSafinServicesSoapBinding?WSDL");
-        client.setDefaultUri("http://10.188.92.250:8082/SAFIN-WEB/app/services/SafinServices?wsdl");
+    public SievClient soapConnector(Jaxb2Marshaller marshaller) {
+    	SievClient client = new SievClient();
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;
