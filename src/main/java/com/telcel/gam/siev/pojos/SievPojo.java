@@ -29,7 +29,7 @@ public class SievPojo {
     private String idMercado;
     private Double costoBase;
     private Double sobrePrecio;
-    private String cveMarca;
+    private Short cveMarca;
     private String cveModelo;
     private String numEmpleado;
     private String fuerzaVenta;
@@ -46,7 +46,7 @@ public class SievPojo {
     private String tipoPlan;
     private String tipoPlazo;
     private String tipoTramite;
-    private String marca;
+//    private String marca;
 //    private String fuerzaVenta;
     private String proyecto;
 //    private String formaPago;
@@ -187,10 +187,10 @@ public class SievPojo {
 	public void setSobrePrecio(Double sobrePrecio) {
 		this.sobrePrecio = sobrePrecio;
 	}
-	public String getCveMarca() {
+	public Short getCveMarca() {
 		return cveMarca;
 	}
-	public void setCveMarca(String cveMarca) {
+	public void setCveMarca(Short cveMarca) {
 		this.cveMarca = cveMarca;
 	}
 	public String getCveModelo() {
@@ -282,12 +282,6 @@ public class SievPojo {
 	}
 	public void setTipoTramite(String tipoTramite) {
 		this.tipoTramite = tipoTramite;
-	}
-	public String getMarca() {
-		return marca;
-	}
-	public void setMarca(String marca) {
-		this.marca = marca;
 	}
 	public String getProyecto() {
 		return proyecto;

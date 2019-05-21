@@ -103,7 +103,7 @@ public class SievClient extends WebServiceGatewaySupport {
 		ofertarClientePetType.setClasificacionCLiente(pojo.getClasificacionCliente());
         ofertarClientePetType.setIdFormaPago(pojo.getFormaPago());
 		ofertarClientePetType.setIdSistema(Integer.parseInt(pojo.getIdSistema()));
-		ofertarClientePetType.setCveMarca(pojo.getCveMarca());
+		ofertarClientePetType.setCveMarca(pojo.getCveMarca().toString());
 		ofertarClientePetType.setCveModelo(pojo.getCveModelo());
 		ofertarClientePetType.setNumeroEmpleado(pojo.getNumEmpleado());
 		ofertarClientePetType.setFuerzaVenta(pojo.getFuerzaVenta());

@@ -45,7 +45,7 @@ public class RequestCredCheck {
         requestCredCheck.append("                     <tipoPlan>" + sievPojo.getTipoPlan() + "</tipoPlan>\n");
         requestCredCheck.append("                     <tipoPlazo>" + sievPojo.getTipoPlazo() + "</tipoPlazo>\n");
         requestCredCheck.append("                     <tipoTramite>" + sievPojo.getTipoTramite() + "</tipoTramite>\n");
-        requestCredCheck.append("                     <marca>" + sievPojo.getMarca() + "</marca>\n");
+        requestCredCheck.append("                     <marca>" + sievPojo.getCveMarca() + "</marca>\n");
         requestCredCheck.append("                     <fuerzaVenta>" + sievPojo.getFuerzaVenta() + "</fuerzaVenta>\n");
         requestCredCheck.append("                     <proyecto>" + sievPojo.getProyecto() + "</proyecto>\n");
         requestCredCheck.append("                     <formaPago>" + sievPojo.getFormaPago() + "</formaPago>\n");
