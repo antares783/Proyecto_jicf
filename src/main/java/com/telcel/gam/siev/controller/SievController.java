@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.xml.bind.JAXBElement;
 
+import org.assertj.core.util.DateUtil;
 import org.ocpsoft.rewrite.el.ELBeanName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -20,6 +21,8 @@ import com.telcel.gam.siev.modelo.TcCredcheckRegiones;
 import com.telcel.gam.siev.modelo.TcMarca;
 import com.telcel.gam.siev.modelo.TcModelo;
 import com.telcel.gam.siev.modelo.TcSafinCanales;
+import com.telcel.gam.siev.modelo.TcSistemasCatalogos;
+import com.telcel.gam.siev.modelo.TtWsLlamadaRespuesta;
 import com.telcel.gam.siev.pojos.SievPojo;
 import com.telcel.gam.siev.repository.TcCredcheckEstadosRepository;
 import com.telcel.gam.siev.repository.TcCredcheckFuerzasVentaRepository;
@@ -27,9 +30,9 @@ import com.telcel.gam.siev.repository.TcCredcheckRegionesRepository;
 import com.telcel.gam.siev.repository.TcMarcaRepository;
 import com.telcel.gam.siev.repository.TcModeloRepository;
 import com.telcel.gam.siev.repository.TcSafinCanalesRepository;
+import com.telcel.gam.siev.repository.TcSistemasCatalogosRepository;
+import com.telcel.gam.siev.repository.TtWsLlamadaRespuestaRepository;
 import com.telcel.gam.siev.ws.ConsultarCreditoResponse;
-import com.telcel.gam.siev.ws.OfertarClienteResponse;
-import com.telcel.gam.siev.ws.RecalcularOfertaResponse;
 
 /**
  *
@@ -41,6 +44,10 @@ import com.telcel.gam.siev.ws.RecalcularOfertaResponse;
 @ELBeanName("sievController")
 public class SievController {
  
+	public static final Short SAFiN = 1;
+	public static final Short CREDITCHECK= 2;
+	
+	
 	/***************************Beans, variables****************************/
 	private SievPojo sievPojo = new SievPojo();
 	
@@ -62,6 +69,25 @@ public class SievController {
 	
 	private List<TcModelo> listaModelo =  new ArrayList<TcModelo>();
 	
+	private TtWsLlamadaRespuesta ttWsLlamadaRespuesta;
+	/**
+	 * Lista general para todos los catalogos
+	 */
+	private List<TcSistemasCatalogos> listaCatalogos = new ArrayList<TcSistemasCatalogos>();
+	
+	private List<TcSistemasCatalogos> listaCveBanco = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaCredAutomotriz = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaCredBancario = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaFormaPago = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaMercado = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaModalidadInvest = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaProyecto = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaSexo = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaTipoLinea = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaTipoPersona = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaTramite = new ArrayList<TcSistemasCatalogos>();
+	private List<TcSistemasCatalogos> listaVentaPlazos = new ArrayList<TcSistemasCatalogos>();
+	
 	@Autowired
 	private TcSafinCanalesRepository canalesRepository;
 	@Autowired
@@ -74,6 +100,10 @@ public class SievController {
 	private TcMarcaRepository marcaRepository;
 	@Autowired
 	private TcModeloRepository modeloRepository;
+	@Autowired
+	private TtWsLlamadaRespuestaRepository llamadaRespuestaRepository;
+	@Autowired
+	private TcSistemasCatalogosRepository catalogosSistemaRepository;
 	
 	@PostConstruct
 	private void init () {
@@ -82,6 +112,54 @@ public class SievController {
 		listaFuerzaVentas = fuerzaVentasRepository.findAll();
 		listaRegiones = regionesRepository.findAll();
 		listaMarca = marcaRepository.findByParams('1');
+		listaCatalogos = catalogosSistemaRepository.findAll();
+		llenadoCatalogos();
+	}
+	
+	public void llenadoCatalogos() {
+		System.out.println("Pasando por el llenado de catalogos");
+		listaCatalogos.forEach((TcSistemasCatalogos pivot) -> {
+			switch (pivot.getTcSistemasCatalogosPK().getCampo()) {
+				case "CLAVE_BANCO":
+					listaCveBanco.add(pivot);
+				break;
+				case "CREDITO_AUTOMOTRIZ":
+					listaCredAutomotriz.add(pivot);
+				break;
+				case "CREDITO_BANCARIO":
+					listaCredBancario.add(pivot);
+				break;
+				case "FORMA_PAGO":
+					listaFormaPago.add(pivot);
+				break;
+				case "MERCADO":
+					listaMercado.add(pivot);
+				break;
+				case "MODALIDAD_INVESTIGACION":
+					listaModalidadInvest.add(pivot);
+				break;
+				case "PROYECTO":
+					listaProyecto.add(pivot);
+				break;
+				case "SEXO":
+					listaSexo.add(pivot);
+				break;
+				case "TIPO_LINEA":
+					listaTipoLinea.add(pivot);
+				break;
+				case "TIPO_PERSONA":
+					listaTipoPersona.add(pivot);
+				break;
+				case "TIPO_TRAMITE":
+					listaTramite.add(pivot);
+				break;
+				case "VENTA_PLAZOS":
+					listaVentaPlazos.add(pivot);
+				break;
+				default:
+				break;
+			}
+		});
 	}
 
 	public void getModelosByMarca() {
@@ -103,17 +181,25 @@ public class SievController {
 		@SuppressWarnings("unchecked")
 		JAXBElement<ConsultarCreditoResponse> responseConsultarCredito = (JAXBElement<ConsultarCreditoResponse>) client.callWebServiceConsultaCliente(sievPojo);
 		
+		ttWsLlamadaRespuesta = new TtWsLlamadaRespuesta(1);
+		ttWsLlamadaRespuesta.setClaveSistema(SAFiN);
+		ttWsLlamadaRespuesta.setFecha(DateUtil.now());
+		ttWsLlamadaRespuesta.setUsuario("EX406063");
+//		ttWsLlamadaRespuesta.setLlamada(responseConsultarCredito.getValue().getConsultarCreditoResponse().);
+		
+		llamadaRespuestaRepository.saveAndFlush(ttWsLlamadaRespuesta);
+		
 		responseWS = com.telcel.gam.siev.util.SievResponseUtil.getResponseConsultarCredito(responseConsultarCredito);
-		
-		@SuppressWarnings("unchecked")
-		JAXBElement<OfertarClienteResponse> responseOfertaCliente = (JAXBElement<OfertarClienteResponse>) client.callWebServiceOfertaCliente(sievPojo);
-		
-		responseWS = responseWS + com.telcel.gam.siev.util.SievResponseUtil.getResponseOfertaCliente(responseOfertaCliente);
-		
-		@SuppressWarnings("unchecked")
-		JAXBElement<RecalcularOfertaResponse> responseRecalcular = (JAXBElement<RecalcularOfertaResponse>) client.callWebServiceRecalcularOferta(sievPojo);
-
-		responseWS = responseWS + com.telcel.gam.siev.util.SievResponseUtil.getResponseRecalcularOferta(responseRecalcular);
+//		
+//		@SuppressWarnings("unchecked")
+//		JAXBElement<OfertarClienteResponse> responseOfertaCliente = (JAXBElement<OfertarClienteResponse>) client.callWebServiceOfertaCliente(sievPojo);
+//		
+//		responseWS = responseWS + com.telcel.gam.siev.util.SievResponseUtil.getResponseOfertaCliente(responseOfertaCliente);
+//		
+//		@SuppressWarnings("unchecked")
+//		JAXBElement<RecalcularOfertaResponse> responseRecalcular = (JAXBElement<RecalcularOfertaResponse>) client.callWebServiceRecalcularOferta(sievPojo);
+//
+//		responseWS = responseWS + com.telcel.gam.siev.util.SievResponseUtil.getResponseRecalcularOferta(responseRecalcular);
 		
 		context.close();
 		
@@ -206,7 +292,119 @@ public class SievController {
 
 		public void setClaveMarca(String claveMarca) {
 			this.claveMarca = claveMarca;
-		}	
-		
+		}
+
+		public TtWsLlamadaRespuesta getTtWsLlamadaRespuesta() {
+			return ttWsLlamadaRespuesta;
+		}
+
+		public void setTtWsLlamadaRespuesta(TtWsLlamadaRespuesta ttWsLlamadaRespuesta) {
+			this.ttWsLlamadaRespuesta = ttWsLlamadaRespuesta;
+		}
+
+		public List<TcSistemasCatalogos> getListaCatalogos() {
+			return listaCatalogos;
+		}
+
+		public void setListaCatalogos(List<TcSistemasCatalogos> listaCatalogos) {
+			this.listaCatalogos = listaCatalogos;
+		}
+
+		public List<TcSistemasCatalogos> getListaCveBanco() {
+			return listaCveBanco;
+		}
+
+		public void setListaCveBanco(List<TcSistemasCatalogos> listaCveBanco) {
+			this.listaCveBanco = listaCveBanco;
+		}
+
+		public List<TcSistemasCatalogos> getListaCredAutomotriz() {
+			return listaCredAutomotriz;
+		}
+
+		public void setListaCredAutomotriz(List<TcSistemasCatalogos> listaCredAutomotriz) {
+			this.listaCredAutomotriz = listaCredAutomotriz;
+		}
+
+		public List<TcSistemasCatalogos> getListaCredBancario() {
+			return listaCredBancario;
+		}
+
+		public void setListaCredBancario(List<TcSistemasCatalogos> listaCredBancario) {
+			this.listaCredBancario = listaCredBancario;
+		}
+
+		public List<TcSistemasCatalogos> getListaFormaPago() {
+			return listaFormaPago;
+		}
+
+		public void setListaFormaPago(List<TcSistemasCatalogos> listaFormaPago) {
+			this.listaFormaPago = listaFormaPago;
+		}
+
+		public List<TcSistemasCatalogos> getListaMercado() {
+			return listaMercado;
+		}
+
+		public void setListaMercado(List<TcSistemasCatalogos> listaMercado) {
+			this.listaMercado = listaMercado;
+		}
+
+		public List<TcSistemasCatalogos> getListaModalidadInvest() {
+			return listaModalidadInvest;
+		}
+
+		public void setListaModalidadInvest(List<TcSistemasCatalogos> listaModalidadInvest) {
+			this.listaModalidadInvest = listaModalidadInvest;
+		}
+
+		public List<TcSistemasCatalogos> getListaProyecto() {
+			return listaProyecto;
+		}
+
+		public void setListaProyecto(List<TcSistemasCatalogos> listaProyecto) {
+			this.listaProyecto = listaProyecto;
+		}
+
+		public List<TcSistemasCatalogos> getListaSexo() {
+			return listaSexo;
+		}
+
+		public void setListaSexo(List<TcSistemasCatalogos> listaSexo) {
+			this.listaSexo = listaSexo;
+		}
+
+		public List<TcSistemasCatalogos> getListaTipoLinea() {
+			return listaTipoLinea;
+		}
+
+		public void setListaTipoLinea(List<TcSistemasCatalogos> listaTipoLinea) {
+			this.listaTipoLinea = listaTipoLinea;
+		}
+
+		public List<TcSistemasCatalogos> getListaTipoPersona() {
+			return listaTipoPersona;
+		}
+
+		public void setListaTipoPersona(List<TcSistemasCatalogos> listaTipoPersona) {
+			this.listaTipoPersona = listaTipoPersona;
+		}
+
+		public List<TcSistemasCatalogos> getListaTramite() {
+			return listaTramite;
+		}
+
+		public void setListaTramite(List<TcSistemasCatalogos> listaTramite) {
+			this.listaTramite = listaTramite;
+		}
+
+		public List<TcSistemasCatalogos> getListaVentaPlazos() {
+			return listaVentaPlazos;
+		}
+
+		public void setListaVentaPlazos(List<TcSistemasCatalogos> listaVentaPlazos) {
+			this.listaVentaPlazos = listaVentaPlazos;
+		}
+
 		
 }

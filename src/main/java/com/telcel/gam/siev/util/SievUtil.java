@@ -2,8 +2,11 @@ package com.telcel.gam.siev.util;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -12,6 +15,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.assertj.core.util.DateUtil;
 
+import com.telcel.gam.siev.modelo.TcSistemasCatalogos;
 import com.telcel.gam.siev.pojos.SievPojo;
 import com.telcel.gam.siev.ws.ConsultarCreditoResponse;
 import com.telcel.gam.siev.ws.ControlDataRequestType;
@@ -87,5 +91,6 @@ public class SievUtil {
         
         return controlDataRequestType;
 	}
+	
 	
 }

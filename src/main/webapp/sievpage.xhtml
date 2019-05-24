@@ -273,12 +273,11 @@ input[type="text"] {
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<p:outputLabel for="claveBanco" value="Clave Banco"
-							styleClass="requiredLb1" />
-						<p:inputText id="claveBanco" label="Clave Banco"
-							value="#{sievController.sievPojo.claveBanco}" >
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
-						</p:inputText>
+						<p:outputLabel for="claveBanco" value="Clave Banco"/>
+						<p:selectOneMenu id="claveBanco" label="Clave Banco" value="#{sievController.sievPojo.claveBanco}" >
+						<f:selectItem itemLabel="Seleccion..." itemValue="" />
+						<f:selectItems value="#{sievController.listaCveBanco}" var="banco" itemLabel="#{banco.tcSistemasCatalogosPK.claveValor}" itemValue="#{banco.tcSistemasCatalogosPK.claveValor}"/>
+						</p:selectOneMenu>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
