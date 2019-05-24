@@ -182,7 +182,7 @@ public class SievController {
 		JAXBElement<ConsultarCreditoResponse> responseConsultarCredito = (JAXBElement<ConsultarCreditoResponse>) client.callWebServiceConsultaCliente(sievPojo);
 		
 		ttWsLlamadaRespuesta = new TtWsLlamadaRespuesta(1);
-		ttWsLlamadaRespuesta.setClaveSistema(SAFiN);
+//		ttWsLlamadaRespuesta.setClaveSistema(SAFiN);
 		ttWsLlamadaRespuesta.setFecha(DateUtil.now());
 		ttWsLlamadaRespuesta.setUsuario("EX406063");
 //		ttWsLlamadaRespuesta.setLlamada(responseConsultarCredito.getValue().getConsultarCreditoResponse().);
