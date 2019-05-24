@@ -11,7 +11,9 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -31,7 +33,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "TtWsLlamadaRespuesta.findAll", query = "SELECT t FROM TtWsLlamadaRespuesta t"),
     @NamedQuery(name = "TtWsLlamadaRespuesta.findById", query = "SELECT t FROM TtWsLlamadaRespuesta t WHERE t.id = :id"),
-    @NamedQuery(name = "TtWsLlamadaRespuesta.findByClaveSistema", query = "SELECT t FROM TtWsLlamadaRespuesta t WHERE t.claveSistema = :claveSistema"),
     @NamedQuery(name = "TtWsLlamadaRespuesta.findByLlamada", query = "SELECT t FROM TtWsLlamadaRespuesta t WHERE t.llamada = :llamada"),
     @NamedQuery(name = "TtWsLlamadaRespuesta.findByUsuario", query = "SELECT t FROM TtWsLlamadaRespuesta t WHERE t.usuario = :usuario"),
     @NamedQuery(name = "TtWsLlamadaRespuesta.findByFecha", query = "SELECT t FROM TtWsLlamadaRespuesta t WHERE t.fecha = :fecha")})
@@ -42,8 +43,6 @@ public class TtWsLlamadaRespuesta implements Serializable {
     @NotNull
     @Column(name = "ID")
     private Integer id;
-    @Column(name = "CLAVE_SISTEMA")
-    private Short claveSistema;
     @Size(max = 4600)
     @Column(name = "LLAMADA")
     private String llamada;
@@ -57,6 +56,9 @@ public class TtWsLlamadaRespuesta implements Serializable {
     @Column(name = "FECHA")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
+    @JoinColumn(name = "CLAVE_SISTEMA", referencedColumnName = "CLAVE")
+    @ManyToOne
+    private TcSistemas claveSistema;
 
     public TtWsLlamadaRespuesta() {
     }
@@ -71,14 +73,6 @@ public class TtWsLlamadaRespuesta implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Short getClaveSistema() {
-        return claveSistema;
-    }
-
-    public void setClaveSistema(Short claveSistema) {
-        this.claveSistema = claveSistema;
     }
 
     public String getLlamada() {
@@ -111,6 +105,14 @@ public class TtWsLlamadaRespuesta implements Serializable {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public TcSistemas getClaveSistema() {
+        return claveSistema;
+    }
+
+    public void setClaveSistema(TcSistemas claveSistema) {
+        this.claveSistema = claveSistema;
     }
 
     @Override

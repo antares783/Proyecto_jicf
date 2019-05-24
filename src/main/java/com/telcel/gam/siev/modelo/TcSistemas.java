@@ -6,16 +6,19 @@
 package com.telcel.gam.siev.modelo;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -38,6 +41,8 @@ public class TcSistemas implements Serializable {
     @Size(max = 30)
     @Column(name = "SISTEMA")
     private String sistema;
+    @OneToMany(mappedBy = "claveSistema")
+    private Collection<TtWsLlamadaRespuesta> ttWsLlamadaRespuestaCollection;
 
     public TcSistemas() {
     }
@@ -60,6 +65,15 @@ public class TcSistemas implements Serializable {
 
     public void setSistema(String sistema) {
         this.sistema = sistema;
+    }
+
+    @XmlTransient
+    public Collection<TtWsLlamadaRespuesta> getTtWsLlamadaRespuestaCollection() {
+        return ttWsLlamadaRespuestaCollection;
+    }
+
+    public void setTtWsLlamadaRespuestaCollection(Collection<TtWsLlamadaRespuesta> ttWsLlamadaRespuestaCollection) {
+        this.ttWsLlamadaRespuestaCollection = ttWsLlamadaRespuestaCollection;
     }
 
     @Override

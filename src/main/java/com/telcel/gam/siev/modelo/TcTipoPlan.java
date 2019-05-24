@@ -6,60 +6,75 @@
 package com.telcel.gam.siev.modelo;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author VI8G023
  */
 @Entity
-@Table(name = "TC_SAFIN_CANALES", catalog = "SIEV", schema = "dbo")
+@Table(name = "TC_TIPO_PLAN", catalog = "SIEV", schema = "dbo")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "TcSafinCanales.findAll", query = "SELECT t FROM TcSafinCanales t"),
-    @NamedQuery(name = "TcSafinCanales.findByClave", query = "SELECT t FROM TcSafinCanales t WHERE t.clave = :clave"),
-    @NamedQuery(name = "TcSafinCanales.findByCanal", query = "SELECT t FROM TcSafinCanales t WHERE t.canal = :canal")})
-public class TcSafinCanales implements Serializable {
+    @NamedQuery(name = "TcTipoPlan.findAll", query = "SELECT t FROM TcTipoPlan t"),
+    @NamedQuery(name = "TcTipoPlan.findByClave", query = "SELECT t FROM TcTipoPlan t WHERE t.clave = :clave"),
+    @NamedQuery(name = "TcTipoPlan.findByPlanDescripcion", query = "SELECT t FROM TcTipoPlan t WHERE t.planDescripcion = :planDescripcion")})
+public class TcTipoPlan implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 1)
     @Column(name = "CLAVE")
-    private Short clave;
-    @Size(max = 15)
-    @Column(name = "CANAL")
-    private String canal;
+    private String clave;
+    @Size(max = 30)
+    @Column(name = "PLAN_DESCRIPCION")
+    private String planDescripcion;
+    @OneToMany(mappedBy = "tipoPlan")
+    private Collection<TcPlan> tcPlanCollection;
 
-    public TcSafinCanales() {
+    public TcTipoPlan() {
     }
 
-    public TcSafinCanales(Short clave) {
+    public TcTipoPlan(String clave) {
         this.clave = clave;
     }
 
-    public Short getClave() {
+    public String getClave() {
         return clave;
     }
 
-    public void setClave(Short clave) {
+    public void setClave(String clave) {
         this.clave = clave;
     }
 
-    public String getCanal() {
-        return canal;
+    public String getPlanDescripcion() {
+        return planDescripcion;
     }
 
-    public void setCanal(String canal) {
-        this.canal = canal;
+    public void setPlanDescripcion(String planDescripcion) {
+        this.planDescripcion = planDescripcion;
+    }
+
+    @XmlTransient
+    public Collection<TcPlan> getTcPlanCollection() {
+        return tcPlanCollection;
+    }
+
+    public void setTcPlanCollection(Collection<TcPlan> tcPlanCollection) {
+        this.tcPlanCollection = tcPlanCollection;
     }
 
     @Override
@@ -72,10 +87,10 @@ public class TcSafinCanales implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TcSafinCanales)) {
+        if (!(object instanceof TcTipoPlan)) {
             return false;
         }
-        TcSafinCanales other = (TcSafinCanales) object;
+        TcTipoPlan other = (TcTipoPlan) object;
         if ((this.clave == null && other.clave != null) || (this.clave != null && !this.clave.equals(other.clave))) {
             return false;
         }
@@ -84,7 +99,7 @@ public class TcSafinCanales implements Serializable {
 
     @Override
     public String toString() {
-        return "com.telcel.gam.siev.modelo.TcSafinCanales[ clave=" + clave + " ]";
+        return "com.telcel.gam.siev.modelo.TcTipoPlan[ clave=" + clave + " ]";
     }
     
 }

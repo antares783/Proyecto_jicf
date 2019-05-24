@@ -56,6 +56,9 @@ public class TcPlan implements Serializable {
     private Character dispoDeur;
     @Column(name = "DISPO_R9")
     private Character dispoR9;
+    @JoinColumn(name = "TIPO_PLAN", referencedColumnName = "CLAVE")
+    @ManyToOne
+    private TcTipoPlan tipoPlan;
     @JoinColumn(name = "TIPO_PLAZO", referencedColumnName = "CLAVE")
     @ManyToOne
     private TcTipoPlazo tipoPlazo;
@@ -118,6 +121,14 @@ public class TcPlan implements Serializable {
 
     public void setDispoR9(Character dispoR9) {
         this.dispoR9 = dispoR9;
+    }
+
+    public TcTipoPlan getTipoPlan() {
+        return tipoPlan;
+    }
+
+    public void setTipoPlan(TcTipoPlan tipoPlan) {
+        this.tipoPlan = tipoPlan;
     }
 
     public TcTipoPlazo getTipoPlazo() {
