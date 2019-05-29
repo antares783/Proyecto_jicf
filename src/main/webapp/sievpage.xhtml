@@ -33,16 +33,18 @@ input[type="text"] {
 	column-count: 2;
 	column-gap: 25px;
 }
-.ui-inputtext, .ui-inputfield{
-    text-transform: uppercase;    
-    }
+
+.ui-inputtext, .ui-inputfield {
+	text-transform: uppercase;
+}
 /*]]>*/
 </style>
+
 </h:head>
 
 
 <h:body>
-<!-- 	<p:outputLabel for="@next" value="Sistema Integrado de Evaluación" /> -->
+	<!-- 	<p:outputLabel for="@next" value="Sistema Integrado de Evaluación" /> -->
 	<h1>Sistema Integrado de Evaluación</h1>
 	<h:form>
 
@@ -57,7 +59,7 @@ input[type="text"] {
 							styleClass="requiredLb1" />
 						<p:inputText id="razonSocial" label="Razón Social"
 							value="#{sievController.sievPojo.razonSocial}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -66,7 +68,7 @@ input[type="text"] {
 							styleClass="requiredLb1" />
 						<p:inputText id="nombre" label="Nombre"
 							value="#{sievController.sievPojo.nombre}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -74,17 +76,18 @@ input[type="text"] {
 						<p:outputLabel for="apellidoPaterno" value="Apellido Paterno"
 							styleClass="requiredLb1" />
 						<p:inputText id="apellidoPaterno" label="Apellido Paterno"
-							value="#{sievController.sievPojo.apellidoPaterno}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.apellidoPaterno}"
+							required="true">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<p:outputLabel for="apellidoMaterno" value="Apellido Materno"
-							styleClass="requiredLb1" />
+						<p:outputLabel for="apellidoMaterno" value="Apellido Materno" />
 						<p:inputText id="apellidoMaterno" label="Apellido Materno"
-							value="#{sievController.sievPojo.apellidoMaterno}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.apellidoMaterno}"
+							required="true">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -93,18 +96,18 @@ input[type="text"] {
 						<p:outputLabel for="fechaNacimiento" value="Fecha de Nacimiento" />
 						<p:calendar id="fechaNacimiento"
 							value="#{sievController.sievPojo.fechaNacimiento}"
-							showOn="button" required="true"/>
+							showOn="button" required="true" pattern="dd-MM-yyyy" />
 					</h:panelGroup>
 
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="sexo" value="Sexo" />
-						<p:selectOneMenu id="sexo"
-							value="#{sievController.sievPojo.sexo}"
-							style="width:125px" required="true">
+						<p:selectOneMenu id="sexo" value="#{sievController.sievPojo.sexo}"
+							required="true">
 							<f:selectItem itemLabel="Select..." itemValue="" />
-							<f:selectItem itemLabel="Hombre" itemValue="M" />
-							<f:selectItem itemLabel="Mujer" itemValue="F" />
+							<f:selectItems value="#{sievController.listaSexo}" var="sexo"
+								itemValue="#{sexo.tcSistemasCatalogosPK.claveValor}"
+								itemLabel="#{sexo.valor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -112,29 +115,28 @@ input[type="text"] {
 						<p:outputLabel for="rfc" value="RFC" styleClass="requiredLb1" />
 						<p:inputText id="rfc" label="RFC"
 							value="#{sievController.sievPojo.rfc}" required="true">
-<!-- 							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/> -->
-							<p:keyFilter regEx="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])([A-Z]|[0-9]){2}([A]|[0-9]){1})?$"/>
+							<!-- 							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/> -->
+							<p:keyFilter
+								regEx="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])([A-Z]|[0-9]){2}([A]|[0-9]){1})?$" />
 						</p:inputText>
 					</h:panelGroup>
-					
+
 					<h:panelGroup layout="block">
 						<p:outputLabel for="curp" value="CURP" styleClass="requiredLb1" />
 						<p:inputText id="curp" label="CURP"
 							value="#{sievController.sievPojo.curp}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
-					<!-- Falta definir estados como catalogo, el valor de envio no es el correcto-->
 					<h:panelGroup layout="block">
 						<p:outputLabel for="estado" value="Estado:" />
 						<p:selectOneMenu id="estado"
-							value="#{sievController.sievPojo.estado}"
-							style="width:125px" required="true">
-							<f:selectItem itemLabel="Select..."
-								itemValue="" />
-							<f:selectItems value="#{sievController.listaEstados}" var="edo" itemValue="#{edo.clave}" itemLabel="#{edo.estado}"/>
-<!-- 							<f:selectItems value="#{sievController.lista}" var="canal" itemValue="#{canal.clave}" itemLabel="#{canal.canal}"/> -->
+							value="#{sievController.sievPojo.estado}" style="width:125px"
+							required="true">
+							<f:selectItem itemLabel="Select..." itemValue="" />
+							<f:selectItems value="#{sievController.listaEstados}" var="edo"
+								itemValue="#{edo.clave}" itemLabel="#{edo.estado}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -142,8 +144,9 @@ input[type="text"] {
 						<p:outputLabel for="delegacionMunicipio"
 							value="Delegación/Municipio" styleClass="requiredLb1" />
 						<p:inputText id="delegacionMunicipio" label="Delegación/Municipio"
-							value="#{sievController.sievPojo.delegacionMunicipio}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.delegacionMunicipio}"
+							required="true">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -151,7 +154,7 @@ input[type="text"] {
 						<p:outputLabel for="calle" value="Calle" styleClass="requiredLb1" />
 						<p:inputText id="calle" label="Calle"
 							value="#{sievController.sievPojo.calle}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -160,7 +163,7 @@ input[type="text"] {
 							styleClass="requiredLb1" />
 						<p:inputText id="numExterior" label="Número Exterior"
 							value="#{sievController.sievPojo.numeroExterior}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -168,8 +171,9 @@ input[type="text"] {
 						<p:outputLabel for="coloniaPoblacion" value="Colonia/Población"
 							styleClass="requiredLb1" />
 						<p:inputText id="coloniaPoblacion" label="Colonia/Población"
-							value="#{sievController.sievPojo.coloniaPoblacion}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.coloniaPoblacion}"
+							required="true">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -178,7 +182,7 @@ input[type="text"] {
 							styleClass="requiredLb1" />
 						<p:inputText id="ciudad" label="Ciudad"
 							value="#{sievController.sievPojo.ciudad}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -186,8 +190,9 @@ input[type="text"] {
 						<p:outputLabel for="codigoPostal" value="Código Postal"
 							styleClass="requiredLb1" />
 						<p:inputText id="codigoPostal" label="Código Postal"
-							value="#{sievController.sievPojo.codigoPostal}" required="true" >
-							<p:keyFilter regEx="/[1234567890]/i"/>
+							value="#{sievController.sievPojo.codigoPostal}" required="true"
+							maxlength="5">
+							<p:keyFilter regEx="/[0-9]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -195,35 +200,39 @@ input[type="text"] {
 						<p:outputLabel for="telefonoCasa" value="Teléfono Casa"
 							styleClass="requiredLb1" />
 						<p:inputMask id="telefonoCasa" label="Teléfono Casa"
-							value="#{sievController.sievPojo.telefonoCasa}" mask="(999) 999-9999" required="true">
-							<p:keyFilter regEx="/[+1234567890]/i"/>
+							value="#{sievController.sievPojo.telefonoCasa}"
+							mask="(999) 999-9999" required="true">
+							<p:keyFilter regEx="/[0-9]/i" />
 						</p:inputMask>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="telefonoOficina" value="Teléfono Oficina"
 							styleClass="requiredLb1" />
-						<p:inputText id="telefonoOficina" label="Teléfono Oficina"
-							value="#{sievController.sievPojo.telefonoOficina}" required="true">
-							<p:keyFilter regEx="/[+1234567890]/i"/>
-						</p:inputText>
+						<p:inputMask id="telefonoOficina" label="Teléfono Oficina"
+							value="#{sievController.sievPojo.telefonoOficina}"
+							mask="(999) 999-9999" required="true">
+							<p:keyFilter regEx="/[0-9]/i" />
+						</p:inputMask>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="telefonoReferencia"
 							value="Teléfono Referencia" styleClass="requiredLb1" />
-						<p:inputText id="telefonoReferencia" label="Teléfono Referencia"
-							value="#{sievController.sievPojo.telefonoReferencia}" required="true">
-							<p:keyFilter regEx="/[+1234567890]/i"/>
-						</p:inputText>
+						<p:inputMask id="telefonoReferencia" label="Teléfono Referencia"
+							value="#{sievController.sievPojo.telefonoReferencia}"
+							mask="(999) 999-9999" required="true">
+							<p:keyFilter regEx="/[0-9]/i" />
+						</p:inputMask>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="nombreReferencia" value="Nombre Referencia"
 							styleClass="requiredLb1" />
 						<p:inputText id="nombreReferencia" label="Nombre Referencia"
-							value="#{sievController.sievPojo.nombreReferencia}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.nombreReferencia}"
+							required="true">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -233,12 +242,11 @@ input[type="text"] {
 						<p:selectOneMenu id="creditoAutomotriz"
 							value="#{sievController.sievPojo.creditoAutomotriz}"
 							style="width:125px" required="true">
-							<f:selectItem itemLabel="Seleccion..."
-								itemValue="" />
-							<f:selectItem itemLabel="No tiene cuenta automotriz"
-								itemValue="F" />
-							<f:selectItem itemLabel="Si tiene cuenta automotriz"
-								itemValue="V" />
+							<f:selectItem itemLabel="Seleccion..." itemValue="" />
+							<f:selectItems value="#{sievController.listaCredAutomotriz}"
+								var="creditoAutomotriz"
+								itemValue="#{creditoAutomotriz.tcSistemasCatalogosPK.claveValor}"
+								itemLabel="#{creditoAutomotriz.valor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -249,8 +257,9 @@ input[type="text"] {
 							value="#{sievController.sievPojo.creditoBancario}"
 							style="width:125px" required="true">
 							<f:selectItem itemLabel="Seleccion..." itemValue="" />
-							<f:selectItem itemLabel="No tiene cuenta bancaria" itemValue="F" />
-							<f:selectItem itemLabel="Si tiene cuenta bancaria" itemValue="V" />
+							<f:selectItems value="#{sievController.listaCredBancario}"
+								var="bancario" itemLabel="#{bancario.valor}"
+								itemValue="#{bancario.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -258,8 +267,8 @@ input[type="text"] {
 						<p:outputLabel for="tarjetaCredito" value="Tarjeta de Crédito"
 							styleClass="requiredLb1" />
 						<p:inputText id="tarjetaCredito" label="Tarjeta de Crédito"
-							value="#{sievController.sievPojo.tarjetaCredito}" >
-							<p:keyFilter regEx="/[1234567890]/i"/>
+							value="#{sievController.sievPojo.tarjetaCredito}">
+							<p:keyFilter regEx="/[1234567890]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -267,16 +276,21 @@ input[type="text"] {
 						<p:outputLabel for="vigenciaTarjeta" value="Vigencia Tarjeta"
 							styleClass="requiredLb1" />
 						<p:inputText id="vigenciaTarjeta" label="Vigencia Tarjeta"
-							value="#{sievController.sievPojo.vigenciaTarjeta}"  minValue="0" maxValue="9999">
-							<p:keyFilter regEx="/[1234567890]/i"/>
+							value="#{sievController.sievPojo.vigenciaTarjeta}" minValue="0"
+							maxValue="9999">
+							<p:keyFilter regEx="/[1234567890]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<p:outputLabel for="claveBanco" value="Clave Banco"/>
-						<p:selectOneMenu id="claveBanco" label="Clave Banco" value="#{sievController.sievPojo.claveBanco}" >
-						<f:selectItem itemLabel="Seleccion..." itemValue="" />
-						<f:selectItems value="#{sievController.listaCveBanco}" var="banco" itemLabel="#{banco.tcSistemasCatalogosPK.claveValor}" itemValue="#{banco.tcSistemasCatalogosPK.claveValor}"/>
+						<p:outputLabel for="claveBanco" value="Clave Banco" />
+						<p:selectOneMenu id="claveBanco" label="Clave Banco"
+							value="#{sievController.sievPojo.claveBanco}">
+							<f:selectItem itemLabel="Seleccion..." itemValue="" />
+							<f:selectItems value="#{sievController.listaCveBanco}"
+								var="banco"
+								itemLabel="#{banco.tcSistemasCatalogosPK.claveValor}"
+								itemValue="#{banco.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -284,25 +298,26 @@ input[type="text"] {
 						<p:outputLabel for="digitosTC" value="Digitos TC"
 							styleClass="requiredLb1" />
 						<p:inputText id="digitosTC" label="Digitos TC"
-							value="#{sievController.sievPojo.digitosTC}" >
-							<p:keyFilter regEx="/[1234567890]/i"/>
+							value="#{sievController.sievPojo.digitosTC}">
+							<p:keyFilter regEx="/[1234567890]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="cvv" value="CVV" styleClass="requiredLb1" />
-						<p:inputText id="cvv" label="CVV"
-							value="#{sievController.sievPojo.cvv}" minValue="0" maxValue="999">
-							<p:keyFilter regEx="/[1234567890]/i"/>
-						</p:inputText>
+						<p:password id="cvv" label="CVV"
+							value="#{sievController.sievPojo.cvv}" minValue="0"
+							maxValue="999" maxlength="3">
+							<p:keyFilter regEx="/[1234567890]/i" />
+						</p:password>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="folioSistema" value="Folio Sistema"
 							styleClass="requiredLb1" />
 						<p:inputText id="folioSistema" label="Folio Sistema"
-							value="#{sievController.sievPojo.folioSistema}" >
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.folioSistema}">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 				</p:panelGrid>
@@ -317,129 +332,106 @@ input[type="text"] {
 							value="#{sievController.sievPojo.tipoPersona}"
 							style="width:125px" required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="FISICA" itemValue="FISICA" />
-							<f:selectItem itemLabel="MORAL" itemValue="MORAL" />
+							<f:selectItems value="#{sievController.listaTipoPersona}"
+								var="tipoPersona"
+								itemLabel="#{tipoPersona.tcSistemasCatalogosPK.claveValor}"
+								itemValue="#{tipoPersona.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 					<h:panelGroup layout="block">
 						<p:outputLabel for="tipoLinea" value="Tipo de Línea" />
 						<p:selectOneMenu id="tipoLinea"
-							value="#{sievController.sievPojo.tipoLinea}"
-							style="width:125px" required="true">
+							value="#{sievController.sievPojo.tipoLinea}" style="width:125px"
+							required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="DATOS" itemValue="D" />
-							<f:selectItem itemLabel="VOZ" itemValue="V" />
+							<f:selectItems value="#{sievController.listaTipoLinea}"
+								var="tipoLinea" itemLabel="#{tipoLinea.valor}"
+								itemValue="#{tipoLinea.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 
 					</h:panelGroup>
-					<h:panelGroup layout="block">
-						<p:outputLabel for="tipoPlan" value="Tipo de Plan" />
-						<p:selectOneMenu id="tipoPlan"
-							value="#{sievController.sievPojo.tipoPlan}"
-							style="width:125px" required="true">
-							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="MIXTO" itemValue="M" />
-							<f:selectItem itemLabel="NORMAL" itemValue="N" />
-						</p:selectOneMenu>
-					</h:panelGroup>
-					<h:panelGroup layout="block">
-						<p:outputLabel for="tipoPlazo" value="Tipo de Plazo" />
-						<p:selectOneMenu id="tipoPlazo"
-							value="#{sievController.sievPojo.tipoPlazo}"
-							style="width:125px" required="true">
-							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="FORZOSO" itemValue="F" />
-							<f:selectItem itemLabel="LIBRE" itemValue="L" />
-						</p:selectOneMenu>
-					</h:panelGroup>
-
 					<h:panelGroup layout="block">
 						<p:outputLabel for="marca" value="Marca" />
 						<p:selectOneMenu id="marca"
-							value="#{sievController.sievPojo.cveMarca}"
-							style="width:125px" required="true" >
-							<p:ajax event="itemSelect" update="modelo" listener="#{sievController.getModelosByMarca()}"/>
+							value="#{sievController.sievPojo.cveMarca}" style="width:125px"
+							required="true">
+							<p:ajax event="itemSelect" update="modelo"
+								listener="#{sievController.getModelosByMarca()}" />
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItems value="#{sievController.listaMarca}" var="marca" itemLabel="#{marca.descripcion}" itemValue="#{marca.id}" />
+							<f:selectItems value="#{sievController.listaMarca}" var="marca"
+								itemLabel="#{marca.descripcion}" itemValue="#{marca.id}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
-			
+
 					<h:panelGroup layout="block">
 						<p:outputLabel for="modelo" value="Modelo" />
 						<p:selectOneMenu id="modelo"
-							value="#{sievController.sievPojo.modelo}"
-							style="width:125px" required="true">
+							value="#{sievController.sievPojo.modelo}" style="width:125px"
+							required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItems value="#{sievController.listaModelo}" var="modelo" itemLabel="#{modelo.id}" itemValue="#{modelo.descripcion}" />
+							<f:selectItems value="#{sievController.listaModelo}" var="modelo"
+								itemLabel="#{modelo.descripcion}" itemValue="#{modelo.id}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
-					
+
 					<h:panelGroup layout="block">
 						<p:outputLabel for="tipoTramite" value="Tipo de trámite" />
 						<p:selectOneMenu id="tipoTramite"
 							value="#{sievController.sievPojo.tipoTramite}"
 							style="width:125px" required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="ACTIVACION" itemValue="ACT" />
-							<f:selectItem itemLabel="CAMBIO DE EQUIPO" itemValue="SW" />
+							<f:selectItems value="#{sievController.listaTramite}"
+								var="tramite" itemLabel="#{tramite.valor}"
+								itemValue="#{tramite.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
-			
+
 					<h:panelGroup layout="block">
 						<p:outputLabel for="fuerzaVenta" value="Fuerza de Venta" />
 						<p:selectOneMenu id="fuerzaVenta"
 							value="#{sievController.sievPojo.fuerzaVenta}"
 							style="width:125px" required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItems value="#{sievController.listaFuerzaVentas}" var="fuerza" itemLabel="#{fuerza.fuerzaVenta}" itemValue="#{fuerza.fuerzaVenta}" />
+							<f:selectItems value="#{sievController.listaFuerzaVentas}"
+								var="fuerza" itemLabel="#{fuerza.fuerzaVenta}"
+								itemValue="#{fuerza.fuerzaVenta}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="proyecto" value="Proyecto" />
 						<p:selectOneMenu id="proyecto"
-							value="#{sievController.sievPojo.proyecto}"
-							style="width:125px" required="true">
+							value="#{sievController.sievPojo.proyecto}" style="width:125px"
+							required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="COPPEL" itemValue="COPPEL" />
-							<f:selectItem itemLabel="TELMEX" itemValue="TELMEX" />
-							<f:selectItem itemLabel="VENTA EN LINEA"
-								itemValue="VENTA EN LINEA" />
+							<f:selectItems value="#{sievController.listaProyecto}"
+								var="proyecto"
+								itemLabel="#{proyecto.tcSistemasCatalogosPK.claveValor}"
+								itemValue="#{proyecto.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="formaPago" value="Forma de Pago" />
 						<p:selectOneMenu id="formaPago"
-							value="#{sievController.sievPojo.formaPago}"
-							style="width:125px" required="true">
+							value="#{sievController.sievPojo.formaPago}" style="width:125px"
+							required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="DOMICILIACION" itemValue="DOMICILIACION" />
-							<f:selectItem itemLabel="EFECTIVO" itemValue="EFECTIVO" />
-							<f:selectItem itemLabel="TARJETA DE CREDITO"
-								itemValue="TARJETA DE CREDITO" />
+							<f:selectItems value="#{sievController.listaFormaPago}"
+								var="formaPago" itemLabel="#{formaPago.valor}"
+								itemValue="#{formaPago.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="canalVenta" value="Canal de Venta" />
 						<p:selectOneMenu id="canalVenta"
-							value="#{sievController.sievPojo.canalVenta}"
-							style="width:125px" required="true">
+							value="#{sievController.sievPojo.canalVenta}" style="width:125px"
+							required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="CACS" itemValue="CACS" />
-							<f:selectItem itemLabel="CADENAS COMERCIALES"
-								itemValue="CADENAS COMERCIALES" />
-							<f:selectItem itemLabel="CENTRO DE VENTAS TEL"
-								itemValue="CENTRO DE VENTAS TEL" />
-							<f:selectItem itemLabel="CVT/CCT" itemValue="CVT/CCT" />
-							<f:selectItem itemLabel="DATOS" itemValue="DATOS" />
-							<f:selectItem itemLabel="DISTRIBUIDOR" itemValue="DISTRIBUIDOR" />
-							<f:selectItem itemLabel="INTEGRADOR" itemValue="INTEGRADOR" />
-							<f:selectItem itemLabel="PYMES" itemValue="PYMES" />
-							<f:selectItem itemLabel="TELEMARKETING" itemValue="TELEMARKETING" />
-							<f:selectItem itemLabel="VENTAS CORPORATIVAS"
-								itemValue="VENTAS CORPORATIVAS" />
+							<f:selectItems value="#{sievController.listaCanalesVenta}"
+								var="canalVenta" itemLabel="#{canalVenta.canalVenta}"
+								itemValue="#{canalVenta.canalVenta}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -447,12 +439,12 @@ input[type="text"] {
 					<h:panelGroup layout="block">
 						<p:outputLabel for="mercado" value="Mercado" />
 						<p:selectOneMenu id="mercado"
-							value="#{sievController.sievPojo.mercado}"
-							style="width:125px" required="true">
+							value="#{sievController.sievPojo.mercado}" style="width:125px"
+							required="true">
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="CORPORATIVO" itemValue="CORPORATIVO" />
-							<f:selectItem itemLabel="MASIVO" itemValue="MASIVO" />
-							<f:selectItem itemLabel="PYME" itemValue="PYME" />
+							<f:selectItems value="#{sievController.listaMercado}"
+								var="mercado" itemLabel="#{mercado.valor}"
+								itemValue="#{mercado.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -463,27 +455,29 @@ input[type="text"] {
 							value="#{sievController.sievPojo.modalidadInvestigacion}"
 							style="width:125px" required="true">
 							<f:selectItem itemLabel="Seleccion..." itemValue="" />
-							<f:selectItem itemLabel="INMEDIATA" itemValue="INMEDIATA" />
-							<f:selectItem itemLabel="DIFERIDA" itemValue="DIFERIDA" />
-							<f:selectItem itemLabel="N/A" itemValue="N/A" />
+							<f:selectItems value="#{sievController.listaModalidadInvest}"
+								var="modalidad" itemLabel="#{modalidad.valor}"
+								itemValue="#{modalidad.tcSistemasCatalogosPK.claveValor}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="region" value="Region" />
 						<p:selectOneMenu id="region"
-							value="#{sievController.sievPojo.region}"
-							style="width:125px" required="true">
+							value="#{sievController.sievPojo.region}" style="width:125px"
+							required="true">
 							<f:selectItem itemLabel="Seleccion..." itemValue="" />
-							<f:selectItems value="#{sievController.listaRegiones}" var="region" itemLabel="#{region.region}" itemValue="#{region.clave}" />
+							<f:selectItems value="#{sievController.listaRegiones}"
+								var="region" itemLabel="#{region.region}"
+								itemValue="#{region.clave}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<h:outputText value="Venta plazos: " />
 						<p:selectBooleanButton id="ventaPlazos"
-							value="#{sievController.sievPojo.ventaPlazos}"
-							onLabel="Yes" offLabel="No" style="width:60px" required="true"/>
+							value="#{sievController.sievPojo.ventaPlazos}" onLabel="Yes"
+							offLabel="No" style="width:60px" required="true" />
 					</h:panelGroup>
 
 				</p:panelGrid>
@@ -493,290 +487,173 @@ input[type="text"] {
 			<p:panel header="Datos del equipo">
 				<p:panelGrid columns="3" cellpadding="5" layout="grid">
 					<h:panelGroup layout="block">
-						<h:outputLabel for="depositoInicial" value="Depósito Inicial"/>
+						<p:outputLabel for="depositoInicial" value="Depósito Inicial" />
 						<p:inputNumber id="depositoInicial"
-							value="#{sievController.sievPojo.depositoInicial}" required="true"/>
+							value="#{sievController.sievPojo.depositoInicial}"
+							required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="renta" value="Renta"/>
-						<p:inputNumber id="renta"
-							value="#{sievController.sievPojo.renta}" required="true"/>
+						<p:outputLabel for="renta" value="Renta" />
+						<p:inputNumber id="renta" value="#{sievController.sievPojo.renta}"
+							required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="montoServicio" value="Monto Servicio"/>
+						<p:outputLabel for="montoServicio" value="Monto Servicio" />
 						<p:inputNumber id="montoServicio"
-							value="#{sievController.sievPojo.montoServicio}" required="true"/>
+							value="#{sievController.sievPojo.montoServicio}" required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="precioLista" value="Precio Lista"/>
+						<p:outputLabel for="precioLista" value="Precio Lista" />
 						<p:inputNumber id="precioLista"
-							value="#{sievController.sievPojo.precioLista}" required="true"/>
+							value="#{sievController.sievPojo.precioLista}" required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="precioKit" value="Precio Kit"/>
+						<p:outputLabel for="precioKit" value="Precio Kit" />
 						<p:inputNumber id="precioKit"
-							value="#{sievController.sievPojo.precioKit}" required="true"/>
+							value="#{sievController.sievPojo.precioKit}" required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="anticipo" value="Anticipo"/>
+						<p:outputLabel for="anticipo" value="Anticipo" />
 						<p:inputNumber id="anticipo"
-							value="#{sievController.sievPojo.anticipo}" required="true"/>
+							value="#{sievController.sievPojo.anticipo}" required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="costoBaseEquipo" value="Costo Base"/>
+						<p:outputLabel for="costoBaseEquipo" value="Costo Base" />
 						<p:inputNumber id="costoBaseEquipo"
-							value="#{sievController.sievPojo.costoBaseEquipo}" required="true"/>
+							value="#{sievController.sievPojo.costoBaseEquipo}"
+							required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="parcialidades" value="Parcialidades"/>
+						<p:outputLabel for="parcialidades" value="Parcialidades" />
 						<p:inputNumber id="parcialidades"
-							value="#{sievController.sievPojo.parcialidades}" required="true"/>
+							value="#{sievController.sievPojo.parcialidades}" required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
-						<h:outputLabel for="sobreprecio" value="Sobre Precio"/>
+						<p:outputLabel for="sobreprecio" value="Sobre Precio" />
 						<p:inputNumber id="sobreprecio"
-							value="#{sievController.sievPojo.sobreprecio}" required="true"/>
+							value="#{sievController.sievPojo.sobreprecio}" required="true" />
 					</h:panelGroup>
-					
+
 					<h:panelGroup layout="block">
 						<p:outputLabel for="costoAmigoKit" value="Costo Amigo KIT" />
 						<p:inputNumber id="costoAmigoKit"
-							value="#{sievController.sievPojo.costoAmigoKit}" required="true"/>
+							value="#{sievController.sievPojo.costoAmigoKit}" required="true" />
 					</h:panelGroup>
 				</p:panelGrid>
 			</p:panel>
 		</p:outputPanel>
 
 		<p:outputPanel>
-			<p:panel id="columnasSafin" header="Oferta Cliente">
+			<p:panel id="columnasPlanes" header="Plan">
 				<p:panelGrid columns="3" cellpadding="5" layout="grid">
-
 					<h:panelGroup layout="block">
-						<p:outputLabel for="cvePlan" value="Plan" />
-						<p:selectOneMenu id="cvePlan"
-							value="#{sievController.sievPojo.cvePlan}"
-							style="width:125px" required="true">
+						<p:outputLabel for="tipoPlan" value="Tipo de Plan" />
+						<p:selectOneMenu id="tipoPlan"
+							value="#{sievController.sievPojo.tipoPlan}" style="width:125px"
+							required="true">
+<!-- 							<p:ajax event="itemSelect" update="cvePlan" -->
+<!-- 								listener="#{sievController.getPlanesByTipoPlanTipoPlazo()}" /> -->
 							<f:selectItem itemLabel="Selección..." itemValue="" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500" itemValue="231103" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500" itemValue="231112" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500" itemValue="231121" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500 VI" itemValue="231130" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500 VI" itemValue="231139" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6500 VI" itemValue="231148" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000" itemValue="231105" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000" itemValue="231114" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000" itemValue="231123" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 Vi" itemValue="231132" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 Vi" itemValue="231141" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 Vi" itemValue="231150" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC" itemValue="231165" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC" itemValue="231166" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC" itemValue="231167" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC VI" itemValue="231168" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC VI" itemValue="231169" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE ESTUDIANTE CONVENIO 6500 CC VI" itemValue="231170" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 CC" itemValue="231171" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 CC" itemValue="231172" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 CC" itemValue="231173" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 VI CC" itemValue="231174" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 VI CC" itemValue="231175" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 8000 VI CC" itemValue="231176" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000" itemValue="231099" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000" itemValue="231108" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000" itemValue="231117" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000" itemValue="231100" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000" itemValue="231109" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000" itemValue="231118" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000" itemValue="231101" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000" itemValue="231110" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000" itemValue="231119" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000" itemValue="231102" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000" itemValue="231111" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000" itemValue="231120" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000" itemValue="231104" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000" itemValue="231113" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000" itemValue="231122" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000" itemValue="231106" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000" itemValue="231115" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000" itemValue="231124" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000" itemValue="231107" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000" itemValue="231116" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000" itemValue="231125" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000 VI" itemValue="231126" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000 VI" itemValue="231135" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 2000 VI" itemValue="231144" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 VI" itemValue="231127" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 VI" itemValue="231136" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 VI" itemValue="231145" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 VI" itemValue="231128" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 VI" itemValue="231137" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 VI" itemValue="231146" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000 VI" itemValue="231129" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000 VI" itemValue="231138" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 6000 VI" itemValue="231147" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000 VI" itemValue="231131" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000 VI" itemValue="231140" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 7000 VI" itemValue="231149" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000 VI" itemValue="231133" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000 VI" itemValue="231142" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 9000 VI" itemValue="231151" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231134" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231143" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231152" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC" itemValue="231153" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC" itemValue="231154" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC" itemValue="231155" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000" itemValue="231197" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000" itemValue="231195" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000" itemValue="231196" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC" itemValue="231207" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC" itemValue="231209" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC" itemValue="231212" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC" itemValue="231208" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC" itemValue="231211" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC" itemValue="231213" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000" itemValue="231159" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000" itemValue="231160" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000" itemValue="231161" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000" itemValue="231183" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000" itemValue="231184" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000" itemValue="231185" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000" itemValue="231189" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000" itemValue="231190" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000" itemValue="231191" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 CC" itemValue="231177" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 CC" itemValue="231178" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 CC" itemValue="231179" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC VI" itemValue="231156" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC VI" itemValue="231157" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 1500 CC VI" itemValue="231158" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000 (VERSIÓN IPHONE)" itemValue="231200" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000 (VERSIÓN IPHONE)" itemValue="231198" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 2000 (VERSIÓN IPHONE)" itemValue="231199" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC VI" itemValue="231214" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC VI" itemValue="231216" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 3000 CC VI" itemValue="231218" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC VI" itemValue="231215" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC VI" itemValue="231217" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 5000 CC VI" itemValue="231219" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000 VI" itemValue="231162" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000 VI" itemValue="231163" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 6000 VI" itemValue="231164" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000 VI" itemValue="231186" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000 VI" itemValue="231187" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 7000 VI" itemValue="231188" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000 VI" itemValue="231192" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000 VI" itemValue="231193" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO CC 9000 VI" itemValue="231194" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231180" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231181" />
-							<f:selectItem itemLabel="TELCEL MAX SL ESTUDIANTE CONVENIO A 12000 VI" itemValue="231182" />
-							<f:selectItem itemLabel="AMIGO FACIL 18M" itemValue="216711" />
-							<f:selectItem itemLabel="TINT PLUS TD EM300 AV A 18" itemValue="216715" />
-							<f:selectItem itemLabel="TINT PLUS TD EM100CB AV A 18" itemValue="216716" />
-							<f:selectItem itemLabel="BULK ALTO VOLUMEN 100M" itemValue="216720" />
-							<f:selectItem itemLabel="BULK ALTO VOLUMEN 30M" itemValue="216721" />
-							<f:selectItem itemLabel="BULK ALTO VOLUMEN 50M" itemValue="216722" />
-							<f:selectItem itemLabel="TELCEL TABLET  3500 MB" itemValue="225903" />
-							<f:selectItem itemLabel="TELCEL TABLET  3500 MB" itemValue="225904" />
-							<f:selectItem itemLabel="TELCEL TABLET  3500 MB CC" itemValue="225905" />
-							<f:selectItem itemLabel="TELCEL TABLET  3500 MB CC" itemValue="225906" />
-							<f:selectItem itemLabel="BULK BIDIRECCIONAL" itemValue="216723" />
-							<f:selectItem itemLabel="BULK UNIDIRECCIONAL" itemValue="216724" />
-							<f:selectItem itemLabel="PROTEC DIG CC SR 12" itemValue="216725" />
-							<f:selectItem itemLabel="TELCEL PLUS EMPR INT500 CB A 18" itemValue="216727" />
-							<f:selectItem itemLabel="TELCEL PLUS EMPR INT2000 CB A 18" itemValue="216728" />
-							<f:selectItem itemLabel="TPLUS EMPRESA 40 COST A 18" itemValue="216729" />
-							<f:selectItem itemLabel="TPLUS EMPRESA 100 COST A 18" itemValue="216730" />
-							<f:selectItem itemLabel="TPLUS EMPRESA 300 COST A 12" itemValue="216731" />
-							<f:selectItem itemLabel="TPLUS EMPRESA INT300 COST A 12" itemValue="216732" />
-							<f:selectItem itemLabel="TPLUS EMPRESA INT300 COST A 18" itemValue="216733" />
-							<f:selectItem itemLabel="TPLUS EMPRESA 40 COST B 18" itemValue="216736" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000" itemValue="225654" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000" itemValue="225655" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000" itemValue="225656" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000 VI" itemValue="225657" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000 VI" itemValue="225658" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LIMITE MPP CC 6000 VI" itemValue="225659" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000" itemValue="225672" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000" itemValue="225673" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000" itemValue="225674" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000 VI" itemValue="225675" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000 VI" itemValue="225676" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 6000 VI" itemValue="225677" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000" itemValue="225831" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000" itemValue="225832" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000" itemValue="225833" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000" itemValue="225837" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000" itemValue="225838" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000" itemValue="225839" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000" itemValue="225819" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000" itemValue="225820" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000" itemValue="225821" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000 VI" itemValue="225834" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000 VI" itemValue="225835" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 7000 VI" itemValue="225836" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000 VI" itemValue="225840" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000 VI" itemValue="225841" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 9000 VI" itemValue="225842" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000 VI" itemValue="225822" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000 VI" itemValue="225823" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 12000 VI" itemValue="225824" />
-							<f:selectItem itemLabel="TELCEL MAX SIN LÍMITE CC 3000" itemValue="225573" />
+							<f:selectItems value="#{sievController.listaTipoPlan}"
+								var="tipoPlan" itemLabel="#{tipoPlan.planDescripcion}"
+								itemValue="#{tipoPlan.clave}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
-					
-					
+					<h:panelGroup layout="block">
+						<p:outputLabel for="tipoPlazo" value="Tipo de Plazo" />
+						<p:selectOneMenu id="tipoPlazo"
+							value="#{sievController.sievPojo.tipoPlazo}" style="width:125px"
+							required="true">
+<!-- 							<p:ajax event="itemSelect" update="cvePlan" -->
+<!-- 								listener="#{sievController.getPlanesByTipoPlanTipoPlazo()}" /> -->
+							<f:selectItem itemLabel="Selección..." itemValue="" />
+							<f:selectItems value="#{sievController.listaTipoPlazo}"
+								var="tipoPlazo" itemLabel="#{tipoPlazo.plazo}"
+								itemValue="#{tipoPlazo.clave}" />
+						</p:selectOneMenu>
+					</h:panelGroup>
+					<h:panelGroup layout="block">
+						<p:commandButton value="Consulta Plan" id="searchPlan" update="cvePlan" ajax="false" action="#{sievController.getPlanesByTipoPlanTipoPlazo()}"/>
+<!-- 						style="margin-right:20px;" styleClass="ui-priority-primary" -->
+					</h:panelGroup>
+				</p:panelGrid>
+				<h:panelGroup layout="block">
+					<!-- 						<p:outputLabel for="cvePlan" value="Plan" /> -->
+					<!-- 						<p:selectOneMenu id="cvePlan" -->
+					<!-- 							value="#{sievController.sievPojo.cvePlan}" style="width:250px" -->
+					<!-- 							required="true"> -->
+					<!-- 							<f:selectItem itemLabel="Selección..." itemValue="" /> -->
+					<!-- 							<f:selectItems value="#{sievController.listaPlan}" var="plan" -->
+					<!-- 								itemLabel="#{plan.nombre}" itemValue="#{plan.id}" /> -->
+					<!-- 						</p:selectOneMenu> -->
+					<p:dataTable var="plan" value="#{sievController.listaPlan}"
+						paginator="true" rows="10"
+						paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+						rowsPerPageTemplate="5,10,15" selectionMode="single"
+						rowKey="plan.id"
+						selection="#{sievController.sievPojo.cvePlan}" id="cvePlan" lazy="true">
+						<!--  update=":form:carDetail"-->
+						<p:ajax event="rowSelect" />
+						<p:column headerText="Nombre Plan">
+							<h:outputText value="#{plan.nombre}" />
+						</p:column>
+					</p:dataTable>
+				</h:panelGroup>
+			</p:panel>
+		</p:outputPanel>
+
+		<p:outputPanel>
+			<p:panel id="columnasSafin" header="Oferta Cliente">
+				<p:panelGrid columns="3" cellpadding="5" layout="grid">
 					<h:panelGroup layout="block">
 						<p:outputLabel for="movimiento" value="Movimiento" />
 						<p:selectOneMenu id="movimiento"
 							value="#{sievController.sievPojo.movimiento}" required="true">
 							<f:selectItem itemValue="" itemLabel="Selección..." />
-							<f:selectItem itemValue="1" itemLabel="Activación" />
-							<f:selectItem itemValue="2" itemLabel="Renovación" />
-							<f:selectItem itemValue="3" itemLabel="Migración" />
-							<f:selectItem itemValue="4" itemLabel="Portabilidad" />
+							<f:selectItems value="#{sievController.listaMovimientos}"
+								var="movimientos" itemValue="#{movimientos.clave}"
+								itemLabel="#{movimientos.movimiento}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="idCanal" value="Canal" />
-						<p:selectOneMenu id="idCanal" value="#{sievController.sievPojo.idCanal}" required="true">
+						<p:selectOneMenu id="idCanal"
+							value="#{sievController.sievPojo.idCanal}" required="true">
 							<f:selectItem itemValue="" itemLabel="Selección..." />
-							<f:selectItems value="#{sievController.lista}" var="canal" itemValue="#{canal.clave}" itemLabel="#{canal.canal}"/>
+							<f:selectItems value="#{sievController.lista}" var="canal"
+								itemValue="#{canal.clave}" itemLabel="#{canal.canal}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
-					<h:panelGroup layout="block">
-						<p:outputLabel for="idMercado" value="Mercado"/>
-						<p:selectOneMenu id="idMercado"
-							value="#{sievController.sievPojo.idMercado}" required="true">
-							<f:selectItem itemValue="" itemLabel="Selección..." />
-							<f:selectItem itemValue="1" itemLabel="MASIVO" />
-							<f:selectItem itemValue="2" itemLabel="PYME" />
-							<f:selectItem itemValue="3" itemLabel="CORPORATIVO" />
-						</p:selectOneMenu>
-					</h:panelGroup>
+					<!-- 					<h:panelGroup layout="block"> -->
+					<!-- 						<p:outputLabel for="idMercado" value="Mercado" /> -->
+					<!-- 						<p:selectOneMenu id="idMercado" -->
+					<!-- 							value="#{sievController.sievPojo.idMercado}" required="true"> -->
+					<!-- 							<f:selectItem itemValue="" itemLabel="Selección..." /> -->
+					<!-- 							<f:selectItems value="#{sievController.listaMercado}" -->
+					<!-- 								var="mercado" -->
+					<!-- 								itemValue="#{mercado.tcSistemasCatalogosPK.claveValor}" -->
+					<!-- 								itemLabel="#{mercado.valor}" /> -->
+					<!-- 						</p:selectOneMenu> -->
+					<!-- 					</h:panelGroup> -->
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="idSistema" value="Sistema" />
 						<p:selectOneMenu id="idSistema" style="width:200px"
 							value="#{sievController.sievPojo.idSistema}" required="true">
 							<f:selectItem itemValue="" itemLabel="Selección..." />
-							<f:selectItem itemValue="1" itemLabel="SISACT" />
-							<f:selectItem itemValue="2" itemLabel="ECAC" />
-							<f:selectItem itemValue="3" itemLabel="SICORE" />
-							<f:selectItem itemValue="4" itemLabel="SAFIN" />
-							<f:selectItem itemValue="5" itemLabel="SMART" />
-							<f:selectItem itemValue="6" itemLabel="CREDIT CHECK" />
+							<f:selectItems value="#{sievController.listaSistemas}"
+								var="sistema" itemValue="#{sistema.clave}"
+								itemLabel="#{sistema.sistema}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
@@ -785,40 +662,43 @@ input[type="text"] {
 						<p:selectOneMenu id="idProducto" style="width:200px"
 							value="#{sievController.sievPojo.idProducto}" required="true">
 							<f:selectItem itemValue="" itemLabel="Selección..." />
-							<f:selectItem itemValue="1" itemLabel="EQUIPO" />
-							<f:selectItem itemValue="2" itemLabel="ACCESORIO" />
-							<f:selectItem itemValue="3" itemLabel="SERVICIO" />
+							<f:selectItems value="#{sievController.listaProductos}"
+								var="producto" itemValue="#{producto.clave}"
+								itemLabel="#{producto.producto}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="numEmpleado" value="Número Empleado" />
 						<p:inputText id="numEmpleado"
-							value="#{sievController.sievPojo.numEmpleado}" required="true" >
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.numEmpleado}" required="true">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="clasiCliente" value="Clasificación Cliente" />
 						<p:inputText type="text" id="clasiCliente"
-							value="#{sievController.sievPojo.clasificacionCliente}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.clasificacionCliente}"
+							required="true">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="clasiBuro" value="Clasificación Buro" />
 						<p:inputText type="text" id="clasiBuro"
-							value="#{sievController.sievPojo.clasificacionCliente}" required="true">
-							<p:keyFilter regEx="/[ABCEFGHIJKLMNÑOPQRSTUVWXYZ1234567890]/i"/>
+							value="#{sievController.sievPojo.clasificacionCliente}"
+							required="true">
+							<p:keyFilter regEx="/[A-Z0-9\s]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="icc" value="ICC" />
-						<p:inputText id="icc" value="#{sievController.sievPojo.icc}" required="true">
-							<p:keyFilter regEx="/[1234567890]/i"/>
+						<p:inputText id="icc" value="#{sievController.sievPojo.icc}"
+							required="true">
+							<p:keyFilter regEx="/[1234567890]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -826,7 +706,7 @@ input[type="text"] {
 						<p:outputLabel for="scoreBuro" value="Score Buró" />
 						<p:inputText type="number" id="scoreBuro"
 							value="#{sievController.sievPojo.scoreBuro}" required="true">
-							<p:keyFilter regEx="/[1234567890]/i"/>
+							<p:keyFilter regEx="/[1234567890]/i" />
 						</p:inputText>
 					</h:panelGroup>
 
@@ -841,15 +721,16 @@ input[type="text"] {
 					<h:panelGroup layout="block">
 						<p:outputLabel for="idOferta" value="ID Oferta" />
 						<p:inputNumber id="idOferta"
-							value="#{sievController.sievPojo.idOferta}"
-							decimalPlaces="0" required="true"/>
+							value="#{sievController.sievPojo.idOferta}" decimalPlaces="0"
+							required="true" />
 					</h:panelGroup>
 
 					<h:panelGroup layout="block">
 						<p:outputLabel for="aportacionVoluntaria"
 							value="Aportación Voluntaria" />
 						<p:inputNumber id="aportacionVoluntaria"
-							value="#{sievController.sievPojo.aportacionVoluntaria}" required="true"/>
+							value="#{sievController.sievPojo.aportacionVoluntaria}"
+							required="true" />
 					</h:panelGroup>
 
 				</p:panelGrid>
@@ -858,7 +739,7 @@ input[type="text"] {
 		</p:outputPanel>
 
 
-		<p:panelGrid columns="2"  cellpadding="1" layout="grid">
+		<p:panelGrid columns="2" cellpadding="1" layout="grid">
 			<h:panelGroup layout="block">
 				<p:commandButton value="Consultar"
 					actionListener="#{sievController.submit()}" ajax="false" />
@@ -873,8 +754,7 @@ input[type="text"] {
 			<h:panelGroup layout="block">
 				<p:outputLabel for="msg" style="alignment-adjust: auto"></p:outputLabel>
 				<p:inputTextarea rows="6" cols="140" id="msg"
-					style="align-content: center;"
-					value="#{sievController.responseWS}" />
+					style="align-content: center;" value="#{sievController.responseWS}" />
 			</h:panelGroup>
 		</p:panel>
 	</h:form>

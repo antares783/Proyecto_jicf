@@ -1,5 +1,8 @@
 package com.telcel.gam.siev;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
@@ -19,6 +22,9 @@ public class SievConfig {
         // this is the package name specified in the <generatePackage> specified in
         // pom.xml
         marshaller.setContextPath("com.telcel.gam.siev.ws");
+        Map<String,Object> map = new HashMap<>();
+        map.put("jaxb.formatted.output", true);
+        marshaller.setMarshallerProperties(map);
         return marshaller;
     }
  

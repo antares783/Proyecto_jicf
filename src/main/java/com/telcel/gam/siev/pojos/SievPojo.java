@@ -17,12 +17,12 @@ public class SievPojo {
     private String nombre;
     private String apellidos;
     private String curp;
-    private String idSistema;
+    private Short idSistema;
     private String region;
     private String clasificacionCliente;
     private String clasificacionBuro;
     private String formaPago;
-    private String cvePlan;
+    private Integer cvePlan;
     private Integer parcialidades;
     private String movimiento;
     private String idCanal;
@@ -39,7 +39,7 @@ public class SievPojo {
     private Integer idOferta;
     private int    icc;
     private int    scoreBuro;
-    private String idProducto;
+    private Short idProducto;
     //creditcheck
     private String tipoPersona;
     private String tipoLinea;
@@ -115,10 +115,10 @@ public class SievPojo {
 	public void setCurp(String curp) {
 		this.curp = curp;
 	}
-	public String getIdSistema() {
+	public Short getIdSistema() {
 		return idSistema;
 	}
-	public void setIdSistema(String idSistema) {
+	public void setIdSistema(Short idSistema) {
 		this.idSistema = idSistema;
 	}
 	public String getRegion() {
@@ -145,10 +145,10 @@ public class SievPojo {
 	public void setFormaPago(String formaPago) {
 		this.formaPago = formaPago;
 	}
-	public String getCvePlan() {
+	public Integer getCvePlan() {
 		return cvePlan;
 	}
-	public void setCvePlan(String cvePlan) {
+	public void setCvePlan(Integer cvePlan) {
 		this.cvePlan = cvePlan;
 	}
 	public Integer getParcialidades() {
@@ -247,10 +247,10 @@ public class SievPojo {
 	public void setScoreBuro(int scoreBuro) {
 		this.scoreBuro = scoreBuro;
 	}
-	public String getIdProducto() {
+	public Short getIdProducto() {
 		return idProducto;
 	}
-	public void setIdProducto(String idProducto) {
+	public void setIdProducto(Short idProducto) {
 		this.idProducto = idProducto;
 	}
 	public String getTipoPersona() {

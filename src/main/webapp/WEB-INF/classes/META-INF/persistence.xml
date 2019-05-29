@@ -15,6 +15,12 @@
     <class>com.telcel.gam.siev.modelo.TcSafinSistemas</class>
     <class>com.telcel.gam.siev.modelo.TcModelo</class>
     <class>com.telcel.gam.siev.modelo.TcSafinMovimientos</class>
+    <class>com.telcel.gam.siev.modelo.TcCredcheckRegiones</class>
+    <class>com.telcel.gam.siev.modelo.TcCredcheckFuerzasVenta</class>
+    <class>com.telcel.gam.siev.modelo.TcSistemas</class>
+    <class>com.telcel.gam.siev.modelo.TcPlan</class>
+    <class>com.telcel.gam.siev.modelo.TcTipoPlan</class>
+    <class>com.telcel.gam.siev.modelo.TcSafinFormasPago</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>

@@ -11,6 +11,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -56,7 +57,7 @@ public class TcMarca implements Serializable {
     @Size(max = 90)
     @Column(name = "NOMBRE")
     private String nombre;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idMarca")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idMarca", fetch = FetchType.EAGER)
     private Collection<TcModelo> tcModeloCollection;
 
     public TcMarca() {

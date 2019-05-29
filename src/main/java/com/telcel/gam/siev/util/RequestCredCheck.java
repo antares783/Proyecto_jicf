@@ -51,7 +51,7 @@ public class RequestCredCheck {
         requestCredCheck.append("                     <formaPago>" + sievPojo.getFormaPago() + "</formaPago>\n");
         requestCredCheck.append("                     <modelo>" + sievPojo.getModelo() + "</modelo>\n");
         requestCredCheck.append("                     <canalVenta>" + sievPojo.getCanalVenta() + "</canalVenta>\n");
-        requestCredCheck.append("                     <mercado>" + sievPojo.getMercado() + "</mercado>\n");
+        requestCredCheck.append("                     <mercado>" + com.telcel.gam.siev.util.SievUtil.getMercadoBySistema(sievPojo.getMercado(),SystemType.CREDITCHECK.getValor()) + "</mercado>\n");
         requestCredCheck.append("                     <modalidadInves>" + sievPojo.getModalidadInvestigacion() + "</modalidadInves>\n");
         requestCredCheck.append("                     <region>" + com.telcel.gam.siev.util.SievUtil.getRegionBySistema(sievPojo.getRegion(), 1) + "</region>\n");
         requestCredCheck.append("                     <ventaPlazos>" + sievPojo.getParcialidades() + "</ventaPlazos>\n");
