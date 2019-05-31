@@ -1,17 +1,18 @@
 package com.telcel.gam.siev.controller;
 
 import java.io.IOException;
-import java.io.StringWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.xml.bind.JAXBElement;
-import javax.xml.transform.stream.StreamResult;
 
-import org.assertj.core.util.DateUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.ocpsoft.rewrite.el.ELBeanName;
+import org.primefaces.event.SelectEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
@@ -19,7 +20,6 @@ import org.springframework.oxm.XmlMappingException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
-import org.springframework.ws.transport.WebServiceMessageSender;
 
 import com.telcel.gam.siev.SievConfig;
 import com.telcel.gam.siev.client.SievClient;
@@ -30,6 +30,7 @@ import com.telcel.gam.siev.modelo.TcCredcheckRegiones;
 import com.telcel.gam.siev.modelo.TcMarca;
 import com.telcel.gam.siev.modelo.TcModelo;
 import com.telcel.gam.siev.modelo.TcPlan;
+import com.telcel.gam.siev.modelo.TcPlanDataModel;
 import com.telcel.gam.siev.modelo.TcSafinCanales;
 import com.telcel.gam.siev.modelo.TcSafinMovimientos;
 import com.telcel.gam.siev.modelo.TcSafinSistemas;
@@ -58,13 +59,11 @@ import com.telcel.gam.siev.repository.TtWsLlamadaRespuestaRepository;
 import com.telcel.gam.siev.util.MethodWsType;
 import com.telcel.gam.siev.util.RequestResponseType;
 import com.telcel.gam.siev.ws.ConsultarCredito;
-import com.telcel.gam.siev.ws.ConsultarCreditoPetType;
 import com.telcel.gam.siev.ws.ConsultarCreditoResponse;
 import com.telcel.gam.siev.ws.EvaluacionTramite;
 import com.telcel.gam.siev.ws.EvaluacionTramiteResponse;
 import com.telcel.gam.siev.ws.ObjectFactory;
 import com.telcel.gam.siev.ws.OfertarCliente;
-import com.telcel.gam.siev.ws.OfertarClientePetType;
 import com.telcel.gam.siev.ws.OfertarClienteResponse;
 import com.telcel.gam.siev.ws.RecalcularOferta;
 import com.telcel.gam.siev.ws.RecalcularOfertaResponse;
@@ -77,10 +76,15 @@ import com.telcel.gam.siev.ws.RecalcularOfertaResponse;
 @Scope(scopeName = "session")
 @Component(value = "sievController")
 @ELBeanName("sievController")
-public class SievController extends WebServiceGatewaySupport {
+public class SievController extends WebServiceGatewaySupport implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final Short SAFiN = 1;
 	public static final Short CREDITCHECK = 2;
+	private static final Logger logger = LogManager.getLogger(SievController.class);
 
 	/*************************** Beans, variables ****************************/
 	private SievPojo sievPojo = new SievPojo();
@@ -88,6 +92,10 @@ public class SievController extends WebServiceGatewaySupport {
 	private String responseWS = "";
 
 	private String claveMarca = "";
+	
+	private TcPlan tcPlan = new TcPlan();
+	
+	private TcPlanDataModel dataModel;
 
 	private TcSafinCanales canales = new TcSafinCanales();
 
@@ -145,8 +153,8 @@ public class SievController extends WebServiceGatewaySupport {
 	private TcCredcheckRegionesRepository regionesRepository;
 	@Autowired
 	private TcMarcaRepository marcaRepository;
-	@Autowired
-	private TcModeloRepository modeloRepository;
+//	@Autowired
+//	private TcModeloRepository modeloRepository;
 	@Autowired
 	private TtWsLlamadaRespuestaRepository llamadaRespuestaRepository;
 	@Autowired
@@ -165,11 +173,10 @@ public class SievController extends WebServiceGatewaySupport {
 	private TcSafinSistemasRepository safinSistemasRepository;
 	@Autowired
 	private TcSafinTiposProductoRepository safinProductoRepository;
-//	@Autowired
-//	private SievClient cliente;
 
 	@PostConstruct
 	private void init() {
+		logger.info("Pasando por la inicialización de listas ");
 		lista = canalesRepository.findAll();
 		listaEstados = estadosRepository.findAll();
 		listaFuerzaVentas = fuerzaVentasRepository.findAll();
@@ -183,6 +190,12 @@ public class SievController extends WebServiceGatewaySupport {
 		listaSistemas = safinSistemasRepository.findAll();
 		listaProductos = safinProductoRepository.findAll();
 		llenadoCatalogos();
+		logger.info("Termina la inicialización de listas ");
+	}
+	
+	public void onRowSelect(SelectEvent event) {
+		System.out.println("La seleccion : " + ((TcPlan) event.getObject()).getId());
+		sievPojo.setCvePlan(((TcPlan) event.getObject()).getId());
 	}
 
 	public void llenadoCatalogos() {
@@ -231,13 +244,11 @@ public class SievController extends WebServiceGatewaySupport {
 	}
 
 	public void getPlanesByTipoPlanTipoPlazo() {
-		System.out.println("Get planes by tipo plan, tipo plazo");
-		System.out.println("Tipo Plan " + sievPojo.getTipoPlan());
-		System.out.println("Tipo Plazo " + sievPojo.getTipoPlazo());
 		if (sievPojo.getTipoPlan() != null && sievPojo.getTipoPlazo() != null) {
 			listaPlan = new ArrayList<TcPlan>();
 			listaPlan = planRepository.findByTipoPlanTipoPlazo(new TcTipoPlan(sievPojo.getTipoPlan()),
 					new TcTipoPlazo(sievPojo.getTipoPlazo()), '1');
+			dataModel = new TcPlanDataModel(listaPlan);
 			System.out.println("Tamaño de los planes" + listaPlan.size());
 		}
 	}
@@ -251,7 +262,7 @@ public class SievController extends WebServiceGatewaySupport {
 	public void saveRequestResponse(TcSistemas claveSistema, String request, String response, String metodoInvocado) {
 		TtWsLlamadaRespuesta llamadaRespuesta = new TtWsLlamadaRespuesta();
 		Integer sec = llamadaRespuestaRepository.getNextSeriesId();
-		System.out.println("La secuencia: " + sec);
+		logger.info("La secuencia: " + sec);
 		if (sec != null && sec > 0) {
 			llamadaRespuesta.setId(sec);
 			llamadaRespuesta.setFecha(new Date());
@@ -262,7 +273,7 @@ public class SievController extends WebServiceGatewaySupport {
 			llamadaRespuesta.setRespuesta(response);
 			llamadaRespuestaRepository.saveAndFlush(llamadaRespuesta);
 		} else {
-			System.out.println("No funciono la puta secuencia de mierda");
+			logger.info("No funciona la secuencia ");
 		}
 	}
 
@@ -275,49 +286,77 @@ public class SievController extends WebServiceGatewaySupport {
 		// ***********************************************
 		// Consulta el ws para el metodo Consultar Credito
 		// ***********************************************
+		logger.info("Metodo Consultar Credito");
 		ConsultarCredito consultarCredito = com.telcel.gam.siev.util.SievUtil.getConsultarCredito(sievPojo);
 		JAXBElement<ConsultarCredito> requestConsultarCredito = of.createConsultarCredito(consultarCredito);
 
 		JAXBElement<ConsultarCreditoResponse> responseConsultarCredito = (JAXBElement<ConsultarCreditoResponse>) cliente
 				.callWebServiceConsultaCliente(requestConsultarCredito);
+		logger.info("Se guarda el request y response");
 		saveRequestResponse(new TcSistemas(SAFiN),
 				com.telcel.gam.siev.util.SievUtil.getRequestResponse(requestConsultarCredito,
 						RequestResponseType.CONSULTAR_CREDITO_REQUEST.getValor(), cliente),
 				com.telcel.gam.siev.util.SievUtil.getRequestResponse(responseConsultarCredito,
 						RequestResponseType.CONSULTAR_CREDITO_RESPONSE.getValor(), cliente),
 				MethodWsType.CONSULTAR_CREDITO_METHOD.getMetodo());
+		logger.info("Termina guardado");
 		responseWS = com.telcel.gam.siev.util.SievResponseUtil.getResponseConsultarCredito(responseConsultarCredito);
 		// *********************************************
 		// Consulta el ws para el metodo Ofertar Cliente
 		// *********************************************
+		logger.info("Metodo Ofertar Cliente");
 		OfertarCliente ofertarCliente = com.telcel.gam.siev.util.SievUtil.getOfertarClientePetType(sievPojo);
 		JAXBElement<OfertarCliente> requestOfertarCliente = of.createOfertarCliente(ofertarCliente);
 		JAXBElement<OfertarClienteResponse> responseOfertaCliente = (JAXBElement<OfertarClienteResponse>) cliente
 				.callWebServiceOfertaCliente(requestOfertarCliente);
+		logger.info("Se guarda el request y response");
 		saveRequestResponse(new TcSistemas(SAFiN),
 				com.telcel.gam.siev.util.SievUtil.getRequestResponse(requestOfertarCliente,
 						RequestResponseType.OFERTAR_CLIENTE_REQUEST.getValor(), cliente),
 				com.telcel.gam.siev.util.SievUtil.getRequestResponse(responseConsultarCredito,
 						RequestResponseType.OFERTAR_CLIENTE_RESPONSE.getValor(), cliente),
 				MethodWsType.OFERTAR_CLIENTE_METHOD.getMetodo());
+		logger.info("Termina guardado");
 		responseWS = responseWS
 				+ com.telcel.gam.siev.util.SievResponseUtil.getResponseOfertaCliente(responseOfertaCliente);
 		// ***********************************************
 		// Consulta el ws para el metodo Recalcular Oferta
 		// ***********************************************
+		logger.info("Metodo Recalcular Oferta");
 		RecalcularOferta recalcularOferta = com.telcel.gam.siev.util.SievUtil.getRecalcularOferta(sievPojo);
 		JAXBElement<RecalcularOferta> requestRecalcularOferta = of.createRecalcularOferta(recalcularOferta);
 		JAXBElement<RecalcularOfertaResponse> responseRecalcularOferta = (JAXBElement<RecalcularOfertaResponse>) cliente
 				.callWebServiceRecalcularOferta(requestRecalcularOferta);
+		logger.info("Se guarda el request y response");
 		saveRequestResponse(new TcSistemas(SAFiN),
 				com.telcel.gam.siev.util.SievUtil.getRequestResponse(requestRecalcularOferta,
 						RequestResponseType.RECALCULAR_OFERTA_REQUEST.getValor(), cliente),
 				com.telcel.gam.siev.util.SievUtil.getRequestResponse(responseRecalcularOferta,
 						RequestResponseType.RECALCULAR_OFERTA_RESPONSE.getValor(), cliente),
 				MethodWsType.RECALCULAR_OFERTA_METHOD.getMetodo());
+		logger.info("Termina guardado");
 		responseWS = responseWS
 				+ com.telcel.gam.siev.util.SievResponseUtil.getResponseRecalcularOferta(responseRecalcularOferta);
-
+		
+		// ***********************************************
+		// Consulta Evaluacion tramite
+		// ***********************************************
+		logger.info("Metodo EValuacion TRamie");
+		EvaluacionTramite evaluacionTramite = com.telcel.gam.siev.util.SievUtil.getEvaluacionTramite(sievPojo);
+		JAXBElement<EvaluacionTramite> requestEvaluacionTramite = of.createEvaluacionTramite(evaluacionTramite);
+		JAXBElement<EvaluacionTramiteResponse> responseEvaluacionTramite = (JAXBElement<EvaluacionTramiteResponse>) cliente
+				.callWebServiceEvaluacionTramite(requestEvaluacionTramite);
+		logger.info("Se guarda el request y response");
+		saveRequestResponse(new TcSistemas(CREDITCHECK),
+				com.telcel.gam.siev.util.SievUtil.getRequestResponse(requestEvaluacionTramite,
+						RequestResponseType.EVALUACION_TRAMITE_REQUEST.getValor(), cliente),
+				com.telcel.gam.siev.util.SievUtil.getRequestResponse(responseEvaluacionTramite,
+						RequestResponseType.EVALUACION_TRAMITE_RESPONSE.getValor(), cliente),
+				MethodWsType.EVALUACION_TRAMITE.getMetodo());
+		logger.info("Termina guardado");
+		responseWS = responseWS
+				+ com.telcel.gam.siev.util.ReadXMLFile.getResponseCreditCheck();
+		
 		context.close();
 
 		return "/sievpage.xhtml?faces-redirect=true";
@@ -328,6 +367,8 @@ public class SievController extends WebServiceGatewaySupport {
 	public String limpiarDatos() {
 		sievPojo = new SievPojo();
 		responseWS = "";
+		listaPlan = new ArrayList<TcPlan>();
+		dataModel = new TcPlanDataModel(listaPlan);
 		return "/sievpage.xhtml?faces-redirect=true";
 	}
 
@@ -578,4 +619,21 @@ public class SievController extends WebServiceGatewaySupport {
 	public void setListaProductos(List<TcSafinTiposProducto> listaProductos) {
 		this.listaProductos = listaProductos;
 	}
+
+	public TcPlan getTcPlan() {
+		return tcPlan;
+	}
+
+	public void setTcPlan(TcPlan tcPlan) {
+		this.tcPlan = tcPlan;
+	}
+
+	public TcPlanDataModel getDataModel() {
+		return dataModel;
+	}
+
+	public void setDataModel(TcPlanDataModel dataModel) {
+		this.dataModel = dataModel;
+	}
+	
 }

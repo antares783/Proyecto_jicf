@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="evaluacionTramite">
     <xs:complexType>
@@ -5,13 +7,13 @@
         <xs:element name="controlData">
           <xs:complexType>
             <xs:sequence>
-              <xs:element type="xs:byte" name="messageUUID"/>
-              <xs:element type="xs:dateTime" name="requestDate"/>
-              <xs:element type="xs:string" name="sendBy"/>
-              <xs:element type="xs:float" name="version"/>
-              <xs:element type="xs:string" name="ipClient"/>
-              <xs:element type="xs:string" name="ipServer"/>
-              <xs:element type="xs:string" name="user"/>
+              <xs:element name="messageUUID" type="xs:unsignedByte" />
+              <xs:element name="requestDate" type="xs:dateTime" />
+              <xs:element name="sendBy" type="xs:string" />
+              <xs:element name="version" type="xs:decimal" />
+              <xs:element name="ipClient" type="xs:string" />
+              <xs:element name="ipServer" type="xs:string" />
+              <xs:element name="user" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -21,29 +23,29 @@
               <xs:element name="accesoWS">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="clave"/>
-                    <xs:element type="xs:string" name="usuario"/>
+                    <xs:element name="clave" type="xs:string" />
+                    <xs:element name="usuario" type="xs:string" />
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
               <xs:element name="informacionBasica">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="tipoPersona"/>
-                    <xs:element type="xs:string" name="tipoLinea"/>
-                    <xs:element type="xs:string" name="tipoPlan"/>
-                    <xs:element type="xs:string" name="tipoPlazo"/>
-                    <xs:element type="xs:string" name="tipoTramite"/>
-                    <xs:element type="xs:string" name="marca"/>
-                    <xs:element type="xs:string" name="fuerzaVenta"/>
-                    <xs:element type="xs:string" name="proyecto"/>
-                    <xs:element type="xs:string" name="formaPago"/>
-                    <xs:element type="xs:string" name="modelo"/>
-                    <xs:element type="xs:string" name="canalVenta"/>
-                    <xs:element type="xs:string" name="mercado"/>
-                    <xs:element type="xs:string" name="modalidadInves"/>
-                    <xs:element type="xs:string" name="region"/>
-                    <xs:element type="xs:string" name="ventaPlazos"/>
+                    <xs:element name="tipoPersona" type="xs:string" />
+                    <xs:element name="tipoLinea" type="xs:string" />
+                    <xs:element name="tipoPlan" type="xs:string" />
+                    <xs:element name="tipoPlazo" type="xs:string" />
+                    <xs:element name="tipoTramite" type="xs:string" />
+                    <xs:element name="marca" type="xs:string" />
+                    <xs:element name="fuerzaVenta" type="xs:string" />
+                    <xs:element name="proyecto" type="xs:string" />
+                    <xs:element name="formaPago" type="xs:string" />
+                    <xs:element name="modelo" type="xs:string" />
+                    <xs:element name="canalVenta" type="xs:string" />
+                    <xs:element name="mercado" type="xs:string" />
+                    <xs:element name="modalidadInves" type="xs:string" />
+                    <xs:element name="region" type="xs:string" />
+                    <xs:element name="ventaPlazos" type="xs:string" />
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -53,50 +55,51 @@
                     <xs:element name="datosCliente">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element type="xs:string" name="razonSocial"/>
-                          <xs:element type="xs:string" name="nombre"/>
-                          <xs:element type="xs:string" name="apellidoPaterno"/>
-                          <xs:element type="xs:string" name="apellidoMaterno"/>
-                          <xs:element type="xs:string" name="fechaNacimiento"/>
-                          <xs:element type="xs:string" name="sexo"/>
-                          <xs:element type="xs:string" name="rfc"/>
-                          <xs:element type="xs:string" name="estado"/>
-                          <xs:element type="xs:string" name="delegacionMunicipio"/>
-                          <xs:element type="xs:string" name="calle"/>
-                          <xs:element type="xs:byte" name="numExterior"/>
-                          <xs:element type="xs:string" name="coloniaPoblacion"/>
-                          <xs:element type="xs:string" name="ciudad"/>
-                          <xs:element type="xs:short" name="codigoPostal"/>
-                          <xs:element type="xs:int" name="telefonoCasa"/>
-                          <xs:element type="xs:int" name="telefonoOficina"/>
-                          <xs:element type="xs:int" name="telefonoReferencia"/>
-                          <xs:element type="xs:string" name="nombreReferencia"/>
-                          <xs:element type="xs:string" name="creditoAutomotriz"/>
-                          <xs:element type="xs:string" name="creditoBancario"/>
-                          <xs:element type="xs:int" name="tarjetaCredito"/>
-                          <xs:element type="xs:string" name="vigenciaTarjeta"/>
-                          <xs:element type="xs:string" name="claveBanco"/>
-                          <xs:element type="xs:short" name="digitosTC"/>
-                          <xs:element type="xs:short" name="cvv"/>
-                          <xs:element type="xs:byte" name="folioSistema"/>
-                          <xs:element type="xs:byte" name="idSistema"/>
-                          <xs:element type="xs:string" name="userBC"/>
-                          <xs:element type="xs:string" name="passBC"/>
+                          <xs:element name="razonSocial" />
+                          <xs:element name="nombre" type="xs:string" />
+                          <xs:element name="apellidoPaterno" type="xs:string" />
+                          <xs:element name="apellidoMaterno" type="xs:string" />
+                          <xs:element name="fechaNacimiento" type="xs:string" />
+                          <xs:element name="sexo" type="xs:string" />
+                          <xs:element name="rfc" type="xs:string" />
+                          <xs:element name="estado" type="xs:string" />
+                          <xs:element name="delegacionMunicipio" type="xs:string" />
+                          <xs:element name="calle" type="xs:string" />
+                          <xs:element name="numExterior" type="xs:unsignedByte" />
+                          <xs:element name="coloniaPoblacion" type="xs:string" />
+                          <xs:element name="ciudad" type="xs:string" />
+                          <xs:element name="codigoPostal" type="xs:unsignedInt" />
+                          <xs:element name="telefonoCasa" />
+                          <xs:element name="telefonoOficina" />
+                          <xs:element name="telefonoReferencia" />
+                          <xs:element name="nombreReferencia" />
+                          <xs:element name="creditoAutomotriz" />
+                          <xs:element name="creditoBancario" />
+                          <xs:element name="tarjetaCredito" />
+                          <xs:element name="vigenciaTarjeta" />
+                          <xs:element name="claveBanco" />
+                          <xs:element name="digitosTC" />
+                          <xs:element name="cvv" />
+                          <xs:element name="folioSistema" type="xs:unsignedByte" />
+                          <xs:element name="idSistema" type="xs:unsignedByte" />
+                          <xs:element name="userBC" />
+                          <xs:element name="passBC" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                     <xs:element name="datosEquipo">
                       <xs:complexType>
                         <xs:sequence>
-                          <xs:element type="xs:short" name="depositoInicial"/>
-                          <xs:element type="xs:short" name="renta"/>
-                          <xs:element type="xs:byte" name="montoServicio"/>
-                          <xs:element type="xs:short" name="precioLista"/>
-                          <xs:element type="xs:short" name="precioKit"/>
-                          <xs:element type="xs:short" name="anticipo"/>
-                          <xs:element type="xs:short" name="costoBaseEquipo"/>
-                          <xs:element type="xs:byte" name="numParcialidades"/>
-                          <xs:element type="xs:byte" name="sobrePrecio"/>
+                          <xs:element name="depositoInicial" />
+                          <xs:element name="renta" />
+                          <xs:element name="montoServicio" />
+                          <xs:element name="precioLista" />
+                          <xs:element name="precioKit" />
+                          <xs:element name="anticipo" />
+                          <xs:element name="costoBaseEquipo" />
+                          <xs:element name="numParcialidades" />
+                          <xs:element name="sobrePrecio" />
+                          <xs:element name="gamaPlan" />
                         </xs:sequence>
                       </xs:complexType>
                     </xs:element>

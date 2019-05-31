@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="evaluacionTramiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="controlData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="messageUUID" type="xs:string" />
+              <xs:element name="responseDate" type="xs:dateTime" />
+              <xs:element name="sendBy" type="xs:string" />
+              <xs:element name="latency" type="xs:unsignedShort" />
+              <xs:element name="version" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detailResponse">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="code" type="xs:unsignedShort" />
+              <xs:element name="severityLevel" type="xs:unsignedByte" />
+              <xs:element name="description" type="xs:string" />
+              <xs:element name="actor" type="xs:string" />
+              <xs:element name="businessMeaning" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="evaluacionTramite">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nemonico" type="xs:string" />
+              <xs:element name="ejecucion">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombreFlujo" />
+                    <xs:element name="trazaEjecucion" />
+                    <xs:element name="clasifBuroCredito" type="xs:string" />
+                    <xs:element name="clasifMovil2000" type="xs:string" />
+                    <xs:element name="clasifAnacr" type="xs:string" />
+                    <xs:element name="respListaNegra" type="xs:string" />
+                    <xs:element name="claseCredito" type="xs:string" />
+                    <xs:element name="tipoCliente" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="listaNegra">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="claveAccionLN" />
+                          <xs:element name="descripcionAccionLN" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="movilM2K">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="historicoM2K">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="clasificacion" />
+                                <xs:element name="lineasActivas" type="xs:unsignedByte" />
+                                <xs:element name="lineasCanceladas" type="xs:unsignedByte" />
+                                <xs:element name="importeTotalLinCanceladas" type="xs:decimal" />
+                                <xs:element name="importeTotalLinActivas" type="xs:decimal" />
+                                <xs:element name="referenciaCtasActivas" />
+                                <xs:element name="referenciaCtasCaneladas" />
+                                <xs:element name="adeudo" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="adeudoM2K">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="lineasActivas" type="xs:unsignedByte" />
+                                <xs:element name="lineasCanceladas" type="xs:unsignedByte" />
+                                <xs:element name="importeTotalLinCanceladas" type="xs:decimal" />
+                                <xs:element name="importeTotalLinActivas" type="xs:decimal" />
+                                <xs:element name="referenciaCtasActivas" />
+                                <xs:element name="referenciaCtasCaneladas" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="buroCredito">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="reporteBc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="claveClasificacionBc" />
+                                <xs:element name="descripClasificacionBc" />
+                                <xs:element name="numeroLineas" type="xs:unsignedByte" />
+                                <xs:element name="valorIcc" type="xs:unsignedByte" />
+                                <xs:element name="valorScore" type="xs:unsignedByte" />
+                                <xs:element name="estatusFinal" type="xs:string" />
+                                <xs:element name="folioBc" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="idProviderBc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="claveClasificacionBc" />
+                                <xs:element name="descripClasificacionBc" />
+                                <xs:element name="numeroLineas" type="xs:unsignedByte" />
+                                <xs:element name="valorIcc" type="xs:unsignedByte" />
+                                <xs:element name="valorScore" type="xs:unsignedByte" />
+                                <xs:element name="estatusFinal" type="xs:string" />
+                                <xs:element name="folioBc" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="repoBcIcc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="claveClasificacionBc" />
+                                <xs:element name="descripClasificacionBc" />
+                                <xs:element name="numeroLineas" type="xs:unsignedByte" />
+                                <xs:element name="valorIcc" type="xs:unsignedByte" />
+                                <xs:element name="valorScore" type="xs:unsignedByte" />
+                                <xs:element name="estatusFinal" type="xs:string" />
+                                <xs:element name="folioBc" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="idProvBcIcc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="claveClasificacionBc" />
+                                <xs:element name="descripClasificacionBc" />
+                                <xs:element name="numeroLineas" type="xs:unsignedByte" />
+                                <xs:element name="valorIcc" type="xs:unsignedByte" />
+                                <xs:element name="valorScore" type="xs:unsignedByte" />
+                                <xs:element name="estatusFinal" type="xs:string" />
+                                <xs:element name="folioBc" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="repoBcTelcoIcc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="claveClasificacionBc" />
+                                <xs:element name="descripClasificacionBc" />
+                                <xs:element name="numeroLineas" type="xs:unsignedByte" />
+                                <xs:element name="valorIcc" type="xs:unsignedByte" />
+                                <xs:element name="valorScore" type="xs:unsignedByte" />
+                                <xs:element name="estatusFinal" type="xs:string" />
+                                <xs:element name="folioBc" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="idProvTelcoIcc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="claveClasificacionBc" />
+                                <xs:element name="descripClasificacionBc" />
+                                <xs:element name="numeroLineas" type="xs:unsignedByte" />
+                                <xs:element name="valorIcc" type="xs:unsignedByte" />
+                                <xs:element name="valorScore" type="xs:unsignedByte" />
+                                <xs:element name="estatusFinal" type="xs:string" />
+                                <xs:element name="folioBc" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="buroCreditoHst">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="producto" />
+                                <xs:element name="claveClasificacionBc" />
+                                <xs:element name="descripClasificacionBc" />
+                                <xs:element name="numeroLineas" type="xs:unsignedByte" />
+                                <xs:element name="valorIcc" type="xs:unsignedByte" />
+                                <xs:element name="valorScore" type="xs:unsignedByte" />
+                                <xs:element name="estatusFinal" type="xs:string" />
+                                <xs:element name="folioBc" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="buroCreditoMoral">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="claveClasificacionBc" />
+                          <xs:element name="descripClasificacionBc" />
+                          <xs:element name="numeroLineas" type="xs:unsignedByte" />
+                          <xs:element name="valorIcc" type="xs:unsignedByte" />
+                          <xs:element name="valorScore" type="xs:unsignedByte" />
+                          <xs:element name="estatusFinal" type="xs:string" />
+                          <xs:element name="folioBc" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="scoreCCS">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="claveClaseCredito" />
+                          <xs:element name="descripClaseCredito" />
+                          <xs:element name="claveClasificacionFinal" />
+                          <xs:element name="descripClasificacionFinal" />
+                          <xs:element name="claveTipoCliente" />
+                          <xs:element name="descripTipoCliente" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="gamaPlan">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion" />
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="depositoRenta">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion" />
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="limiteCredito">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="limiteCredito" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="financiamiento">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="aplicaFinanciamiento" />
+                          <xs:element name="montoEnganche" type="xs:decimal" />
+                          <xs:element name="montoFinanciado" type="xs:decimal" />
+                          <xs:element name="montoParcialidad" type="xs:decimal" />
+                          <xs:element name="montoSobrePrecio" type="xs:decimal" />
+                          <xs:element name="montoTotal" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cargoInterredes">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ticket" />
+                          <xs:element name="idCargo" />
+                          <xs:element name="primerCargo" type="xs:decimal" />
+                          <xs:element name="segundoCargo" type="xs:decimal" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="lineasAutorizadas">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="lineasAutoAdmon">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion" />
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="lineasAutoEdad">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion" />
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="verificacionDom">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ejecucion">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="claveModalidadInvest" />
+                          <xs:element name="descripModalidadInvest" />
+                          <xs:element name="generaVerificacion" />
+                          <xs:element name="mensajeVerificacion" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="detalle">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="accionRespuesta" />
+                          <xs:element name="mensaje" />
+                          <xs:element name="tipoRespuesta" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="anacr">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="anacrAdeudo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="tieneAdeudo" type="xs:boolean" />
+                                <xs:element name="adeudoTotalActivo" type="xs:decimal" />
+                                <xs:element name="adeudoTotalInactivo" type="xs:decimal" />
+                                <xs:element name="lineasActivas" type="xs:unsignedByte" />
+                                <xs:element name="lineasCanceladas" type="xs:unsignedByte" />
+                                <xs:element name="referenciaCtasActivas" />
+                                <xs:element name="referenciaCtasCanceladas" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="anacrHst">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ejecucion" />
+                          <xs:element name="detalle">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="accionRespuesta" />
+                                <xs:element name="mensaje" />
+                                <xs:element name="tipoRespuesta" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="detalle">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="accionRespuesta" />
+                    <xs:element name="mensaje" />
+                    <xs:element name="tipoRespuesta" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

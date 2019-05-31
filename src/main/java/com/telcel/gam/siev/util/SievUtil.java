@@ -157,11 +157,11 @@ public class SievUtil {
 		ofertarClientePetType.setCurp(sievPojo.getCurp().trim());
 		ofertarClientePetType.setIdProducto(sievPojo.getIdProducto().intValue());
 		ofertarClientePetType.setCvePlan(sievPojo.getCvePlan().toString());
-		ofertarClientePetType.setRegion(sievPojo.getRegion());
+		ofertarClientePetType.setRegion(getRegionBySistema(sievPojo.getRegion(), SystemType.SAFIN.getValor()));
 		ofertarClientePetType.setNumParcialidades(sievPojo.getParcialidades());
 		ofertarClientePetType.setIdMovimiento(Integer.parseInt(sievPojo.getMovimiento()));
         ofertarClientePetType.setIdCanal(Integer.parseInt(sievPojo.getIdCanal()));
-		ofertarClientePetType.setIdMercado(Integer.parseInt(getMercadoBySistema(sievPojo.getIdMercado(),SystemType.SAFIN.getValor())));
+		ofertarClientePetType.setIdMercado(Integer.parseInt(getMercadoBySistema(sievPojo.getMercado(),SystemType.SAFIN.getValor())));
 		ofertarClientePetType.setCostoBaseEquipo(sievPojo.getCostoBase());
 		ofertarClientePetType.setSobrePrecio(sievPojo.getSobrePrecio());
 		ofertarClientePetType.setClasificacionCLiente(sievPojo.getClasificacionCliente());

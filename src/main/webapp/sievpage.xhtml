@@ -46,7 +46,7 @@ input[type="text"] {
 <h:body>
 	<!-- 	<p:outputLabel for="@next" value="Sistema Integrado de Evaluación" /> -->
 	<h1>Sistema Integrado de Evaluación</h1>
-	<h:form>
+	<h:form id="formSiev">
 
 		<p:outputPanel>
 
@@ -559,8 +559,9 @@ input[type="text"] {
 						<p:selectOneMenu id="tipoPlan"
 							value="#{sievController.sievPojo.tipoPlan}" style="width:125px"
 							required="true">
-<!-- 							<p:ajax event="itemSelect" update="cvePlan" -->
-<!-- 								listener="#{sievController.getPlanesByTipoPlanTipoPlazo()}" /> -->
+							<p:ajax event="itemSelect"/>
+							<!-- 							<p:ajax event="itemSelect" update="cvePlan" -->
+							<!-- 								listener="#{sievController.getPlanesByTipoPlanTipoPlazo()}" /> -->
 							<f:selectItem itemLabel="Selección..." itemValue="" />
 							<f:selectItems value="#{sievController.listaTipoPlan}"
 								var="tipoPlan" itemLabel="#{tipoPlan.planDescripcion}"
@@ -572,8 +573,7 @@ input[type="text"] {
 						<p:selectOneMenu id="tipoPlazo"
 							value="#{sievController.sievPojo.tipoPlazo}" style="width:125px"
 							required="true">
-<!-- 							<p:ajax event="itemSelect" update="cvePlan" -->
-<!-- 								listener="#{sievController.getPlanesByTipoPlanTipoPlazo()}" /> -->
+							<p:ajax event="itemSelect"/>
 							<f:selectItem itemLabel="Selección..." itemValue="" />
 							<f:selectItems value="#{sievController.listaTipoPlazo}"
 								var="tipoPlazo" itemLabel="#{tipoPlazo.plazo}"
@@ -581,31 +581,27 @@ input[type="text"] {
 						</p:selectOneMenu>
 					</h:panelGroup>
 					<h:panelGroup layout="block">
-						<p:commandButton value="Consulta Plan" id="searchPlan" update="cvePlan" ajax="false" action="#{sievController.getPlanesByTipoPlanTipoPlazo()}"/>
-<!-- 						style="margin-right:20px;" styleClass="ui-priority-primary" -->
+						<p:commandButton value="Consulta Plan" id="searchPlan" process="@this"
+							action="#{sievController.getPlanesByTipoPlanTipoPlazo}" update="cvePlan" />
 					</h:panelGroup>
 				</p:panelGrid>
 				<h:panelGroup layout="block">
-					<!-- 						<p:outputLabel for="cvePlan" value="Plan" /> -->
-					<!-- 						<p:selectOneMenu id="cvePlan" -->
-					<!-- 							value="#{sievController.sievPojo.cvePlan}" style="width:250px" -->
-					<!-- 							required="true"> -->
-					<!-- 							<f:selectItem itemLabel="Selección..." itemValue="" /> -->
-					<!-- 							<f:selectItems value="#{sievController.listaPlan}" var="plan" -->
-					<!-- 								itemLabel="#{plan.nombre}" itemValue="#{plan.id}" /> -->
-					<!-- 						</p:selectOneMenu> -->
-					<p:dataTable var="plan" value="#{sievController.listaPlan}"
-						paginator="true" rows="10"
-						paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
-						rowsPerPageTemplate="5,10,15" selectionMode="single"
-						rowKey="plan.id"
-						selection="#{sievController.sievPojo.cvePlan}" id="cvePlan" lazy="true">
-						<!--  update=":form:carDetail"-->
-						<p:ajax event="rowSelect" />
-						<p:column headerText="Nombre Plan">
-							<h:outputText value="#{plan.nombre}" />
-						</p:column>
-					</p:dataTable>
+					<p:outputPanel id="planDetail">
+						<p:dataTable var="plan" value="#{sievController.dataModel}"
+							paginator="true" rows="10"
+							paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+							rowsPerPageTemplate="5,10,15" selectionMode="single"
+							rowKey="#{plan.id}" selection="#{sievController.tcPlan}"
+							id="cvePlan" lazy="true">
+							<p:ajax event="rowSelect" listener="#{sievController.onRowSelect}"/>
+							<p:column headerText="ID" width="100">
+								<h:outputText value="#{plan.id}" />
+							</p:column>
+							<p:column headerText="Nombre Plan">
+								<h:outputText value="#{plan.nombre}" />
+							</p:column>
+						</p:dataTable>
+					</p:outputPanel>
 				</h:panelGroup>
 			</p:panel>
 		</p:outputPanel>
@@ -633,19 +629,6 @@ input[type="text"] {
 								itemValue="#{canal.clave}" itemLabel="#{canal.canal}" />
 						</p:selectOneMenu>
 					</h:panelGroup>
-
-					<!-- 					<h:panelGroup layout="block"> -->
-					<!-- 						<p:outputLabel for="idMercado" value="Mercado" /> -->
-					<!-- 						<p:selectOneMenu id="idMercado" -->
-					<!-- 							value="#{sievController.sievPojo.idMercado}" required="true"> -->
-					<!-- 							<f:selectItem itemValue="" itemLabel="Selección..." /> -->
-					<!-- 							<f:selectItems value="#{sievController.listaMercado}" -->
-					<!-- 								var="mercado" -->
-					<!-- 								itemValue="#{mercado.tcSistemasCatalogosPK.claveValor}" -->
-					<!-- 								itemLabel="#{mercado.valor}" /> -->
-					<!-- 						</p:selectOneMenu> -->
-					<!-- 					</h:panelGroup> -->
-
 					<h:panelGroup layout="block">
 						<p:outputLabel for="idSistema" value="Sistema" />
 						<p:selectOneMenu id="idSistema" style="width:200px"

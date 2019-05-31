@@ -30,7 +30,7 @@ public class SievResponseUtil {
 	public static String getResponseOfertaCliente(JAXBElement<OfertarClienteResponse> responseOfertaCliente) {
 		String resOfertarCliente ="---------------------------Respuesta Oferta Cliente Safin------------------------------------\n";
 		if(responseOfertaCliente.getValue().getDetailResponse() != null) { //si el detail response es nulo
-			resOfertarCliente = "Código: " + responseOfertaCliente.getValue().getDetailResponse().getCode()  + "\n" +
+			resOfertarCliente = resOfertarCliente + "Código: " + responseOfertaCliente.getValue().getDetailResponse().getCode()  + "\n" +
 					"Nivel de Severidad: " + responseOfertaCliente.getValue().getDetailResponse().getSeverityLevel() + "\n" +
 					"Descripción: " + responseOfertaCliente.getValue().getDetailResponse().getDescription() + "\n" + 
 					"Actor: " + responseOfertaCliente.getValue().getDetailResponse().getActor() + "\n" +
@@ -61,7 +61,7 @@ public class SievResponseUtil {
 		String resRecalcularOfertaResponse = "-----------------------------Respuesta Recalcular Oferta Safin----------------------------------\n";
 		
 		if(responseRecalcular.getValue().getDetailResponse() != null) { //si el detail response es nulo
-			resRecalcularOfertaResponse = "Código: " + responseRecalcular.getValue().getDetailResponse().getCode()  + "\n" +
+			resRecalcularOfertaResponse = resRecalcularOfertaResponse + "Código: " + responseRecalcular.getValue().getDetailResponse().getCode()  + "\n" +
 					"Nivel de Severidad: " + responseRecalcular.getValue().getDetailResponse().getSeverityLevel() + "\n" +
 					"Descripción: " + responseRecalcular.getValue().getDetailResponse().getDescription()  + "\n" + 
 					"Actor: " + responseRecalcular.getValue().getDetailResponse().getActor() +  "\n" +

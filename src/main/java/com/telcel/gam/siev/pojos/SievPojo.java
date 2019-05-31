@@ -26,7 +26,7 @@ public class SievPojo {
     private Integer parcialidades;
     private String movimiento;
     private String idCanal;
-    private String idMercado;
+//    private String idMercado;
     private Double costoBase;
     private Double sobrePrecio;
     private Short cveMarca;
@@ -169,12 +169,12 @@ public class SievPojo {
 	public void setIdCanal(String idCanal) {
 		this.idCanal = idCanal;
 	}
-	public String getIdMercado() {
-		return idMercado;
-	}
-	public void setIdMercado(String idMercado) {
-		this.idMercado = idMercado;
-	}
+//	public String getIdMercado() {
+//		return idMercado;
+//	}
+//	public void setIdMercado(String idMercado) {
+//		this.idMercado = idMercado;
+//	}
 	public Double getCostoBase() {
 		return costoBase;
 	}
