@@ -14,6 +14,7 @@ public class TcPlanDataModel extends ListDataModel<TcPlan> implements Selectable
 		super(data);
 	}
 	
+	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public TcPlan getRowData(String rowKey) {
 		@SuppressWarnings("unchecked")
@@ -28,7 +29,6 @@ public class TcPlanDataModel extends ListDataModel<TcPlan> implements Selectable
 
 	@Override
 	public Object getRowKey(TcPlan object) {
-		// TODO Auto-generated method stub
 		return object.getId();
 	}
 
